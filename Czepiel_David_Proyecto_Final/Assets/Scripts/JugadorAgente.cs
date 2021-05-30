@@ -1,20 +1,26 @@
-﻿/*    
+﻿/*
    Copyright (C) 2020 Federico Peinado
    http://www.federicopeinado.com
 
    Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
    Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
 
-   Autor: Federico Peinado 
+   Autor: Federico Peinado
    Contacto: email@federicopeinado.com
 */
+
 namespace UCM.IAV.Movimiento
 {
-
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+
+    using BehaviorDesigner.Runtime;
+    using BehaviorDesigner.Runtime.Tasks;
+
+    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+    using UnityEngine.AI;
 
     /// <summary>
     /// Clase para modelar el controlador del jugador como agente
@@ -25,10 +31,13 @@ namespace UCM.IAV.Movimiento
         /// El componente de cuerpo rígido
         /// </summary>
         private Rigidbody _cuerpoRigido;
+
         /// <summary>
         /// Dirección del movimiento
         /// </summary>
         private Vector3 _dir;
+
+        public GameObject prueba;
 
         /// <summary>
         /// Al despertar, establecer el cuerpo rígido
@@ -47,7 +56,12 @@ namespace UCM.IAV.Movimiento
             velocidad.z = Input.GetAxis("Vertical");
             // Faltaba por normalizar el vector
             velocidad.Normalize();
-            velocidad *= velocidadMax; 
+            velocidad *= velocidadMax;
+
+            if (Input.GetKeyDown("space"))
+            {
+                prueba.GetComponent<BehaviorTree>().SetVariableValue("Target", this.transform.gameObject);
+            }
         }
 
         /// <summary>
@@ -63,7 +77,7 @@ namespace UCM.IAV.Movimiento
             {
                 // El cuerpo rígido no podrá estar marcado como cinemático
                 _cuerpoRigido.AddForce(velocidad * Time.deltaTime, ForceMode.VelocityChange); // Cambiamos directamente la velocidad, sin considerar la masa (pidiendo que avance esa distancia de golpe)
-            } 
+            }
         }
 
         /// <summary>
