@@ -12,30 +12,24 @@
 
     [TaskCategory("CzepielDavidProyectoFinal")]
     [TaskDescription("Rellenar")]
-    public class PonermeEnLaCola : Action
+    public class ComprobarMiPedido : Conditional
     {
-        public SharedInt miPosicionCola;
-        public SharedGameObject miTarget;
+        [Tooltip("The first variable to compare")]
+        public SharedGameObject variable;
 
-        private GameObject cajaManager;
+        private Menu miMenu;
 
         public override void OnStart()
         {
-            cajaManager = GlobalVariables.Instance.GetVariable("CajaManager").ConvertTo<SharedGameObject>().Value;
-            miPosicionCola.Value = cajaManager.GetComponent<CajaManager>().dameLugarCola();
+            miMenu = variable.Value.GetComponent<Menu>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (cajaManager.GetComponent<CajaManager>().meToca(miPosicionCola.Value))
-            {
+            if (miMenu.estoyListoParaComer())
                 return TaskStatus.Success;
-            }
             else
-            {
-                miTarget.Value = cajaManager.GetComponent<CajaManager>().dameLugar(miPosicionCola.Value);
                 return TaskStatus.Failure;
-            }
         }
     }
 }

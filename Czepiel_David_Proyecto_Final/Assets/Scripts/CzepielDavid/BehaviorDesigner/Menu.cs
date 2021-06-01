@@ -17,6 +17,10 @@
 
         private int ordenComer = 0;
 
+        public int IDPedido = 0;
+
+        private bool listoParaComer = false;
+
         private void Start()
         {
             menuItemsComer = new List<bool>();
@@ -39,6 +43,11 @@
 
         public void servir()
         {
+        }
+
+        public bool estoyListoParaComer()
+        {
+            return listoParaComer || Input.GetKeyDown("space");
         }
 
         /// <summary>

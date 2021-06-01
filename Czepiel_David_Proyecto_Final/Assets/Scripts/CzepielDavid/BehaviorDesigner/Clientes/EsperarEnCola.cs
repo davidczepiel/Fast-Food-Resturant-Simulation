@@ -37,6 +37,7 @@
             {
                 if (pos == caja.miPosicionEnLaCola(miTicket.Value))
                 {
+                    //this.gameObject.SetActive(false);
                     return TaskStatus.Running;
                 }
                 else

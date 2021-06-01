@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mVariableData:
     variableStartIndex: 
-    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":1},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ColaManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":3},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PedidosManager","IsShared":true,"IsGlobal":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":4}]}'
+    JSONSerialization: '{"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":1},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ColaManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":3},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PedidosManager","IsShared":true,"IsGlobal":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":4},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"IsGlobal":true,"GameObjectmValue":5}]}'
     fieldSerializationData:
       typeName: []
       fieldNameHash: 
       startIndex: 
       dataPosition: 
       unityObjects:
+      - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}

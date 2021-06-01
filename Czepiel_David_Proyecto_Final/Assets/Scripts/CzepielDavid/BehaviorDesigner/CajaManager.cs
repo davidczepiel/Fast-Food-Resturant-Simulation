@@ -53,11 +53,6 @@
             }
         }
 
-        public GameObject damePedido()
-        {
-            return Instantiate(menuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        }
-
         public bool meToca(int turnoEsperando)
         {
             if (turnoEsperando == turno && !ocupado)
@@ -89,6 +84,20 @@
         {
             int result = lugares.FindIndex(element => element == libre);
             ocupados[result] = false;
+        }
+
+        public bool miPedidoListo(int id)
+        {
+            int i = 0;
+            while (i < pedidosParaDar.Count && pedidosParaDar[i].IDPedido != id)
+                i++;
+
+            return i < pedidosParaDar.Count;
+        }
+
+        public GameObject damePedido()
+        {
+            return Instantiate(menuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
         }
     }
 }
