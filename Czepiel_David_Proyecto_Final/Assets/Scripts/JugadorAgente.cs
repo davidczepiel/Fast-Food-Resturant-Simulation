@@ -57,11 +57,6 @@ namespace UCM.IAV.Movimiento
             // Faltaba por normalizar el vector
             velocidad.Normalize();
             velocidad *= velocidadMax;
-
-            if (Input.GetKeyDown("space"))
-            {
-                prueba.GetComponent<BehaviorTree>().SetVariableValue("Target", this.transform.gameObject);
-            }
         }
 
         /// <summary>
