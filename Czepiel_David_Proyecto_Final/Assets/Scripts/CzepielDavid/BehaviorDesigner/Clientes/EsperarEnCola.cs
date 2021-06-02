@@ -16,17 +16,17 @@
     {
         public SharedGameObject miTarget;
         public SharedInt miTicket;
+        public SharedVector3 miTargetVector;
+        public SharedGameObject cajaManager;
 
-        private GameObject cajaManager;
         private CajaManager caja;
         private int pos;
 
         public override void OnStart()
         {
-            cajaManager = GlobalVariables.Instance.GetVariable("CajaManager").ConvertTo<SharedGameObject>().Value;
-            caja = cajaManager.GetComponent<CajaManager>();
+            caja = cajaManager.Value.GetComponent<CajaManager>();
             pos = caja.miPosicionEnLaCola(miTicket.Value);
-            miTarget.Value = caja.dameLugar(miTicket.Value);
+            //miTarget.Value = caja.dameLugar(miTicket.Value);
         }
 
         public override TaskStatus OnUpdate()
@@ -42,7 +42,8 @@
                 }
                 else
                 {
-                    miTarget.Value = caja.dameLugar(miTicket.Value);
+                    //miTarget.Value = caja.dameLugar(miTicket.Value);
+                    miTargetVector.Value = caja.dameLugarVector(miTicket.Value);
                     return TaskStatus.Failure;
                 }
             }

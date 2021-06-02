@@ -607,7 +607,8 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\PonermeEnLaCola.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Preparacion.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TomarPedido.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\UsarPapelera.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\UsarElemento.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CocinaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\ColaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Menu.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\ClientesManager.cs" />

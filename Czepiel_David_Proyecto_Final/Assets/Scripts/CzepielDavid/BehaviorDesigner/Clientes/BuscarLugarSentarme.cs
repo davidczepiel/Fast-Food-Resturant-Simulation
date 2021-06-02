@@ -17,6 +17,8 @@
         [Tooltip("Silla para sentarme")]
         public SharedGameObject target;
 
+        public SharedGameObject comedorManager;
+
         /// <summary>
         /// Esta tarea se hace cargo de el fantasma pille a la cantante
         /// y de avisarla de esto, modificando sus variables y tambien
@@ -25,11 +27,11 @@
         /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
-            if (!GlobalVariables.Instance.GetVariable("ComedorManager").ConvertTo<SharedGameObject>().Value.GetComponent<LugaresManager>().hayHueco())
+            if (!comedorManager.Value.GetComponent<LugaresManager>().hayHueco())
                 return TaskStatus.Running;
             else
             {
-                GameObject lugar = GlobalVariables.Instance.GetVariable("ComedorManager").ConvertTo<SharedGameObject>().Value.GetComponent<LugaresManager>().dameLugar();
+                GameObject lugar = comedorManager.Value.GetComponent<LugaresManager>().dameLugar();
                 //GlobalVariables.Instance.SetVariableValue("ComedorManager", true);
                 target.Value = lugar;
 

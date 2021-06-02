@@ -12,26 +12,23 @@
 
     [TaskCategory("CzepielDavidProyectoFinal")]
     [TaskDescription("Rellenar")]
-    public class UsarPapelera : Action
+    public class UsarElemento : Action
     {
         [Tooltip("Silla para sentarme")]
         public SharedGameObject miPedido;
 
         public SharedGameObject miTarget;
+        public SharedVector3 miTargetVector;
+        public SharedGameObject lugaresManager;
 
         private float tiempoPensar;
 
         private float timer;
-
         private int miTurno = 0;
 
-        private GameObject papelerasManager;
-
         public override void OnStart()
-
         {
-            papelerasManager = GlobalVariables.Instance.GetVariable("PapelerasManager").ConvertTo<SharedGameObject>().Value;
-            miTurno = papelerasManager.GetComponent<LugaresDesgastablesManager>().dameLugarCola();
+            miTurno = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarCola();
             tiempoPensar = 1;
             timer = tiempoPensar;
         }
@@ -48,11 +45,18 @@
             timer -= a;
             if (think())
             {
-                if (papelerasManager.GetComponent<LugaresDesgastablesManager>().meToca(miTurno))
+                if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().meToca(miTurno))
                 {
-                    GameObject lugar = papelerasManager.GetComponent<LugaresDesgastablesManager>().dameLugar();
+                    GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugar();
                     miTarget.Value = lugar;
                     return TaskStatus.Success;
+                }
+                else
+                {
+                    //GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarEsperar(miTurno);
+                    //miTarget.Value = lugar;
+                    miTargetVector.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarVector(miTurno);
+                    return TaskStatus.Failure;
                 }
             }
             return TaskStatus.Running;

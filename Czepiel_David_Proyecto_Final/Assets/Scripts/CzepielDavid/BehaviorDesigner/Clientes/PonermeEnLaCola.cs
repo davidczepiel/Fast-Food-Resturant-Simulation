@@ -16,24 +16,24 @@
     {
         public SharedInt miPosicionCola;
         public SharedGameObject miTarget;
-
-        private GameObject cajaManager;
+        public SharedVector3 miTargetVector;
+        public SharedGameObject cajaManager;
 
         public override void OnStart()
         {
-            cajaManager = GlobalVariables.Instance.GetVariable("CajaManager").ConvertTo<SharedGameObject>().Value;
-            miPosicionCola.Value = cajaManager.GetComponent<CajaManager>().dameLugarCola();
+            miPosicionCola.Value = cajaManager.Value.GetComponent<CajaManager>().dameLugarCola();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (cajaManager.GetComponent<CajaManager>().meToca(miPosicionCola.Value))
+            if (cajaManager.Value.GetComponent<CajaManager>().meToca(miPosicionCola.Value))
             {
                 return TaskStatus.Success;
             }
             else
             {
-                miTarget.Value = cajaManager.GetComponent<CajaManager>().dameLugar(miPosicionCola.Value);
+                //miTarget.Value = cajaManager.Value.GetComponent<CajaManager>().dameLugar(miPosicionCola.Value);
+                miTargetVector.Value = cajaManager.Value.GetComponent<CajaManager>().dameLugarVector(miPosicionCola.Value);
                 return TaskStatus.Failure;
             }
         }

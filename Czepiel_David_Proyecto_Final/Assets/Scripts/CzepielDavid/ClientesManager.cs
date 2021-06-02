@@ -8,15 +8,30 @@
     {
         public List<Menu> menusPersonalizados = new List<Menu>();
         public GameObject menuDefecto;
+        public GameObject clientePrefab;
+
+        public Vector3 posSpwan;
+
+        public float cadencia = 2;
+
+        private float timer;
 
         // Start is called before the first frame update
         private void Start()
         {
+            timer = cadencia;
         }
 
         // Update is called once per frame
         private void Update()
         {
+            timer -= Time.deltaTime;
+
+            if (timer <= 0)
+            {
+                timer = cadencia;
+                Instantiate(clientePrefab, posSpwan, Quaternion.identity);
+            }
         }
 
         public GameObject dameUnMenu()

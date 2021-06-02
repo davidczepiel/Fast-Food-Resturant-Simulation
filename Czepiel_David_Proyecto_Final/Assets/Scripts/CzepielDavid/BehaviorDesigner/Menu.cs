@@ -45,6 +45,16 @@
         {
         }
 
+        public void setId(int id)
+        {
+            IDPedido = id;
+        }
+
+        public int getID()
+        {
+            return IDPedido;
+        }
+
         public bool estoyListoParaComer()
         {
             return listoParaComer || Input.GetKeyDown("space");

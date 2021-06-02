@@ -15,15 +15,16 @@
         public GameObject padreLugares;
         public List<GameObject> lugares = new List<GameObject>();
 
+        public GameObject padreLugaresEspera;
+        public List<GameObject> lugaresEspera = new List<GameObject>();
+
         public int usosHastaDesgaste = 1000;
         private List<bool> ocupados = new List<bool>();
         private List<bool> reparrables = new List<bool>();
         private List<int> usosRestantes = new List<int>();
 
-        public GameObject puntoCola;
-        public Vector3 desplazamientoCola;
-
-        public List<GameObject> esperando = new List<GameObject>();
+        public GameObject lugarEmpiezaCola;
+        public Vector3 desplazamiento;
 
         private int ticketActual = 0;
         private int turno = 0;
@@ -39,8 +40,15 @@
                 reparrables.Add(false);
                 usosRestantes.Add(usosHastaDesgaste);
             }
+
+            allChildren = padreLugaresEspera.GetComponentsInChildren<Transform>();
+            foreach (Transform child in allChildren)
+            {
+                lugaresEspera.Add(child.gameObject);
+            }
             //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
             lugares.RemoveAt(0);
+            lugaresEspera.RemoveAt(0);
             ocupados.RemoveAt(0);
             reparrables.RemoveAt(0);
             usosRestantes.RemoveAt(0);
@@ -62,6 +70,16 @@
             ocupados[i] = true;
             usosRestantes[i] -= 1;
             return lugares[i];
+        }
+
+        public GameObject dameLugarEsperar(int ticket)
+        {
+            return lugaresEspera[ticket - turno];
+        }
+
+        public Vector3 dameLugarVector(int turnoCliente)
+        {
+            return lugarEmpiezaCola.transform.position + (desplazamiento * (turnoCliente - turno));
         }
 
         public void liberarLugar(GameObject libre)

@@ -17,6 +17,8 @@
         [Tooltip("Silla para sentarme")]
         public SharedGameObject miPedido;
 
+        public SharedGameObject cajaManager;
+
         /// <summary>
         /// Esta tarea se hace cargo de el fantasma pille a la cantante
         /// y de avisarla de esto, modificando sus variables y tambien
@@ -25,7 +27,7 @@
         /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
-            GameObject pedido = GlobalVariables.Instance.GetVariable("CajaManager").ConvertTo<SharedGameObject>().Value.GetComponent<CajaManager>().damePedido();
+            GameObject pedido = cajaManager.Value.GetComponent<CajaManager>().damePedido();
             miPedido.Value = pedido;
             return TaskStatus.Success;
         }

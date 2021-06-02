@@ -15,6 +15,7 @@
     public class EsperarPedido : Action
     {
         public SharedGameObject miTarget;
+        public SharedGameObject cajaManager;
         public SharedInt miTicket;
 
         public SharedGameObject miPedido;
@@ -23,7 +24,7 @@
 
         public override void OnStart()
         {
-            caja = GlobalVariables.Instance.GetVariable("CajaManager").ConvertTo<SharedGameObject>().Value.GetComponent<CajaManager>();
+            caja = cajaManager.Value.GetComponent<CajaManager>();
         }
 
         public override TaskStatus OnUpdate()

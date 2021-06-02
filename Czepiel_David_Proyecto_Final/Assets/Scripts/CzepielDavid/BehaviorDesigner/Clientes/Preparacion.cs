@@ -18,6 +18,7 @@
         public SharedGameObject miPedido;
 
         public SharedGameObject miTarget;
+        public SharedGameObject clientesManager;
 
         /// <summary>
         /// Esta tarea se hace cargo de el fantasma pille a la cantante
@@ -27,7 +28,7 @@
         /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
-            GameObject pedido = GlobalVariables.Instance.GetVariable("ClientesManager").ConvertTo<SharedGameObject>().Value.GetComponent<ClientesManager>().dameUnMenu();
+            GameObject pedido = clientesManager.Value.GetComponent<ClientesManager>().dameUnMenu();
             miPedido.Value = pedido;
             miTarget.Value = GameObject.Find("Cola");
             return TaskStatus.Success;

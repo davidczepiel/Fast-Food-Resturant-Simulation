@@ -18,13 +18,11 @@
         public SharedGameObject miPedido;
 
         public SharedGameObject miTarget;
-
-        private GameObject papelerasManager;
+        public SharedGameObject lugaresManager;
 
         public override void OnStart()
-
         {
-            papelerasManager = GlobalVariables.Instance.GetVariable("PapelerasManager").ConvertTo<SharedGameObject>().Value;
+            //lugaresManager = GlobalVariables.Instance.GetVariable("PapelerasManager").ConvertTo<SharedGameObject>().Value;
         }
 
         /// <summary>
@@ -35,7 +33,7 @@
         /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
-            papelerasManager.GetComponent<LugaresDesgastablesManager>().liberarLugar(miTarget.Value);
+            lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().liberarLugar(miTarget.Value);
             return TaskStatus.Success;
         }
     }

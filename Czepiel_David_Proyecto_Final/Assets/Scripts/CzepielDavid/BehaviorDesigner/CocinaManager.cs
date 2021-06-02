@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class CajaManager : MonoBehaviour
+    public class CocinaManager : MonoBehaviour
     {
         //Menu que se va a ofrecer
         public GameObject menuPrefab;
@@ -18,8 +18,6 @@
         private List<bool> ocupados = new List<bool>();
 
         public GameObject lugarCaja;
-        public GameObject lugarEmpiezaCola;
-        public Vector3 desplazamiento;
 
         private bool ocupado = true;
         private int ticketActual = 0;
@@ -80,11 +78,6 @@
         public GameObject dameLugar(int turnoCliente)
         {
             return lugares[turnoCliente - turno];
-        }
-
-        public Vector3 dameLugarVector(int turnoCliente)
-        {
-            return lugarEmpiezaCola.transform.position + (desplazamiento * (turnoCliente - turno));
         }
 
         public void liberarLugar(GameObject libre)
