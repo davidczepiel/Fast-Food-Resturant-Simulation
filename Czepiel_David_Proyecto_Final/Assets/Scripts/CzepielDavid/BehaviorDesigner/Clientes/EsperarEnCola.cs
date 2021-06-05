@@ -14,36 +14,37 @@
     [TaskDescription("Rellenar")]
     public class EsperarEnCola : Action
     {
-        public SharedGameObject miTarget;
         public SharedInt miTicket;
+        public SharedGameObject miTarget;
         public SharedVector3 miTargetVector;
-        public SharedGameObject cajaManager;
+        public SharedGameObject lugaresManager;
 
-        private CajaManager caja;
+        private LugaresDesgastablesManager lugares;
         private int pos;
 
         public override void OnStart()
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
-            pos = caja.miPosicionEnLaCola(miTicket.Value);
-            //miTarget.Value = caja.dameLugar(miTicket.Value);
+            lugares = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>();
+            pos = lugares.posDentroCola(miTicket.Value);
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (caja.meToca(miTicket.Value))
+            if (lugares.meToca(miTicket.Value))
+            {
+                GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugar();
+                miTarget.Value = lugar;
                 return TaskStatus.Success;
+            }
             else
             {
-                if (pos == caja.miPosicionEnLaCola(miTicket.Value))
+                if (pos == lugares.posDentroCola(miTicket.Value))
                 {
-                    //this.gameObject.SetActive(false);
                     return TaskStatus.Running;
                 }
                 else
                 {
-                    //miTarget.Value = caja.dameLugar(miTicket.Value);
-                    miTargetVector.Value = caja.dameLugarVector(miTicket.Value);
+                    miTargetVector.Value = lugares.dameLugarVector(miTicket.Value);
                     return TaskStatus.Failure;
                 }
             }

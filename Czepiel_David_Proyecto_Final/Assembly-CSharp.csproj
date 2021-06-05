@@ -598,6 +598,8 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
     <Compile Include="Assets\Scripts\Agente.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CajaManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayLugarQueReparar.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\RepararElemento.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\BuscarLugarSentarme.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Comer.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\ComprobarMiPedido.cs" />

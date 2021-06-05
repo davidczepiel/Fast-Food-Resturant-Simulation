@@ -15,25 +15,28 @@
     public class PonermeEnLaCola : Action
     {
         public SharedInt miPosicionCola;
+
         public SharedGameObject miTarget;
         public SharedVector3 miTargetVector;
-        public SharedGameObject cajaManager;
+
+        public SharedGameObject lugaresManager;
 
         public override void OnStart()
         {
-            miPosicionCola.Value = cajaManager.Value.GetComponent<CajaManager>().dameLugarCola();
+            miPosicionCola.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarCola();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (cajaManager.Value.GetComponent<CajaManager>().meToca(miPosicionCola.Value))
+            if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().meToca(miPosicionCola.Value))
             {
+                GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugar();
+                miTarget.Value = lugar;
                 return TaskStatus.Success;
             }
             else
             {
-                //miTarget.Value = cajaManager.Value.GetComponent<CajaManager>().dameLugar(miPosicionCola.Value);
-                miTargetVector.Value = cajaManager.Value.GetComponent<CajaManager>().dameLugarVector(miPosicionCola.Value);
+                miTargetVector.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarVector(miPosicionCola.Value);
                 return TaskStatus.Failure;
             }
         }

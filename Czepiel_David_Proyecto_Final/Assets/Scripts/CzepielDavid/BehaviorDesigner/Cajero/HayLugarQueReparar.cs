@@ -12,23 +12,27 @@
 
     [TaskCategory("CzepielDavidProyectoFinal")]
     [TaskDescription("Rellenar")]
-    public class LiberarLugar : Action
+    public class HayLugarQueReparar : Conditional
     {
-        [Tooltip("Silla para sentarme")]
-        public SharedGameObject miPedido;
+        public SharedGameObject papeleras;
 
         public SharedGameObject miTarget;
-        public SharedGameObject lugaresManager;
 
         public override void OnStart()
         {
-            //lugaresManager = GlobalVariables.Instance.GetVariable("PapelerasManager").ConvertTo<SharedGameObject>().Value;
         }
 
         public override TaskStatus OnUpdate()
         {
-            lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().liberarLugar(miTarget.Value);
-            return TaskStatus.Success;
+            if (papeleras.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
+            {
+                miTarget.Value = papeleras.Value.GetComponent<LugaresDesgastablesManager>().dameLugarParaArreglar();
+                return TaskStatus.Success;
+            }
+            else
+            {
+                return TaskStatus.Failure;
+            }
         }
     }
 }

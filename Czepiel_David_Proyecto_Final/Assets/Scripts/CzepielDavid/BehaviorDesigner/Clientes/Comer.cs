@@ -19,7 +19,7 @@
 
         private Menu miMenu;
 
-        private float tiempoComerAlgo;
+        public float tiempoComerAlgo = 1;
 
         private float timer;
 
@@ -27,7 +27,6 @@
 
         {
             miMenu = miPedido.Value.GetComponent<Menu>();
-            tiempoComerAlgo = 1;
             timer = tiempoComerAlgo;
         }
 

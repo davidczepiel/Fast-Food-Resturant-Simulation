@@ -18,17 +18,18 @@
         public SharedGameObject miPedido;
 
         public SharedGameObject miTarget;
+        public SharedInt miTicket;
         public SharedVector3 miTargetVector;
         public SharedGameObject lugaresManager;
 
         private float tiempoPensar;
 
         private float timer;
-        private int miTurno = 0;
+        private int pos = 0;
 
         public override void OnStart()
         {
-            miTurno = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarCola();
+            pos = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarCola();
             tiempoPensar = 1;
             timer = tiempoPensar;
         }
@@ -45,7 +46,7 @@
             timer -= a;
             if (think())
             {
-                if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().meToca(miTurno))
+                if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().meToca(pos))
                 {
                     GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugar();
                     miTarget.Value = lugar;
@@ -53,9 +54,7 @@
                 }
                 else
                 {
-                    //GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarEsperar(miTurno);
-                    //miTarget.Value = lugar;
-                    miTargetVector.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarVector(miTurno);
+                    miTargetVector.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarVector(pos);
                     return TaskStatus.Failure;
                 }
             }

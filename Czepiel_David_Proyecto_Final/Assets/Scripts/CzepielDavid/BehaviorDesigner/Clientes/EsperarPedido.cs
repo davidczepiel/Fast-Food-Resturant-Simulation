@@ -29,20 +29,20 @@
 
         public override TaskStatus OnUpdate()
         {
-            if (caja.meToca(miTicket.Value)) ;
-            else
-            {
-                //if (pos == caja.miPosicionEnLaCola(miTicket.Value))
-                //{
-                //    this.gameObject.SetActive(false);
-                //    return TaskStatus.Running;
-                //}
-                //else
-                //{
-                //    miTarget.Value = caja.dameLugar(miTicket.Value);
-                //    return TaskStatus.Failure;
-                //}
-            }
+            //if (caja.meToca(miTicket.Value)) ;
+            //else
+            //{
+            //    //if (pos == caja.miPosicionEnLaCola(miTicket.Value))
+            //    //{
+            //    //    this.gameObject.SetActive(false);
+            //    //    return TaskStatus.Running;
+            //    //}
+            //    //else
+            //    //{
+            //    //    miTarget.Value = caja.dameLugar(miTicket.Value);
+            //    //    return TaskStatus.Failure;
+            //    //}
+            //}
             return TaskStatus.Success;
         }
     }

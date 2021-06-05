@@ -15,10 +15,7 @@
         public GameObject padreLugares;
         public List<GameObject> lugares = new List<GameObject>();
 
-        public GameObject padreLugaresEspera;
-        public List<GameObject> lugaresEspera = new List<GameObject>();
-
-        public int usosHastaDesgaste = 1000;
+        public int usosHastaDesgaste = 1;
         private List<bool> ocupados = new List<bool>();
         private List<bool> reparrables = new List<bool>();
         private List<int> usosRestantes = new List<int>();
@@ -41,14 +38,8 @@
                 usosRestantes.Add(usosHastaDesgaste);
             }
 
-            allChildren = padreLugaresEspera.GetComponentsInChildren<Transform>();
-            foreach (Transform child in allChildren)
-            {
-                lugaresEspera.Add(child.gameObject);
-            }
             //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
             lugares.RemoveAt(0);
-            lugaresEspera.RemoveAt(0);
             ocupados.RemoveAt(0);
             reparrables.RemoveAt(0);
             usosRestantes.RemoveAt(0);
@@ -72,14 +63,37 @@
             return lugares[i];
         }
 
-        public GameObject dameLugarEsperar(int ticket)
-        {
-            return lugaresEspera[ticket - turno];
-        }
-
         public Vector3 dameLugarVector(int turnoCliente)
         {
-            return lugarEmpiezaCola.transform.position + (desplazamiento * (turnoCliente - turno));
+            int cantidadDesplazar = turnoCliente - turno;
+            Vector3 pos = lugarEmpiezaCola.transform.position;
+            pos += (desplazamiento * cantidadDesplazar);
+            return pos;
+        }
+
+        public bool hayLugarQueArreglar()
+        {
+            int i = 0;
+            while (i < lugares.Count && !reparrables[i])
+                i++;
+
+            return i < lugares.Count;
+        }
+
+        public GameObject dameLugarParaArreglar()
+        {
+            int i = 0;
+            while (i < lugares.Count && !reparrables[i])
+                i++;
+
+            reparrables[i] = true;
+            ocupados[i] = true;
+            return lugares[i];
+        }
+
+        public Vector3 dameLugarParaArreglarVector()
+        {
+            return dameLugarParaArreglar().transform.position;
         }
 
         public void liberarLugar(GameObject libre)
@@ -90,6 +104,14 @@
                 reparrables[result] = true;
         }
 
+        public void repararLugar(GameObject libre)
+        {
+            int result = lugares.FindIndex(element => element == libre);
+            ocupados[result] = false;
+            reparrables[result] = false;
+            usosRestantes[result] = 1;
+        }
+
         public bool hayHueco()
         {
             int i = 0;
@@ -97,14 +119,7 @@
             {
                 i++;
             }
-            if (i < ocupados.Count)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return i < ocupados.Count;
         }
 
         public bool meToca(int turnoEsperando)
@@ -121,6 +136,11 @@
         public int dameLugarCola()
         {
             return ticketActual++;
+        }
+
+        public int posDentroCola(int ticketCliente)
+        {
+            return ticketCliente - turno;
         }
     }
 }
