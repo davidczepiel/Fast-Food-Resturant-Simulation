@@ -10,7 +10,7 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Rellenar")]
     public class ComprobarMiPedido : Conditional
     {
@@ -26,10 +26,10 @@
 
         public override TaskStatus OnUpdate()
         {
-            if (miMenu.estoyListoParaComer())
+            if (miMenu.getListo())
                 return TaskStatus.Success;
             else
-                return TaskStatus.Failure;
+                return TaskStatus.Running;
         }
     }
 }

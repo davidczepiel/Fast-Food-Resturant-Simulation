@@ -9,95 +9,78 @@
         //Menu que se va a ofrecer
         public GameObject menuPrefab;
 
-        private List<Menu> pedidosParaDar;
+        public GameObject padreLugaresHacerHamburguesa;
+        public List<GameObject> lugaresHacerHamburguesa = new List<GameObject>();
 
-        //Posiciones de la cola
-        public GameObject padreLugares;
+        public GameObject padreLugaresHacerPatatas;
+        public List<GameObject> lugaresHacerPatatas = new List<GameObject>();
 
-        public List<GameObject> lugares = new List<GameObject>();
         private List<bool> ocupados = new List<bool>();
 
-        public GameObject lugarCaja;
-
-        private bool ocupado = true;
-        private int ticketActual = 0;
-        private int turno = 0;
+        public List<GameObject> pedidosHaciendose = new List<GameObject>();
 
         private void Start()
         {
-            pedidosParaDar = new List<Menu>();
-            Menu ejemplo = new Menu();
-            ejemplo.añadirItem(MenuItem.Hamburguesa);
-            ejemplo.añadirItem(MenuItem.Patatas);
-            ejemplo.añadirItem(MenuItem.Bebida);
-            ejemplo.añadirItem(MenuItem.Helado);
-            pedidosParaDar.Add(ejemplo);
-
-            Transform[] allChildren = padreLugares.GetComponentsInChildren<Transform>();
+            Transform[] allChildren = padreLugaresHacerHamburguesa.GetComponentsInChildren<Transform>();
             foreach (Transform child in allChildren)
             {
-                lugares.Add(child.gameObject);
-                ocupados.Add(false);
+                lugaresHacerHamburguesa.Add(child.gameObject);
             }
             //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
-            lugares.RemoveAt(0);
-            ocupados.RemoveAt(0);
+            lugaresHacerHamburguesa.RemoveAt(0);
+
+            allChildren = padreLugaresHacerPatatas.GetComponentsInChildren<Transform>();
+            foreach (Transform child in allChildren)
+            {
+                lugaresHacerPatatas.Add(child.gameObject);
+            }
+            //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
+            lugaresHacerPatatas.RemoveAt(0);
         }
 
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetKeyDown("space"))
+        }
+
+        public GameObject dameLugarHacerItem(MenuItem item)
+        {
+            switch (item)
             {
-                ocupado = false;
+                case MenuItem.Hamburguesa:
+                    return dameLugarHacerHamburguesa();
+                    break;
+
+                case MenuItem.Patatas:
+                    return dameLugarHacerPatatas();
+                    break;
+
+                default:
+                    return null;
+                    break;
             }
         }
 
-        public bool meToca(int turnoEsperando)
+        private GameObject dameLugarHacerHamburguesa()
         {
-            if (turnoEsperando == turno && !ocupado)
-            {
-                turno++;
-                ocupado = true;
-                return true;
-            }
-            else
-                return false;
+            int i = Random.Range(0, lugaresHacerHamburguesa.Count - 1);
+            return lugaresHacerHamburguesa[i];
         }
 
-        public int miPosicionEnLaCola(int ticketCliente)
+        private GameObject dameLugarHacerPatatas()
         {
-            return ticketCliente - turno;
+            int i = Random.Range(0, lugaresHacerPatatas.Count - 1);
+            return lugaresHacerPatatas[i];
         }
 
-        public int dameLugarCola()
+        public void empezarPedido(GameObject nuevo)
         {
-            return ticketActual++;
+            pedidosHaciendose.Add(nuevo);
         }
 
-        public GameObject dameLugar(int turnoCliente)
+        public bool hayPedidosHaciendose()
         {
-            return lugares[turnoCliente - turno];
-        }
-
-        public void liberarLugar(GameObject libre)
-        {
-            int result = lugares.FindIndex(element => element == libre);
-            ocupados[result] = false;
-        }
-
-        public bool miPedidoListo(int id)
-        {
-            int i = 0;
-            while (i < pedidosParaDar.Count && pedidosParaDar[i].IDPedido != id)
-                i++;
-
-            return i < pedidosParaDar.Count;
-        }
-
-        public GameObject damePedido()
-        {
-            return Instantiate(menuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            return pedidosHaciendose.Count > 0;
         }
     }
 }

@@ -18,10 +18,10 @@
         {
             pedidosParaDar = new List<Menu>();
             Menu ejemplo = new Menu();
-            ejemplo.añadirItem(MenuItem.Hamburguesa);
-            ejemplo.añadirItem(MenuItem.Patatas);
-            ejemplo.añadirItem(MenuItem.Bebida);
-            ejemplo.añadirItem(MenuItem.Helado);
+            ejemplo.itemMenuCompletado(MenuItem.Hamburguesa);
+            ejemplo.itemMenuCompletado(MenuItem.Patatas);
+            ejemplo.itemMenuCompletado(MenuItem.Bebida);
+            ejemplo.itemMenuCompletado(MenuItem.Helado);
             pedidosParaDar.Add(ejemplo);
         }
 

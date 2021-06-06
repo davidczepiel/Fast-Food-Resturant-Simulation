@@ -10,7 +10,7 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Rellenar")]
     public class TomarPedido : Action
     {
@@ -27,8 +27,7 @@
         /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
-            GameObject pedido = cajaManager.Value.GetComponent<CajaManager>().damePedido();
-            miPedido.Value = pedido;
+            miPedido.Value.GetComponent<Menu>().setRecogido(true);
             return TaskStatus.Success;
         }
     }

@@ -10,7 +10,7 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Rellenar")]
     public class Preparacion : Action
     {

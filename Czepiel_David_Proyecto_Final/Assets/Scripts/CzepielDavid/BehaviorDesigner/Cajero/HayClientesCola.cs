@@ -12,29 +12,23 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
     [TaskDescription("Rellenar")]
-    public class HayLugarQueReparar : Conditional
+    public class HayClientesCola : Conditional
     {
-        public SharedGameObject papeleras;
-
         public SharedGameObject miTarget;
+        public SharedGameObject cajaManager;
+        private CajaManager caja;
 
         public override void OnStart()
         {
-            int a;
-            a = 0;
+            caja = cajaManager.Value.GetComponent<CajaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (papeleras.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
-            {
-                miTarget.Value = papeleras.Value.GetComponent<LugaresDesgastablesManager>().dameLugarParaArreglar();
+            if (caja.hayClientesParaPedir())
                 return TaskStatus.Success;
-            }
             else
-            {
                 return TaskStatus.Failure;
-            }
         }
     }
 }

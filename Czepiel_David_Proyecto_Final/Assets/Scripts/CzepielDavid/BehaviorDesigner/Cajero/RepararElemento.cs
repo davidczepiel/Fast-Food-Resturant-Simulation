@@ -10,7 +10,7 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
     [TaskDescription("Rellenar")]
     public class RepararElemento : Action
     {

@@ -10,31 +10,32 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
     [TaskDescription("Rellenar")]
-    public class HayLugarQueReparar : Conditional
+    public class HayPedidoQueHacer : Conditional
     {
-        public SharedGameObject papeleras;
-
-        public SharedGameObject miTarget;
+        public SharedGameObject cajaManager;
+        public SharedGameObject pedido;
+        public SharedGameObject cocinaManager;
+        private CajaManager caja;
+        private CocinaManager cocina;
 
         public override void OnStart()
         {
-            int a;
-            a = 0;
+            caja = cajaManager.Value.GetComponent<CajaManager>();
+            cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (papeleras.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
+            if (caja.hayPedidosParaEmpezar())
             {
-                miTarget.Value = papeleras.Value.GetComponent<LugaresDesgastablesManager>().dameLugarParaArreglar();
+                pedido.Value = caja.pedidoPorEmpezar();
+                cocina.empezarPedido(pedido.Value);
                 return TaskStatus.Success;
             }
             else
-            {
                 return TaskStatus.Failure;
-            }
         }
     }
 }

@@ -8,10 +8,9 @@
 
     public class Menu : MonoBehaviour
     {
-        // Start is called before the first frame update
-        private List<bool> menuItemsCompleted;
-
-        private List<bool> menuItemsComer;
+        private List<bool> elementosMenu = new List<bool>() { false, false, false, false };
+        private List<bool> elementosHaciendose = new List<bool>() { false, false, false, false };
+        private List<bool> pedido = new List<bool>() { false, false, false, false };
 
         private int itemsParaComer = 0;
 
@@ -19,15 +18,17 @@
 
         public int IDPedido = 0;
 
-        private bool listoParaComer = false;
+        private bool listo = false;
+        private bool recogido = false;
 
         private void Start()
         {
-            menuItemsComer = new List<bool>();
-            menuItemsComer.Add(true);
-            menuItemsComer.Add(true);
-            menuItemsComer.Add(true);
-            menuItemsComer.Add(true);
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    elementosMenu.Add(false);
+            //    elementosHaciendose.Add(false);
+            //    pedido.Add(false);
+            //}
         }
 
         // Update is called once per frame
@@ -35,14 +36,28 @@
         {
         }
 
-        public void añadirItem(MenuItem item)
+        public void añadirItemAlPedido(MenuItem item)
         {
-            //menuItemsComer[(int)item] = true;
+            pedido[(int)item] = true;
+        }
+
+        public bool itemHecho(MenuItem item)
+        {
+            return elementosMenu[(int)item] || elementosHaciendose[(int)item];
+        }
+
+        public void itemMenuCompletado(MenuItem item)
+        {
+            elementosMenu[(int)item] = true;
             itemsParaComer++;
         }
 
-        public void servir()
+        public bool menuCompletado()
         {
+            int i = 0;
+            while (i < pedido.Count && pedido[i] == elementosMenu[i]) i++;
+
+            return i >= pedido.Count;
         }
 
         public void setId(int id)
@@ -55,9 +70,24 @@
             return IDPedido;
         }
 
-        public bool estoyListoParaComer()
+        public void setListo(bool a)
         {
-            return listoParaComer || Input.GetKeyDown("space");
+            listo = a;
+        }
+
+        public bool getListo()
+        {
+            return listo;
+        }
+
+        public void setRecogido(bool a)
+        {
+            recogido = a;
+        }
+
+        public bool getRecogido()
+        {
+            return recogido;
         }
 
         /// <summary>
@@ -66,16 +96,16 @@
         /// <returns></returns>
         public bool comer()
         {
-            while (ordenComer < menuItemsComer.Count && !menuItemsComer[ordenComer]) ordenComer++;
-            if (ordenComer < menuItemsComer.Count) menuItemsComer[ordenComer] = false;
+            while (ordenComer < elementosMenu.Count && !elementosMenu[ordenComer]) ordenComer++;
+            if (ordenComer < elementosMenu.Count) elementosMenu[ordenComer] = false;
 
             ordenComer++;
-            return ordenComer >= menuItemsComer.Count;
+            return ordenComer >= elementosMenu.Count;
         }
 
         public bool meQuedaPostre()
         {
-            return menuItemsComer[(int)MenuItem.Helado];
+            return elementosMenu[(int)MenuItem.Helado];
         }
     }
 }

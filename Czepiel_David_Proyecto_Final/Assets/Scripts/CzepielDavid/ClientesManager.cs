@@ -38,21 +38,21 @@
         {
             GameObject nuevo = Instantiate(menuDefecto, new Vector3(0, 0, 0), Quaternion.identity);
 
-            if (menusPersonalizados.Count > 0)
-            {
-                Menu actual = menusPersonalizados[0];
-                menusPersonalizados.RemoveAt(0);
-                return nuevo;
-            }
-            else
-            {
-                Menu defecto = nuevo.GetComponent<Menu>();
-                defecto.añadirItem(MenuItem.Hamburguesa);
-                defecto.añadirItem(MenuItem.Patatas);
-                defecto.añadirItem(MenuItem.Bebida);
-                defecto.añadirItem(MenuItem.Helado);
-                return nuevo;
-            }
+            //if (menusPersonalizados.Count > 0)
+            //{
+            //    Menu actual = menusPersonalizados[0];
+            //    menusPersonalizados.RemoveAt(0);
+            //    return nuevo;
+            //}
+            //else
+            //{
+            Menu defecto = nuevo.GetComponent<Menu>();
+            defecto.añadirItemAlPedido(MenuItem.Hamburguesa);
+            defecto.añadirItemAlPedido(MenuItem.Patatas);
+            defecto.añadirItemAlPedido(MenuItem.Bebida);
+            defecto.añadirItemAlPedido(MenuItem.Helado);
+            return nuevo;
+            //}
         }
 
         public void añadirMenuPersonalizado()

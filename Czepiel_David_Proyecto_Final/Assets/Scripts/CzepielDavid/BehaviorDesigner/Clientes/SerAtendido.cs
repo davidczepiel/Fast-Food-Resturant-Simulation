@@ -12,23 +12,30 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Rellenar")]
-    public class LiberarLugar : Action
+    public class SerAtendido : Action
     {
         [Tooltip("Silla para sentarme")]
         public SharedGameObject miPedido;
 
-        public SharedGameObject miTarget;
-        public SharedGameObject lugaresManager;
+        public SharedGameObject cajaManager;
+        private CajaManager caja;
+        private int miNumeroCaja;
 
         public override void OnStart()
         {
-            //lugaresManager = GlobalVariables.Instance.GetVariable("PapelerasManager").ConvertTo<SharedGameObject>().Value;
+            //    caja = cajaManager.Value.GetComponent<CajaManager>();
+            miNumeroCaja = cajaManager.Value.GetComponent<CajaManager>().darCajaCliente();
         }
 
         public override TaskStatus OnUpdate()
         {
-            lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().liberarLugar(miTarget.Value);
-            return TaskStatus.Success;
+            if (cajaManager.Value.GetComponent<CajaManager>().meHanAtendido(miNumeroCaja))
+            {
+                cajaManager.Value.GetComponent<CajaManager>().hacerPedido(miNumeroCaja, miPedido.Value);
+                return TaskStatus.Success;
+            }
+            else
+                return TaskStatus.Running;
         }
     }
 }

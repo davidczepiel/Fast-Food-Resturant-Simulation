@@ -598,7 +598,11 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
     <Compile Include="Assets\Scripts\Agente.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CajaManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\AtenderCliente.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\EntregarPedido.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayClientesCola.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayLugarQueReparar.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayPedidoQueEntregar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\RepararElemento.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\BuscarLugarSentarme.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Comer.cs" />
@@ -608,9 +612,12 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\LiberarLugar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\PonermeEnLaCola.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Preparacion.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\SerAtendido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TomarPedido.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\UsarElemento.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CocinaManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\Cocinar.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoQueHacer.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\SeleccionarElementoCocinar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\ColaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Menu.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\ClientesManager.cs" />
