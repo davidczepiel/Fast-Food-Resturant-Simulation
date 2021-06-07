@@ -10,9 +10,9 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
     [TaskDescription("Rellenar")]
-    public class Cocinar : Action
+    public class IncluirItemMenu : Action
     {
         public SharedGameObject cajaManager;
         public SharedGameObject cocinaManager;
@@ -35,8 +35,14 @@
             if (timer <= 0)
             {
                 miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
-                miMenu.Value = null;
-                return TaskStatus.Success;
+                if (miMenu.Value.GetComponent<Menu>().menuCompletado())
+                {
+                    caja.añadirPedidoPorRegoger(miMenu.Value);
+                    miMenu.Value = null;
+                    return TaskStatus.Success;
+                }
+                else
+                    return TaskStatus.Failure;
             }
             else
                 return TaskStatus.Running;

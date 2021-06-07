@@ -781,7 +781,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &193726352
 Transform:
@@ -791,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193726351}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.95, y: -4.29, z: 38.189995}
+  m_LocalPosition: {x: 6.95, y: -3.8, z: 38.189995}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 94125116}
@@ -815,7 +815,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -934,13 +934,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212896696}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 4.02, y: 1, z: 52.79}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 10.86, y: -3.6, z: 16.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1472952679}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 981041126}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &212896701
 MonoBehaviour:
@@ -970,17 +970,49 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-0.499752581,79.84668)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(10,110)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,110)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-438.78064,105.609756)"},"ID":3,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,130)"},"ID":4,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueHacer","NodeData":{"Offset":"(-227.197662,151.269211)"},"ID":5,"Name":"Hay
-        Pedido Que Hacer","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":0},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-45.28459,168.699188)"},"ID":6,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(99.01279,148.3833)"},"ID":7,"Name":"Until
-        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,100)"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.SeleccionarElementoCocinar","NodeData":{"Offset":"(-172.633469,178.322266)"},"ID":9,"Name":"Seleccionar
-        Elemento Cocinar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":3},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":4},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SingletiempoCocinar":2},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-5.1829834,184.817078)"},"ID":10,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":6},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Cocinar","NodeData":{"Offset":"(121.268951,194.175873)"},"ID":11,"Name":"Cocinar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":7},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":8},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SingletiempoCocinar":2}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(166.5855,170)"},"ID":12,"Name":"Descansar
-        ","Instant":true}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":9},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":10},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":11},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-0.499752581,79.84668)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(10,110)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,110)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-290.0001,123.333374)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueTratar","NodeData":{"Offset":"(-193.822418,117.177795)"},"ID":4,"Name":"Hay
+        Pedido Que Tratar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":0},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(33.21062,142.177856)"},"ID":5,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-157.24144,113.79306)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueEntraCocina","NodeData":{"Offset":"(-213.775558,113.984512)"},"ID":7,"Name":"Hay
+        Pedido Que Entra Cocina","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":2},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":3},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-36.8964653,106.896454)"},"ID":8,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PedidoNecesitaSerCocinado","NodeData":{"Offset":"(-140,150)"},"ID":9,"Name":"Pedido
+        Necesita Ser Cocinado","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":4},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":5},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"List`1posibilidadesAyuda":[0,1]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(80,140)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-100,170)"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":6},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.PedidoParteCocinaTerminado","NodeData":{"Offset":"(110,170)"},"ID":12,"Name":"Pedido
+        Parte Cocina Terminado","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":7},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":8},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(406.5516,113.448318)"},"ID":13,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-148.620712,99.425354)"},"ID":14,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueTerminoCocina","NodeData":{"Offset":"(-113.447311,106.743088)"},"ID":15,"Name":"Hay
+        Pedido Que Termino Cocina","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":9},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":10},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(68.8504639,116.206963)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-100,170)"},"ID":17,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":11},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.PedidoParteCocinaTerminado","NodeData":{"Offset":"(110,170)"},"ID":18,"Name":"Pedido
+        Parte Cocina Terminado","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":12},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":13},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(193.333221,110)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PuedoAyudarCocinarAlgunPedido","NodeData":{"Offset":"(-76.0419,120.536186)"},"ID":20,"Name":"Puedo
+        Ayudar Cocinar Algun Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":14},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":15},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"List`1posibilidadesAyuda":[0,1]},{"Type":"UCM.IAV.Movimiento.SeleccionarElementoCocinar","NodeData":{"Offset":"(139.999969,126.666565)"},"ID":21,"Name":"Seleccionar
+        Elemento Cocinar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":16},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":17},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":18},"SingletiempoCocinar":2},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(300.000031,126.666565)"},"ID":22,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":19},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Cocinar","NodeData":{"Offset":"(430.000031,133.888779)"},"ID":23,"Name":"Cocinar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":20},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":21},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SingletiempoCocinar":2}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(303.33316,116.111115)"},"ID":24,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(53.7037659,125.000427)"},"ID":25,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":22},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]}]}]},"DetachedTasks":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueHacer","NodeData":{"Offset":"(-1312.26978,54.7127571)"},"ID":26,"Name":"Hay
+        Pedido Que Hacer","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":23},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":24}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-1172.26978,54.7127571)"},"ID":27,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":25},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(-982.27,134.712753)"},"ID":28,"Name":"Until
+        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-6.06329346,106.43689)"},"ID":29,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-166.063232,86.43689)"},"ID":30,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.SeleccionarElementoCocinar","NodeData":{"Offset":"(-166.063232,176.43689)"},"ID":31,"Name":"Seleccionar
+        Elemento Cocinar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":26},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":27},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":28},"SingletiempoCocinar":2},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-6.06323242,176.43689)"},"ID":32,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":29},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Cocinar","NodeData":{"Offset":"(123.936768,186.43689)"},"ID":33,"Name":"Cocinar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":30},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":31},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SingletiempoCocinar":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(183.936768,96.43689)"},"ID":34,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-96.06323,166.43689)"},"ID":35,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":32},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.PedidoParteCocinaTerminado","NodeData":{"Offset":"(113.936768,166.43689)"},"ID":36,"Name":"Pedido
+        Parte Cocina Terminado","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":33},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":34},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true}}]}]}]},{"Type":"UCM.IAV.Movimiento.HayPedidoEnElQueAyudar","NodeData":{"Offset":"(-772.2701,84.71275)"},"ID":37,"Name":"Hay
+        Pedido En El Que Ayudar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":35},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":36}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-592.2701,84.71275)"},"ID":38,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":37},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":38},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":39},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":40},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
         unityObjects:
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 1755812566}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 1755812566}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 1505748106}
+        - {fileID: 1505748106}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 2139151064}
         - {fileID: 729050096}
         - {fileID: 729050096}
         - {fileID: 1755812566}
@@ -990,6 +1022,12 @@ MonoBehaviour:
         - {fileID: 1505748106}
         - {fileID: 729050096}
         - {fileID: 729050096}
+        - {fileID: 1755812566}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 2139151064}
         - {fileID: 729050096}
         - {fileID: 729050096}
         - {fileID: 1505748106}
@@ -1327,7 +1365,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248261172}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.75, y: -4.29, z: 46.66}
+  m_LocalPosition: {x: 3.75, y: -3.8, z: 46.66}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 1049006025}
@@ -1396,7 +1434,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &251903791
 Transform:
@@ -1406,7 +1444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251903790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.95, y: -4.29, z: 33.199997}
+  m_LocalPosition: {x: 6.95, y: -3.8, z: 33.199997}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 94125116}
@@ -1430,7 +1468,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1570,6 +1608,85 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299899449}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &311656172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 311656173}
+  - component: {fileID: 311656175}
+  - component: {fileID: 311656174}
+  m_Layer: 0
+  m_Name: Bebidas/Helados (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &311656173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311656172}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.1503714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1317324853}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!23 &311656174
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311656172}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &311656175
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311656172}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &314362258
 GameObject:
@@ -2834,7 +2951,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &443930172
 Transform:
@@ -2844,7 +2961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443930171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.15, y: -4.29, z: 39.59}
+  m_LocalPosition: {x: -1.15, y: -3.8, z: 39.59}
   m_LocalScale: {x: 2.1589444, y: 2.4408443, z: 4.9007087}
   m_Children: []
   m_Father: {fileID: 1384711916}
@@ -2868,7 +2985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3741,7 +3858,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &664566241
 Transform:
@@ -3775,7 +3892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3925,7 +4042,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 664566241}
-  - {fileID: 1625766978}
+  - {fileID: 1317324853}
   - {fileID: 1384711916}
   - {fileID: 1049006025}
   - {fileID: 94125116}
@@ -4059,9 +4176,13 @@ MonoBehaviour:
   menuPrefab: {fileID: 461975695918182528, guid: d0f3e64466636a74aa6de425334a8e3b,
     type: 3}
   padreLugaresHacerHamburguesa: {fileID: 94125115}
-  lugaresHacerHamburguesa: []
+  lugaresHacerHamburguesas: []
   padreLugaresHacerPatatas: {fileID: 1384711915}
   lugaresHacerPatatas: []
+  padreLugaresHacerBebida: {fileID: 1317324852}
+  lugaresHacerBebidas: []
+  padreLugaresHacerHelado: {fileID: 1317324852}
+  lugaresHacerHelados: []
   pedidosHaciendose: []
 --- !u!114 &729050103
 MonoBehaviour:
@@ -4292,7 +4413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793412962}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 10.06, y: -4.29, z: 46.66}
+  m_LocalPosition: {x: 10.06, y: -3.8, z: 46.66}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 1049006025}
@@ -4715,7 +4836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848160751}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 16.8, y: -4.29, z: 46.66}
+  m_LocalPosition: {x: 16.8, y: -3.8, z: 46.66}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 1049006025}
@@ -5142,7 +5263,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &916547304
 Transform:
@@ -5152,7 +5273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916547303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.15, y: -4.29, z: 33.98}
+  m_LocalPosition: {x: -1.15, y: -3.8, z: 33.98}
   m_LocalScale: {x: 2.1589444, y: 2.4408443, z: 4.9007087}
   m_Children: []
   m_Father: {fileID: 1384711916}
@@ -5176,7 +5297,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5387,7 +5508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981041125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.2, y: 5.613552, z: 20.4}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 807865077}
@@ -5406,6 +5527,9 @@ Transform:
   - {fileID: 676570136}
   - {fileID: 905357837}
   - {fileID: 1314829519}
+  - {fileID: 212896700}
+  - {fileID: 1851918139}
+  - {fileID: 1004059372}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5553,16 +5677,21 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-0.499710083,37.7777634)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-1.75788307,135.272415)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(1.24966621,112.138885)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-893.0436,129.130432)"},"ID":3,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,130)"},"ID":4,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueEntregar","NodeData":{"Offset":"(-126.963326,146.31427)"},"ID":5,"Name":"Hay
-        Pedido Que Entregar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(13.4146385,150)"},"ID":6,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EntregarPedido","NodeData":{"Offset":"(127.915245,145.094666)"},"ID":7,"Name":"Entregar
-        Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":2}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-492.595337,128.218246)"},"ID":8,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1.76452637,134.705872)"},"ID":9,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayClientesCola","NodeData":{"Offset":"(-81.8233261,149.248047)"},"ID":10,"Name":"Hay
-        Clientes Cola","Instant":true,"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":3},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":4}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(52.3531647,154.705872)"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":5},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.AtenderCliente","NodeData":{"Offset":"(175.738052,151.792831)"},"ID":12,"Name":"Atender
-        Cliente","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":6},"SingletiempoAtender":2}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(197.076584,129.6969)"},"ID":13,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-199.999954,123.333321)"},"ID":14,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-132.230774,157.530945)"},"ID":15,"Name":"Hay
-        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":7},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":8}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(8.615595,150.510483)"},"ID":16,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":9},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130.333374,152.777527)"},"ID":17,"Name":"Reparar
-        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":10},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":11},"SingletiempoReparar":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(209.999878,116.666641)"},"ID":18,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-130,160)"},"ID":19,"Name":"Hay
-        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":12},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":13}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(10,150)"},"ID":20,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130,150)"},"ID":21,"Name":"Reparar
-        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":16},"SingletiempoReparar":2}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(626.666748,173.333374)"},"ID":22,"Name":"Descansar
-        ","Instant":true}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":17},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":18},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":19},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":20}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-0.499710083,37.7777634)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-1.75788307,135.272415)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(1.24966621,112.138885)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-893.0436,129.130432)"},"ID":3,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,130)"},"ID":4,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueTerminar","NodeData":{"Offset":"(-136.233887,111.307068)"},"ID":5,"Name":"Hay
+        Pedido Que Terminar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(63.03064,148.071777)"},"ID":6,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-366.6219,130.424622)"},"ID":7,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueEntregar","NodeData":{"Offset":"(-130.64563,137.189026)"},"ID":8,"Name":"Hay
+        Pedido Que Entregar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":1},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(23.52938,144.117615)"},"ID":9,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EntregarPedido","NodeData":{"Offset":"(162.9411,144.117615)"},"ID":10,"Name":"Entregar
+        Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":3},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(145.480927,140)"},"ID":11,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueCompletar","NodeData":{"Offset":"(-140.9397,140.424316)"},"ID":12,"Name":"Hay
+        Pedido Que Completar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":4},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(47.89215,134.773071)"},"ID":13,"Name":"Until
+        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1.81815529,109.090942)"},"ID":14,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.SeleccionarElementoCompletarMenu","NodeData":{"Offset":"(-169.052612,179.618774)"},"ID":15,"Name":"Seleccionar
+        Elemento Completar Menu","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":5},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":6},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":7},"SingletiempoCocinar":0,"List`1items":[2,3]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(2.89446163,180.5625)"},"ID":16,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":8},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.IncluirItemMenu","NodeData":{"Offset":"(130.818237,181.9812)"},"ID":17,"Name":"Incluir
+        Item Menu","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":9},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":10},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SingletiempoCocinar":0}]}]}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-492.595337,128.218246)"},"ID":18,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1.76452637,134.705872)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayClientesCola","NodeData":{"Offset":"(-81.8233261,149.248047)"},"ID":20,"Name":"Hay
+        Clientes Cola","Instant":true,"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":11},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":12}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(52.3531647,154.705872)"},"ID":21,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":13},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.AtenderCliente","NodeData":{"Offset":"(175.738052,151.792831)"},"ID":22,"Name":"Atender
+        Cliente","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":14},"SingletiempoAtender":2}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(197.076584,129.6969)"},"ID":23,"Name":"Selector","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-199.999954,123.333321)"},"ID":24,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-132.230774,157.530945)"},"ID":25,"Name":"Hay
+        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":15},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":16}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(8.615595,150.510483)"},"ID":26,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":17},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130.333374,152.777527)"},"ID":27,"Name":"Reparar
+        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":18},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":19},"SingletiempoReparar":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(209.999878,116.666641)"},"ID":28,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-130,160)"},"ID":29,"Name":"Hay
+        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":20},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":21}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(10,150)"},"ID":30,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":22},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130,150)"},"ID":31,"Name":"Reparar
+        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":23},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":24},"SingletiempoReparar":2}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(703.9114,155.130524)"},"ID":32,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-64.1176758,117.647156)"},"ID":33,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":25},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(58.2352524,120)"},"ID":34,"Name":"Descansar
+        ","Instant":true}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":26},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":27},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":28},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":29},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":30},{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -5570,7 +5699,15 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 729050096}
+        - {fileID: 729050096}
         - {fileID: 1755812566}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 729050096}
+        - {fileID: 1505748106}
+        - {fileID: 1505748106}
+        - {fileID: 729050096}
         - {fileID: 729050096}
         - {fileID: 1505748106}
         - {fileID: 729050096}
@@ -5586,10 +5723,12 @@ MonoBehaviour:
         - {fileID: 1505748106}
         - {fileID: 1505748106}
         - {fileID: 597980723}
+        - {fileID: 1172999276}
         - {fileID: 1505748106}
         - {fileID: 729050096}
         - {fileID: 597980723}
         - {fileID: 320027770}
+        - {fileID: 729050096}
         byteData: 
         byteDataArray: 
       Version: 1.6.8
@@ -5717,13 +5856,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004059364}
-  m_LocalRotation: {x: 0, y: 0.08715578, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 8.19, y: 1.5, z: 40.59}
-  m_LocalScale: {x: 0.8, y: 1.5, z: 0.8}
+  m_LocalRotation: {x: -0, y: 0.08715578, z: -0, w: 0.9961947}
+  m_LocalPosition: {x: 18.97, y: -3.79, z: 13.76}
+  m_LocalScale: {x: 0.80000013, y: 1.5, z: 0.80000013}
   m_Children:
   - {fileID: 670734933}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 981041126}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 10, z: 0}
 --- !u!1 &1004298784
 GameObject:
@@ -7186,7 +7325,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1231305975
 Transform:
@@ -7196,7 +7335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231305974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.15, y: -4.29, z: 27.82}
+  m_LocalPosition: {x: -1.15, y: -3.8, z: 27.82}
   m_LocalScale: {x: 2.1589444, y: 2.4408443, z: 4.9007087}
   m_Children: []
   m_Father: {fileID: 1384711916}
@@ -7220,7 +7359,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7751,7 +7890,7 @@ MonoBehaviour:
     type: 3}
   clientePrefab: {fileID: 1851918134}
   posSpwan: {x: -1.5, y: 1.5, z: 5}
-  cadencia: 10
+  cadencia: 5
 --- !u!135 &1314829521
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7812,6 +7951,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314829518}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1317324852
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317324853}
+  m_Layer: 0
+  m_Name: PadreBebidasHelados
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317324853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317324852}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 9.8, y: -4.29, z: 29.57}
+  m_LocalScale: {x: 2.1589444, y: 2.4408443, z: 2.2688322}
+  m_Children:
+  - {fileID: 1625766978}
+  - {fileID: 311656173}
+  m_Father: {fileID: 676570136}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324502425
 GameObject:
   m_ObjectHideFlags: 0
@@ -7838,7 +8009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324502425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.95, y: 7.31, z: 24.89}
+  m_LocalPosition: {x: 7.87, y: 7.31, z: 24.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1422514915}
@@ -8493,7 +8664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422514914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8533196, y: -6.086027, z: 20.467588}
+  m_LocalPosition: {x: 6.84, y: -11.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1505748107}
@@ -8780,7 +8951,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1577054271
 Transform:
@@ -8790,7 +8961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577054270}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.4, y: -4.29, z: 38.189995}
+  m_LocalPosition: {x: 9.4, y: -3.8, z: 38.189995}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 94125116}
@@ -8814,7 +8985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8859,7 +9030,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1581463402
 Transform:
@@ -8869,7 +9040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581463401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.4, y: -4.29, z: 33.199997}
+  m_LocalPosition: {x: 9.4, y: -3.8, z: 33.199997}
   m_LocalScale: {x: 2.1589398, y: 2.44084, z: 4.90071}
   m_Children: []
   m_Father: {fileID: 94125116}
@@ -8893,7 +9064,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9175,7 +9346,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1625766978
 Transform:
@@ -9184,12 +9355,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625766977}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 10.82, y: -4.29, z: 29.57}
-  m_LocalScale: {x: 2.1589444, y: 2.4408443, z: 4.9007087}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 676570136}
-  m_RootOrder: 1
+  m_Father: {fileID: 1317324853}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &1625766979
 MeshRenderer:
@@ -9209,7 +9380,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe8e00b3fe15cc3408c2ce7e28bedce4, type: 2}
+  - {fileID: 2100000, guid: 5e2f00bc9fbe37f47bc0ebed01fa7540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9608,7 +9779,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717591681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.68, y: 7.31, z: 24.89}
+  m_LocalPosition: {x: 4.6, y: 7.31, z: 24.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1422514915}
@@ -10159,13 +10330,13 @@ Transform:
   m_PrefabInstance: {fileID: 2880729290042950027}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851918134}
-  m_LocalRotation: {x: 0, y: 0.08715578, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: -1.8, y: 1.36, z: 29.6}
-  m_LocalScale: {x: 0.8, y: 1.5, z: 0.8}
+  m_LocalRotation: {x: -0, y: 0.08715578, z: -0, w: 0.9961947}
+  m_LocalPosition: {x: 6.21, y: -3.55, z: 7.8}
+  m_LocalScale: {x: 0.80000013, y: 1.5, z: 0.80000013}
   m_Children:
   - {fileID: 1125210445}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 981041126}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 10, z: 0}
 --- !u!114 &1851918140
 MonoBehaviour:
@@ -10196,21 +10367,22 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(499.5,30)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-14.7857056,128.571411)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(9.499937,110.624878)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1082.82043,150)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.Preparacion","NodeData":{"Offset":"(-184.805145,147.499725)"},"ID":4,"Name":"Preparacion","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":0},"SharedGameObjectclientesManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(179.999939,146.551819)"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-734.9987,108.636612)"},"ID":6,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-524.00946,122.120483)"},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-72.75864,107.910141)"},"ID":8,"Name":"Ponerme
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(499.5,30)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-14.7857056,128.571411)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(9.499937,110.624878)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1082.82043,150)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.Preparacion","NodeData":{"Offset":"(-184.805145,147.499725)"},"ID":4,"Name":"Preparacion","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":0},"SharedGameObjectclientesManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(179.999939,146.551819)"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-734.9987,108.636612)"},"ID":6,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-524.00946,122.120483)"},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-72.75864,107.910141)"},"ID":8,"Name":"Ponerme
         En La Cola","Instant":true,"SharedIntmiPosicionCola":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":3},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":4}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(86.72601,114.011963)"},"ID":9,"Name":"Until
-        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.894676,105.438675)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-62.5,125.769127)"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(77.73861,117.463936)"},"ID":12,"Name":"Esperar
-        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":6}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(15.5244179,213.890808)"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-173.259766,116.244453)"},"ID":14,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.SerAtendido","NodeData":{"Offset":"(-52.7081375,134.23999)"},"ID":15,"Name":"Ser
+        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.894676,105.438675)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-62.5,125.769127)"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(77.73861,117.463936)"},"ID":12,"Name":"Esperar
+        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":6}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(15.5244179,213.890808)"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-173.259766,116.244453)"},"ID":14,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.SerAtendido","NodeData":{"Offset":"(-52.7081375,134.23999)"},"ID":15,"Name":"Ser
         Atendido","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":8}},{"Type":"UCM.IAV.Movimiento.LiberarLugar","NodeData":{"Offset":"(58.7780075,118.129837)"},"ID":16,"Name":"Liberar
-        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":9},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":10}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(351.985382,115.925964)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-31.1324081,124.285713)"},"ID":18,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":11},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(87.54559,138.571381)"},"ID":19,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-90,100)"},"ID":20,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.ComprobarMiPedido","NodeData":{"Offset":"(-125.384644,105.621315)"},"ID":21,"Name":"Comprobar
-        Mi Pedido","Instant":true,"SharedGameObjectvariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(22.195055,114.146362)"},"ID":22,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":12},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.TomarPedido","NodeData":{"Offset":"(141.742218,113.623695)"},"ID":23,"Name":"Tomar
-        Pedido","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":13}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(180.975571,140)"},"ID":24,"Name":"Idle","Instant":true}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-202.631485,147.5)"},"ID":25,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-69.31178,109.244453)"},"ID":26,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.ClienteBuscaSillaComer","NodeData":{"Offset":"(18.007309,213.461243)"},"ID":27,"Name":"Cliente
-        Busca Silla Comer","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedGameObjectcomedorManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":16}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(104.165833,112.048935)"},"ID":28,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(346.406677,166.129028)"},"ID":29,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-83.92857,135)"},"ID":30,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":17},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Comer","NodeData":{"Offset":"(51.73204,142.499878)"},"ID":31,"Name":"Comer","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SingletiempoComerAlgo":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(785.384644,214.615448)"},"ID":32,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-130,110)"},"ID":33,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedVector3","NodeData":{"Offset":"(-572.131653,252.5683)"},"ID":34,"Name":"Set
-        Shared Vector 3","Instant":true,"SharedVector3targetValue":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(24,2,38)"},"SharedVector3targetVariable":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedGameObject","NodeData":{"Offset":"(-417.443451,234.442413)"},"ID":35,"Name":"Set
-        Shared Game Object","Instant":true,"SharedGameObjecttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":18},"SharedGameObjecttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":19},"SharedBoolvalueCanBeNull":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-189.25,238.750061)"},"ID":36,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-80,90)"},"ID":37,"Name":"Ponerme
-        En La Cola","Instant":true,"SharedIntmiPosicionCola":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":20},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":21}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(70,110)"},"ID":38,"Name":"Until
-        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.50021362,113.055176)"},"ID":39,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-57.5002136,133.055176)"},"ID":40,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(62.625,133.750122)"},"ID":41,"Name":"Esperar
-        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":22},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":23}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(1.70941162,290.213684)"},"ID":42,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":24},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(106.665,345.721558)"},"ID":43,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"UCM.IAV.Movimiento.LiberarLugar","NodeData":{"Offset":"(213.8266,293.0553)"},"ID":44,"Name":"Liberar
-        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":25},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":26}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(357.436,252.051224)"},"ID":45,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-133.1707,110)"},"ID":46,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":27},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(220.731674,120)"},"ID":47,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1483.792,229.185486)"},"ID":48,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-60,110)"},"ID":49,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":28},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(50.00006,120)"},"ID":50,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(1594.96851,233.891327)"},"ID":51,"Name":"Idle","Instant":true}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":29},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":30},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":31},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":32},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":33},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}]}'
+        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":9},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":10}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(351.985382,115.925964)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.BuscarLugarEsperar","NodeData":{"Offset":"(-91.47357,145.555542)"},"ID":18,"Name":"Buscar
+        Lugar Esperar","Instant":true,"SharedVector3targetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"GameObjectobjetivo":11,"Vector3offsets":"(3,0,3)"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(52.200882,152.063477)"},"ID":19,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(268.1011,138.571381)"},"ID":20,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-90,100)"},"ID":21,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.ComprobarMiPedido","NodeData":{"Offset":"(-125.384644,105.621315)"},"ID":22,"Name":"Comprobar
+        Mi Pedido","Instant":true,"SharedGameObjectvariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(22.195055,114.146362)"},"ID":23,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":12},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.TomarPedido","NodeData":{"Offset":"(141.742218,113.623695)"},"ID":24,"Name":"Tomar
+        Pedido","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":13}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(180.975571,140)"},"ID":25,"Name":"Idle","Instant":true}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-202.631485,147.5)"},"ID":26,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-69.31178,109.244453)"},"ID":27,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.ClienteBuscaSillaComer","NodeData":{"Offset":"(18.007309,213.461243)"},"ID":28,"Name":"Cliente
+        Busca Silla Comer","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedGameObjectcomedorManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":16}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(104.165833,112.048935)"},"ID":29,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(346.406677,166.129028)"},"ID":30,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-83.92857,135)"},"ID":31,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":17},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Comer","NodeData":{"Offset":"(51.73204,142.499878)"},"ID":32,"Name":"Comer","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SingletiempoComerAlgo":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(785.384644,214.615448)"},"ID":33,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-130,110)"},"ID":34,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedVector3","NodeData":{"Offset":"(-572.131653,252.5683)"},"ID":35,"Name":"Set
+        Shared Vector 3","Instant":true,"SharedVector3targetValue":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(24,2,38)"},"SharedVector3targetVariable":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedGameObject","NodeData":{"Offset":"(-417.443451,234.442413)"},"ID":36,"Name":"Set
+        Shared Game Object","Instant":true,"SharedGameObjecttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":18},"SharedGameObjecttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":19},"SharedBoolvalueCanBeNull":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-189.25,238.750061)"},"ID":37,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-80,90)"},"ID":38,"Name":"Ponerme
+        En La Cola","Instant":true,"SharedIntmiPosicionCola":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":20},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":21}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(70,110)"},"ID":39,"Name":"Until
+        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.50021362,113.055176)"},"ID":40,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-57.5002136,133.055176)"},"ID":41,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(62.625,133.750122)"},"ID":42,"Name":"Esperar
+        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":22},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":23}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(1.70941162,290.213684)"},"ID":43,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":24},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(106.665,345.721558)"},"ID":44,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"UCM.IAV.Movimiento.LiberarLugar","NodeData":{"Offset":"(213.8266,293.0553)"},"ID":45,"Name":"Liberar
+        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":25},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":26}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(357.436,252.051224)"},"ID":46,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-133.1707,110)"},"ID":47,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":27},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(220.731674,120)"},"ID":48,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1483.792,229.185486)"},"ID":49,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-60,110)"},"ID":50,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":28},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(50.00006,120)"},"ID":51,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(1594.96851,233.891327)"},"ID":52,"Name":"Idle","Instant":true}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":29},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":30},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":31},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":32},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":33},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -11043,8 +11215,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057832030}
-  m_LocalRotation: {x: -0.42357472, y: 0.28035757, z: -0.13969828, w: -0.8499815}
-  m_LocalPosition: {x: 20.388845, y: 27.950844, z: 6.797529}
+  m_LocalRotation: {x: -0.622583, y: 0.020422041, z: -0.016243301, w: -0.7821186}
+  m_LocalPosition: {x: 7.753216, y: 14.548824, z: 20.510187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11682,22 +11854,32 @@ PrefabInstance:
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.80000013
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.80000013
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: 6.21
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.36
+      value: -3.55
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 29.6
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
@@ -11707,7 +11889,7 @@ PrefabInstance:
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
@@ -11717,7 +11899,7 @@ PrefabInstance:
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577520, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
@@ -11737,21 +11919,22 @@ PrefabInstance:
     - target: {fileID: 2880729289411577527, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}
       propertyPath: mBehaviorSource.mTaskData.JSONSerialization
-      value: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(499.5,30)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-14.7857056,128.571411)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(9.499937,110.624878)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1082.82043,150)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.Preparacion","NodeData":{"Offset":"(-184.805145,147.499725)"},"ID":4,"Name":"Preparacion","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":0},"SharedGameObjectclientesManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(179.999939,146.551819)"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-734.9987,108.636612)"},"ID":6,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-524.00946,122.120483)"},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-72.75864,107.910141)"},"ID":8,"Name":"Ponerme
+      value: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(499.5,30)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-14.7857056,128.571411)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(9.499937,110.624878)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1082.82043,150)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.Preparacion","NodeData":{"Offset":"(-184.805145,147.499725)"},"ID":4,"Name":"Preparacion","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":0},"SharedGameObjectclientesManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(179.999939,146.551819)"},"ID":5,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-734.9987,108.636612)"},"ID":6,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":2},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-524.00946,122.120483)"},"ID":7,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-72.75864,107.910141)"},"ID":8,"Name":"Ponerme
         En La Cola","Instant":true,"SharedIntmiPosicionCola":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":3},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":4}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(86.72601,114.011963)"},"ID":9,"Name":"Until
-        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.894676,105.438675)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-62.5,125.769127)"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(77.73861,117.463936)"},"ID":12,"Name":"Esperar
-        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":6}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(15.5244179,213.890808)"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-173.259766,116.244453)"},"ID":14,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.SerAtendido","NodeData":{"Offset":"(-52.7081375,134.23999)"},"ID":15,"Name":"Ser
+        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.894676,105.438675)"},"ID":10,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-62.5,125.769127)"},"ID":11,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(77.73861,117.463936)"},"ID":12,"Name":"Esperar
+        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":6}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(15.5244179,213.890808)"},"ID":13,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-173.259766,116.244453)"},"ID":14,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.SerAtendido","NodeData":{"Offset":"(-52.7081375,134.23999)"},"ID":15,"Name":"Ser
         Atendido","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":8}},{"Type":"UCM.IAV.Movimiento.LiberarLugar","NodeData":{"Offset":"(58.7780075,118.129837)"},"ID":16,"Name":"Liberar
-        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":9},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":10}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(351.985382,115.925964)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-31.1324081,124.285713)"},"ID":18,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":11},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(87.54559,138.571381)"},"ID":19,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-90,100)"},"ID":20,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.ComprobarMiPedido","NodeData":{"Offset":"(-125.384644,105.621315)"},"ID":21,"Name":"Comprobar
-        Mi Pedido","Instant":true,"SharedGameObjectvariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(22.195055,114.146362)"},"ID":22,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":12},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.TomarPedido","NodeData":{"Offset":"(141.742218,113.623695)"},"ID":23,"Name":"Tomar
-        Pedido","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":13}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(180.975571,140)"},"ID":24,"Name":"Idle","Instant":true}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-202.631485,147.5)"},"ID":25,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-69.31178,109.244453)"},"ID":26,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.ClienteBuscaSillaComer","NodeData":{"Offset":"(18.007309,213.461243)"},"ID":27,"Name":"Cliente
-        Busca Silla Comer","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedGameObjectcomedorManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":16}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(104.165833,112.048935)"},"ID":28,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(346.406677,166.129028)"},"ID":29,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-83.92857,135)"},"ID":30,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":17},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Comer","NodeData":{"Offset":"(51.73204,142.499878)"},"ID":31,"Name":"Comer","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SingletiempoComerAlgo":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(785.384644,214.615448)"},"ID":32,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-130,110)"},"ID":33,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedVector3","NodeData":{"Offset":"(-572.131653,252.5683)"},"ID":34,"Name":"Set
-        Shared Vector 3","Instant":true,"SharedVector3targetValue":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(24,2,38)"},"SharedVector3targetVariable":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedGameObject","NodeData":{"Offset":"(-417.443451,234.442413)"},"ID":35,"Name":"Set
-        Shared Game Object","Instant":true,"SharedGameObjecttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":18},"SharedGameObjecttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":19},"SharedBoolvalueCanBeNull":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-189.25,238.750061)"},"ID":36,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-80,90)"},"ID":37,"Name":"Ponerme
-        En La Cola","Instant":true,"SharedIntmiPosicionCola":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":20},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":21}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(70,110)"},"ID":38,"Name":"Until
-        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.50021362,113.055176)"},"ID":39,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-57.5002136,133.055176)"},"ID":40,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1.5},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(62.625,133.750122)"},"ID":41,"Name":"Esperar
-        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":22},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":23}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(1.70941162,290.213684)"},"ID":42,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":24},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(106.665,345.721558)"},"ID":43,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"UCM.IAV.Movimiento.LiberarLugar","NodeData":{"Offset":"(213.8266,293.0553)"},"ID":44,"Name":"Liberar
-        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":25},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":26}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(357.436,252.051224)"},"ID":45,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-133.1707,110)"},"ID":46,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":27},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(220.731674,120)"},"ID":47,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1483.792,229.185486)"},"ID":48,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-60,110)"},"ID":49,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":28},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(50.00006,120)"},"ID":50,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(1594.96851,233.891327)"},"ID":51,"Name":"Idle","Instant":true}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":29},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":30},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":31},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":32},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":33},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}]}'
+        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":9},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":10}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(351.985382,115.925964)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.BuscarLugarEsperar","NodeData":{"Offset":"(-91.47357,145.555542)"},"ID":18,"Name":"Buscar
+        Lugar Esperar","Instant":true,"SharedVector3targetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"GameObjectobjetivo":11,"Vector3offsets":"(3,0,3)"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(52.200882,152.063477)"},"ID":19,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(268.1011,138.571381)"},"ID":20,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-90,100)"},"ID":21,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"UCM.IAV.Movimiento.ComprobarMiPedido","NodeData":{"Offset":"(-125.384644,105.621315)"},"ID":22,"Name":"Comprobar
+        Mi Pedido","Instant":true,"SharedGameObjectvariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(22.195055,114.146362)"},"ID":23,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":12},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.TomarPedido","NodeData":{"Offset":"(141.742218,113.623695)"},"ID":24,"Name":"Tomar
+        Pedido","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":13}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(180.975571,140)"},"ID":25,"Name":"Idle","Instant":true}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-202.631485,147.5)"},"ID":26,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-69.31178,109.244453)"},"ID":27,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":14},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.ClienteBuscaSillaComer","NodeData":{"Offset":"(18.007309,213.461243)"},"ID":28,"Name":"Cliente
+        Busca Silla Comer","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedGameObjectcomedorManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":16}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(104.165833,112.048935)"},"ID":29,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(346.406677,166.129028)"},"ID":30,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-83.92857,135)"},"ID":31,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":17},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.Comer","NodeData":{"Offset":"(51.73204,142.499878)"},"ID":32,"Name":"Comer","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SingletiempoComerAlgo":1}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(785.384644,214.615448)"},"ID":33,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-130,110)"},"ID":34,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedVector3","NodeData":{"Offset":"(-572.131653,252.5683)"},"ID":35,"Name":"Set
+        Shared Vector 3","Instant":true,"SharedVector3targetValue":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(24,2,38)"},"SharedVector3targetVariable":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedGameObject","NodeData":{"Offset":"(-417.443451,234.442413)"},"ID":36,"Name":"Set
+        Shared Game Object","Instant":true,"SharedGameObjecttargetValue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":18},"SharedGameObjecttargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":19},"SharedBoolvalueCanBeNull":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-189.25,238.750061)"},"ID":37,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PonermeEnLaCola","NodeData":{"Offset":"(-80,90)"},"ID":38,"Name":"Ponerme
+        En La Cola","Instant":true,"SharedIntmiPosicionCola":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":20},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":21}},{"Type":"BehaviorDesigner.Runtime.Tasks.UntilSuccess","NodeData":{"Offset":"(70,110)"},"ID":39,"Name":"Until
+        Success","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-7.50021362,113.055176)"},"ID":40,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-57.5002136,133.055176)"},"ID":41,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EsperarEnCola","NodeData":{"Offset":"(62.625,133.750122)"},"ID":42,"Name":"Esperar
+        En Cola","Instant":true,"SharedIntmiTicket":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":22},"SharedVector3miTargetVector":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":23}}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(1.70941162,290.213684)"},"ID":43,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":24},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(106.665,345.721558)"},"ID":44,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"UCM.IAV.Movimiento.LiberarLugar","NodeData":{"Offset":"(213.8266,293.0553)"},"ID":45,"Name":"Liberar
+        Lugar","Instant":true,"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":25},"SharedGameObjectlugaresManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":26}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(357.436,252.051224)"},"ID":46,"Name":"Sequence","Instant":true,"Disabled":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-133.1707,110)"},"ID":47,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":27},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(220.731674,120)"},"ID":48,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(1483.792,229.185486)"},"ID":49,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-60,110)"},"ID":50,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"","GameObjectmValue":28},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(50.00006,120)"},"ID":51,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(1594.96851,233.891327)"},"ID":52,"Name":"Idle","Instant":true}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":29},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"ticketCola","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ComedorManager","IsShared":true,"GameObjectmValue":30},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PepelerasManager","IsShared":true,"GameObjectmValue":31},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":32},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"ClientesManager","IsShared":true,"GameObjectmValue":33},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 2880729289411577527, guid: c26a3846d3d1c764c922773d646e3d9a,
         type: 3}

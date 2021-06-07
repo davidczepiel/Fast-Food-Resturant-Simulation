@@ -12,28 +12,26 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
     [TaskDescription("Rellenar")]
-    public class EntregarPedido : Action
+    public class HayPedidoQueCompletar : Conditional
     {
         public SharedGameObject cajaManager;
         public SharedGameObject miPedido;
         private CajaManager caja;
-        private Menu menu;
 
         public override void OnStart()
         {
             caja = cajaManager.Value.GetComponent<CajaManager>();
-            menu = miPedido.Value.GetComponent<Menu>();
-            menu.setListo(true);
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (menu.getRecogido())
+            if (caja.hayPedidosParaCompletar())
             {
+                miPedido.Value = caja.pedidoPorCompletar();
                 return TaskStatus.Success;
             }
             else
-                return TaskStatus.Running;
+                return TaskStatus.Failure;
         }
     }
 }

@@ -12,34 +12,43 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
     [TaskDescription("Rellenar")]
-    public class Cocinar : Action
+    public class PedidoNecesitaSerCocinado : Conditional
     {
         public SharedGameObject cajaManager;
         public SharedGameObject cocinaManager;
-        public SharedGameObject miMenu;
-        public SharedUInt itemCocinando;
         private CajaManager caja;
         private CocinaManager cocina;
-        public float tiempoCocinar = 2;
-        private float timer;
+        public SharedGameObject pedido;
+
+        public List<int> posibilidadesAyuda;
 
         public override void OnStart()
         {
-            timer = tiempoCocinar;
             caja = cajaManager.Value.GetComponent<CajaManager>();
+            cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            if (necesitaCocina())
             {
-                miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
-                miMenu.Value = null;
+                cocina.empezarPedido(pedido.Value);
                 return TaskStatus.Success;
             }
             else
-                return TaskStatus.Running;
+                return TaskStatus.Failure;
+        }
+
+        public bool necesitaCocina()
+        {
+            for (int i = 0; i < posibilidadesAyuda.Count; i++)
+            {
+                if (pedido.Value.GetComponent<Menu>().menuRequiereItem((MenuItem)posibilidadesAyuda[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

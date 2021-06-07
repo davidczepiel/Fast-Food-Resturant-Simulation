@@ -32,9 +32,15 @@
             cocina = cocinaManager.Value.GetComponent<CocinaManager>();
             menu = miMenu.Value.GetComponent<Menu>();
             if (!menu.itemHecho(MenuItem.Hamburguesa))
+            {
                 itemCocinando.Value = (int)MenuItem.Hamburguesa;
+                menu.empezarHacerItem((MenuItem)itemCocinando.Value);
+            }
             else if (!menu.itemHecho(MenuItem.Patatas))
+            {
                 itemCocinando.Value = (int)MenuItem.Patatas;
+                menu.empezarHacerItem((MenuItem)itemCocinando.Value);
+            }
         }
 
         public override TaskStatus OnUpdate()

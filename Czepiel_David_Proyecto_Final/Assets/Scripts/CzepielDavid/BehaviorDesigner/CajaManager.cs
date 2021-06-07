@@ -45,10 +45,20 @@
             return pedidosParaRecoger.Count > 0;
         }
 
+        public void añadirPedidoPorCompletar(GameObject pedido)
+        {
+            pedidosParaCompletar.Add(pedido);
+        }
+
+        public void añadirPedidoPorRegoger(GameObject pedido)
+        {
+            pedidosParaRecoger.Add(pedido);
+        }
+
         public GameObject pedidoPorEmpezar()
         {
             GameObject nuevo = pedidosParaEmpezar[0];
-            //pedidosParaEmpezar.RemoveAt(0);
+            pedidosParaEmpezar.RemoveAt(0);
             return nuevo;
         }
 
@@ -100,23 +110,9 @@
         {
             //pedidosParaCompletar.Add(pedidoNuevo);
             pedidosParaEmpezar.Add(pedidoNuevo);
-            pedidosParaRecoger.Add(pedidoNuevo);
+            //pedidosParaRecoger.Add(pedidoNuevo);
             clienteEnCaja[numCaja] = false;
-        }
-
-        public bool miPedidoListo(int id)
-        {
-            //int i = 0;
-            //while (i < pedidosParaCompletar.Count && pedidosParaCompletar[i].IDPedido != id)
-            //    i++;
-
-            //return i < pedidosParaCompletar.Count;
-            return false;
-        }
-
-        public GameObject damePedido()
-        {
-            return Instantiate(menuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            cajaAtendida[numCaja] = false;
         }
     }
 }

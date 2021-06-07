@@ -46,6 +46,27 @@
             return elementosMenu[(int)item] || elementosHaciendose[(int)item];
         }
 
+        public bool cocinaTerminado()
+        {
+            bool cierto = true;
+            if (!elementosMenu[0] && pedido[0])
+                cierto = false;
+            if (!elementosMenu[1] && pedido[1])
+                cierto = false;
+
+            return cierto;
+        }
+
+        public bool menuRequiereItem(MenuItem item)
+        {
+            return pedido[(int)item];
+        }
+
+        public void empezarHacerItem(MenuItem item)
+        {
+            elementosHaciendose[(int)item] = true;
+        }
+
         public void itemMenuCompletado(MenuItem item)
         {
             elementosMenu[(int)item] = true;

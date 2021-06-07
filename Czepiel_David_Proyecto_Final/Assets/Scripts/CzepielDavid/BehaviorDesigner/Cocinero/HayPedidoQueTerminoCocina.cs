@@ -10,22 +10,28 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
     [TaskDescription("Rellenar")]
-    public class HayPedidoQueEntregar : Conditional
+    public class HayPedidoQueTerminoCocina : Conditional
     {
         public SharedGameObject cajaManager;
+        public SharedGameObject cocinaManager;
         private CajaManager caja;
+        private CocinaManager cocina;
+        public SharedGameObject pedido;
 
         public override void OnStart()
         {
             caja = cajaManager.Value.GetComponent<CajaManager>();
+            cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (caja.hayPedidosParaRecoger())
+            pedido.Value = cocina.pedidoTerminadoParteCocina();
+            if (pedido.Value != null)
             {
+                cocina.quitarPedido(pedido.Value);
                 return TaskStatus.Success;
             }
             else

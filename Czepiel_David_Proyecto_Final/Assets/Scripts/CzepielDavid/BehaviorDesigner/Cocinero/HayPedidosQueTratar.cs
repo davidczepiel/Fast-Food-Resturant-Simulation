@@ -10,30 +10,27 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
     [TaskDescription("Rellenar")]
-    public class EntregarPedido : Action
+    public class HayPedidoQueTratar : Conditional
     {
         public SharedGameObject cajaManager;
-        public SharedGameObject miPedido;
+        public SharedGameObject cocinaManager;
         private CajaManager caja;
-        private Menu menu;
+        private CocinaManager cocina;
 
         public override void OnStart()
         {
             caja = cajaManager.Value.GetComponent<CajaManager>();
-            menu = miPedido.Value.GetComponent<Menu>();
-            menu.setListo(true);
+            cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            if (menu.getRecogido())
-            {
+            if (caja.hayPedidosParaEmpezar() || cocina.hayPedidosHaciendose())
                 return TaskStatus.Success;
-            }
             else
-                return TaskStatus.Running;
+                return TaskStatus.Failure;
         }
     }
 }

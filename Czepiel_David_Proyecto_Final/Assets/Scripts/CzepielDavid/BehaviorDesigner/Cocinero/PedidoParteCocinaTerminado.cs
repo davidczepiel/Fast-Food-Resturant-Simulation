@@ -12,34 +12,35 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
     [TaskDescription("Rellenar")]
-    public class Cocinar : Action
+    public class PedidoParteCocinaTerminado : Action
     {
         public SharedGameObject cajaManager;
         public SharedGameObject cocinaManager;
         public SharedGameObject miMenu;
-        public SharedUInt itemCocinando;
         private CajaManager caja;
         private CocinaManager cocina;
-        public float tiempoCocinar = 2;
-        private float timer;
+        private Menu menu;
 
         public override void OnStart()
         {
-            timer = tiempoCocinar;
             caja = cajaManager.Value.GetComponent<CajaManager>();
+            cocina = cocinaManager.Value.GetComponent<CocinaManager>();
+            menu = miMenu.Value.GetComponent<Menu>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
-                miMenu.Value = null;
-                return TaskStatus.Success;
-            }
+            //Se quita de la lista de cosas haciendose
+            cocina.quitarPedido(miMenu.Value);
+
+            //Se mete en una lista u otra
+            if (menu.menuCompletado())
+                caja.añadirPedidoPorRegoger(miMenu.Value);
             else
-                return TaskStatus.Running;
+                caja.añadirPedidoPorCompletar(miMenu.Value);
+
+            miMenu.Value = null;
+            return TaskStatus.Success;
         }
     }
 }
