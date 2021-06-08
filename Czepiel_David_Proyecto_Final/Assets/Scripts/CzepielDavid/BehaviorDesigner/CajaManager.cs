@@ -21,10 +21,16 @@
 
         private void Start()
         {
-            cajaAtendida.Add(false);
-
-            clienteEnCaja.Add(false);
-            cajaControlada.Add(false);
+            Transform[] allChildren = this.gameObject.GetComponentsInChildren<Transform>();
+            foreach (Transform child in allChildren)
+            {
+                cajaAtendida.Add(false);
+                clienteEnCaja.Add(false);
+                cajaControlada.Add(false);
+            }
+            cajaAtendida.RemoveAt(0);
+            clienteEnCaja.RemoveAt(0);
+            cajaControlada.RemoveAt(0);
         }
 
         // Update is called once per frame
@@ -120,9 +126,9 @@
         public int darCajaCliente()
         {
             int i = 0;
-            //while (!clienteEnCaja[i]) i++;
-            clienteEnCaja[0] = true;
-            return 0;
+            while (clienteEnCaja[i]) i++;
+            clienteEnCaja[i] = true;
+            return i;
         }
 
         public bool meHanAtendido(int numCaja)
@@ -149,7 +155,7 @@
                 Menu menu = actual.GetComponent<Menu>();
                 for (int j = 0; j < posiblesElementos.Count; j++)
                 {
-                    if (!menu.itemHecho((MenuItem)posiblesElementos[j]))
+                    if (menu.menuRequiereItem((MenuItem)posiblesElementos[j]) && !menu.itemHecho((MenuItem)posiblesElementos[j]))
                     {
                         bucle = false;
                         pedido = actual;
@@ -158,6 +164,7 @@
                 }
                 i++;
             }
+
             return pedido;
         }
     }

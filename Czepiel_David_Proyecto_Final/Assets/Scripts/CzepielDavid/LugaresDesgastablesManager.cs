@@ -83,7 +83,7 @@
         public GameObject dameLugarParaArreglar()
         {
             int i = 0;
-            while (i < lugares.Count && !reparrables[i])
+            while (i < lugares.Count && (!reparrables[i] || (reparrables[i] && ocupados[i])))
                 i++;
 
             reparrables[i] = true;

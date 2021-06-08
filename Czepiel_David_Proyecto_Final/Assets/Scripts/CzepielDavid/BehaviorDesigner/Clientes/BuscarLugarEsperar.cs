@@ -15,7 +15,6 @@
     public class BuscarLugarEsperar : Action
     {
         public SharedVector3 targetVector;
-        public GameObject objetivo;
         public Vector3 offsets;
 
         public override TaskStatus OnUpdate()
@@ -25,7 +24,7 @@
             desplazamiento.y = (offsets.y * ((float)Random.Range(-100, 100) / (float)100));
             desplazamiento.z = (offsets.z * ((float)Random.Range(-100, 100) / (float)100));
 
-            targetVector.Value = desplazamiento + objetivo.transform.position;
+            targetVector.Value = desplazamiento + GameObject.Find("EsperarPedido").transform.position;
 
             return TaskStatus.Success;
         }

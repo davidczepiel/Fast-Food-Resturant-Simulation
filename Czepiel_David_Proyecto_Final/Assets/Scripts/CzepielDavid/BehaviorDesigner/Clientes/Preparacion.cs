@@ -19,6 +19,12 @@
 
         public SharedGameObject miTarget;
         public SharedGameObject clientesManager;
+        public SharedGameObject comedorManager;
+        public SharedGameObject papelerasManager;
+        public SharedGameObject cajaManager;
+        public SharedGameObject bañosManager;
+        public SharedFloat distanciaLlegada;
+        public SharedBool irBaño;
 
         /// <summary>
         /// Esta tarea se hace cargo de el fantasma pille a la cantante
@@ -28,9 +34,17 @@
         /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
+            miTarget.Value = GameObject.Find("Cola");
+            comedorManager.Value = GameObject.Find("Comedor");
+            papelerasManager.Value = GameObject.Find("PuntoPapeleras");
+            bañosManager.Value = GameObject.Find("Baño");
+            cajaManager.Value = GameObject.Find("Mostrador");
+            clientesManager.Value = GameObject.Find("ClientesManager");
+            distanciaLlegada.Value = 1.2f;
+            irBaño.Value = false;
+
             GameObject pedido = clientesManager.Value.GetComponent<ClientesManager>().dameUnMenu();
             miPedido.Value = pedido;
-            miTarget.Value = GameObject.Find("Cola");
             return TaskStatus.Success;
         }
     }
