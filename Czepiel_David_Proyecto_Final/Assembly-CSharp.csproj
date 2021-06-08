@@ -635,10 +635,13 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PuedoAyudarCocinarAlgunPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\SeleccionarElementoCocinar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\ColaManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\DejarBandejaMesas.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\DejarItemBandeja.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Menu.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\ClientesManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresDesgastablesManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\MesaColocarPedido.cs" />
     <Compile Include="Assets\Scripts\Direccion.cs" />
     <Compile Include="Assets\Scripts\JugadorAgente.cs" />
     <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />

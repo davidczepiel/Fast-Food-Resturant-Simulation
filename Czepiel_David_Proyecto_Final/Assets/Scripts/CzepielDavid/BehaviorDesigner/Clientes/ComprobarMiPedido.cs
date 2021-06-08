@@ -17,6 +17,8 @@
         [Tooltip("The first variable to compare")]
         public SharedGameObject variable;
 
+        public SharedGameObject miTarget;
+
         private Menu miMenu;
 
         public override void OnStart()
@@ -27,7 +29,10 @@
         public override TaskStatus OnUpdate()
         {
             if (miMenu.getListo())
+            {
+                miTarget.Value = GameObject.Find("LugarRecogerPedido");
                 return TaskStatus.Success;
+            }
             else
                 return TaskStatus.Running;
         }

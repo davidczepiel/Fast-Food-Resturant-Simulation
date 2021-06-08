@@ -22,14 +22,11 @@
         private Menu menu;
         private CajaManager caja;
         private CocinaManager cocina;
-        public float tiempoCocinar = 2;
-        private float timer;
 
         public List<int> items;
 
         public override void OnStart()
         {
-            timer = tiempoCocinar;
             caja = cajaManager.Value.GetComponent<CajaManager>();
             cocina = cocinaManager.Value.GetComponent<CocinaManager>();
             menu = miMenu.Value.GetComponent<Menu>();
@@ -46,14 +43,8 @@
 
         public override TaskStatus OnUpdate()
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Running;
+            miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
+            return TaskStatus.Success;
         }
     }
 }

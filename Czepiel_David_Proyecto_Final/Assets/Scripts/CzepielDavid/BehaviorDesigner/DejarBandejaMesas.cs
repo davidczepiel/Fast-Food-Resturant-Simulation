@@ -10,31 +10,32 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+    [TaskCategory("CzepielDavidProyectoFinal")]
     [TaskDescription("Rellenar")]
-    public class IncluirItemMenu : Action
+    public class DejarBandejaMesas : Action
     {
         public SharedGameObject cajaManager;
         public SharedGameObject cocinaManager;
         public SharedGameObject miMenu;
         public SharedUInt itemCocinando;
+        public SharedGameObject miTarget;
+        public SharedGameObject mesasPedidos;
+        private MesaColocarPedido mesas;
         private CajaManager caja;
         private CocinaManager cocina;
+        public float tiempoCocinar = 2;
+        private float timer;
 
         public override void OnStart()
         {
             caja = cajaManager.Value.GetComponent<CajaManager>();
+            mesas = mesasPedidos.Value.GetComponent<MesaColocarPedido>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
-            if (miMenu.Value.GetComponent<Menu>().menuCompletado())
-            {
-                caja.añadirPedidoPorRegoger(miMenu.Value);
-                caja.eliminarPedidoPorCompletar(miMenu.Value);
-                miMenu.Value = null;
-            }
+            miTarget.Value = mesas.dameLugarPonerMenu();
+            mesas.dejarPedidoEnMesa(miTarget.Value, miMenu.Value);
             return TaskStatus.Success;
         }
     }

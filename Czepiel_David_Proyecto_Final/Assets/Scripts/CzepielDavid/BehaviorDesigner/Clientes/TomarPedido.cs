@@ -28,6 +28,8 @@
         public override TaskStatus OnUpdate()
         {
             miPedido.Value.GetComponent<Menu>().setRecogido(true);
+            miPedido.Value.transform.position = this.transform.position;
+            miPedido.Value.transform.parent = this.transform;
             return TaskStatus.Success;
         }
     }
