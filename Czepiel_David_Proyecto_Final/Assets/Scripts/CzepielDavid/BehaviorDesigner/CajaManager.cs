@@ -15,6 +15,7 @@
 
         private List<bool> cajaAtendida = new List<bool>();
         private List<bool> clienteEnCaja = new List<bool>();
+        private List<bool> cajaControlada = new List<bool>();
 
         public GameObject lugarCaja;
 
@@ -23,6 +24,7 @@
             cajaAtendida.Add(false);
 
             clienteEnCaja.Add(false);
+            cajaControlada.Add(false);
         }
 
         // Update is called once per frame
@@ -47,12 +49,20 @@
 
         public void añadirPedidoPorCompletar(GameObject pedido)
         {
-            pedidosParaCompletar.Add(pedido);
+            if (!pedidosParaCompletar.Contains(pedido))
+                pedidosParaCompletar.Add(pedido);
         }
 
         public void añadirPedidoPorRegoger(GameObject pedido)
         {
-            pedidosParaRecoger.Add(pedido);
+            if (!pedidosParaRecoger.Contains(pedido))
+                pedidosParaRecoger.Add(pedido);
+        }
+
+        public void eliminarPedidoPorCompletar(GameObject pedido)
+        {
+            if (pedidosParaCompletar.Contains(pedido))
+                pedidosParaCompletar.Remove(pedido);
         }
 
         public GameObject pedidoPorEmpezar()
@@ -79,9 +89,18 @@
         public bool hayClientesParaPedir()
         {
             int i = 0;
-            while (i < clienteEnCaja.Count && !clienteEnCaja[i])
+            while (i < clienteEnCaja.Count && (!clienteEnCaja[i] || (clienteEnCaja[i] && cajaControlada[i])))
                 i++;
             return i < clienteEnCaja.Count;
+        }
+
+        public int dameCajaAtender()
+        {
+            int i = 0;
+            while (i < clienteEnCaja.Count && (!clienteEnCaja[i] || (clienteEnCaja[i] && cajaControlada[i])))
+                i++;
+            cajaControlada[i] = true;
+            return i;
         }
 
         public void atenderCliente()
@@ -91,6 +110,11 @@
                 i++;
 
             cajaAtendida[i] = true;
+        }
+
+        public void atenderCliente(int numCaja)
+        {
+            cajaAtendida[numCaja] = true;
         }
 
         public int darCajaCliente()
@@ -108,11 +132,33 @@
 
         public void hacerPedido(int numCaja, GameObject pedidoNuevo)
         {
-            //pedidosParaCompletar.Add(pedidoNuevo);
             pedidosParaEmpezar.Add(pedidoNuevo);
-            //pedidosParaRecoger.Add(pedidoNuevo);
             clienteEnCaja[numCaja] = false;
             cajaAtendida[numCaja] = false;
+            cajaControlada[numCaja] = false;
+        }
+
+        public GameObject pedidoEnElQueAyudar(List<int> posiblesElementos)
+        {
+            GameObject pedido = null;
+            int i = 0;
+            bool bucle = true;
+            while (i < pedidosParaCompletar.Count && bucle)
+            {
+                GameObject actual = pedidosParaCompletar[i];
+                Menu menu = actual.GetComponent<Menu>();
+                for (int j = 0; j < posiblesElementos.Count; j++)
+                {
+                    if (!menu.itemHecho((MenuItem)posiblesElementos[j]))
+                    {
+                        bucle = false;
+                        pedido = actual;
+                        break;
+                    }
+                }
+                i++;
+            }
+            return pedido;
         }
     }
 }

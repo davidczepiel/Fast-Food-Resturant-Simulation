@@ -15,6 +15,7 @@
     public class AtenderCliente : Action
     {
         public SharedGameObject cajaManager;
+        public SharedInt numCaja;
         private CajaManager caja;
         public float tiempoAtender = 2;
         private float timer;
@@ -30,7 +31,7 @@
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                caja.atenderCliente();
+                caja.atenderCliente(numCaja.Value);
                 return TaskStatus.Success;
             }
             else

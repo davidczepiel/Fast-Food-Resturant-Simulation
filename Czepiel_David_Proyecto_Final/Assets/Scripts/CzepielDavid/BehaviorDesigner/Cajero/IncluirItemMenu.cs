@@ -38,11 +38,10 @@
                 if (miMenu.Value.GetComponent<Menu>().menuCompletado())
                 {
                     caja.añadirPedidoPorRegoger(miMenu.Value);
+                    caja.eliminarPedidoPorCompletar(miMenu.Value);
                     miMenu.Value = null;
-                    return TaskStatus.Success;
                 }
-                else
-                    return TaskStatus.Failure;
+                return TaskStatus.Success;
             }
             else
                 return TaskStatus.Running;

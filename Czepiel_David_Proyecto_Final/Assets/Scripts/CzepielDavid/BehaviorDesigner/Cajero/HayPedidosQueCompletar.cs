@@ -28,6 +28,7 @@
             if (caja.hayPedidosParaCompletar())
             {
                 miPedido.Value = caja.pedidoPorCompletar();
+                caja.añadirPedidoPorCompletar(miPedido.Value);
                 return TaskStatus.Success;
             }
             else

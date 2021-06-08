@@ -18,12 +18,6 @@
 
         public SharedGameObject miTarget;
 
-        public override void OnStart()
-        {
-            int a;
-            a = 0;
-        }
-
         public override TaskStatus OnUpdate()
         {
             if (papeleras.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())

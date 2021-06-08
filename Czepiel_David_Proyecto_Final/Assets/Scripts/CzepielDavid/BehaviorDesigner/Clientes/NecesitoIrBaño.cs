@@ -10,27 +10,18 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Rellenar")]
-    public class HayClientesCola : Conditional
+    public class NecesitoIrAlBaño : Conditional
     {
-        public SharedGameObject miTarget;
-        public SharedGameObject cajaManager;
-        private CajaManager caja;
-        public SharedInt numCaja;
+        public SharedGameObject variable;
 
-        public override void OnStart()
-        {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
-        }
+        public SharedBool irBaño;
 
         public override TaskStatus OnUpdate()
         {
-            if (caja.hayClientesParaPedir())
-            {
-                numCaja.Value = caja.dameCajaAtender();
+            if (irBaño.Value)
                 return TaskStatus.Success;
-            }
             else
                 return TaskStatus.Failure;
         }

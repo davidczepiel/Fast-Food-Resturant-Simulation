@@ -38,6 +38,7 @@
                 if (!menu.itemHecho((MenuItem)items[(int)i]))
                 {
                     itemCocinando.Value = (uint)items[(int)i];
+                    menu.empezarHacerItem((MenuItem)itemCocinando.Value);
                     break;
                 }
             }

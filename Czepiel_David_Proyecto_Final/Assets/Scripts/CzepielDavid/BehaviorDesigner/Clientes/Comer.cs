@@ -23,6 +23,8 @@
 
         private float timer;
 
+        public SharedBool irBaño;
+
         public override void OnStart()
 
         {
@@ -43,7 +45,15 @@
             if (comidoItem())
             {
                 bool terminado = miMenu.comer();
-                if (terminado) return TaskStatus.Success;
+                if (terminado)
+                {
+                    if (miMenu.menuRequiereItem(MenuItem.Bebida))
+                        irBaño.Value = true;
+                    else
+                        irBaño.Value = false;
+
+                    return TaskStatus.Success;
+                }
             }
             return TaskStatus.Running;
         }

@@ -55,6 +55,11 @@
             //}
         }
 
+        public void clienteHaTerminado(GameObject cliente)
+        {
+            GameObject.Destroy(cliente);
+        }
+
         public GameObject dameUnMenuHecho()
         {
             GameObject nuevo = Instantiate(menuDefecto, new Vector3(0, 0, 0), Quaternion.identity);
