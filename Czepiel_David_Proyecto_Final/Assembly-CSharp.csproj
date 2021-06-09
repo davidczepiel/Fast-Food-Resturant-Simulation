@@ -597,6 +597,7 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3Int.cs" />
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
     <Compile Include="Assets\Scripts\Agente.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\AgentePiensa.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CajaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\AtenderCliente.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\EntregarPedido.cs" />
