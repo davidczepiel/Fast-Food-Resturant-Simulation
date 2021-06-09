@@ -81,6 +81,11 @@
             }
 
             pedidosAcumulados[i].Remove(pedido);
+
+            for (int j = 0; j < pedidosAcumulados[i].Count; j++)
+            {
+                pedidosAcumulados[i][j].transform.position = mesas[i].transform.position + (separacion * (1 + j));
+            }
         }
     }
 }

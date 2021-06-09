@@ -12,7 +12,7 @@
 
     [TaskCategory("CzepielDavidProyectoFinal")]
     [TaskDescription("Rellenar")]
-    public class DejarItemBandeja : Action
+    public class QuitarBandejaMesa : Action
     {
         public SharedGameObject miMenu;
         public SharedGameObject miTarget;
@@ -26,7 +26,7 @@
 
         public override TaskStatus OnUpdate()
         {
-            miTarget.Value = mesas.dameMesaConEstePedido(miMenu.Value);
+            mesas.cogerPedido(miMenu.Value);
             return TaskStatus.Success;
         }
     }

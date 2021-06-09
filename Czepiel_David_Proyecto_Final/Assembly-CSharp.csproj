@@ -621,6 +621,7 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\PonermeEnLaCola.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Preparacion.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\SerAtendido.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TirarPedidoBasura.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TomarPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CocinaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\Cocinar.cs" />
@@ -642,6 +643,7 @@
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresDesgastablesManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\MesaColocarPedido.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\QuitarBandejaMesa.cs" />
     <Compile Include="Assets\Scripts\Direccion.cs" />
     <Compile Include="Assets\Scripts\JugadorAgente.cs" />
     <None Include="Assets\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />

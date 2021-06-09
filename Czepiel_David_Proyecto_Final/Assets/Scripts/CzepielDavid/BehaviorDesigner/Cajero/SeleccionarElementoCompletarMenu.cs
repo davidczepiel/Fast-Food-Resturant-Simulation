@@ -32,7 +32,7 @@
             menu = miMenu.Value.GetComponent<Menu>();
             for (uint i = 0; i < items.Count; i++)
             {
-                if (!menu.itemHecho((MenuItem)items[(int)i]))
+                if (menu.menuRequiereItem((MenuItem)items[(int)i]) && !menu.itemHecho((MenuItem)items[(int)i]))
                 {
                     itemCocinando.Value = (uint)items[(int)i];
                     menu.empezarHacerItem((MenuItem)itemCocinando.Value);

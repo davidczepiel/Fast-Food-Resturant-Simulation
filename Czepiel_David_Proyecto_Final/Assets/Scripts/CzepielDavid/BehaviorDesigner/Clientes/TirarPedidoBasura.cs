@@ -10,23 +10,16 @@
     using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
     using UnityEngine.AI;
 
-    [TaskCategory("CzepielDavidProyectoFinal")]
+    [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Rellenar")]
-    public class DejarItemBandeja : Action
+    public class TirarPedidoBasura : Action
     {
-        public SharedGameObject miMenu;
-        public SharedGameObject miTarget;
-        public SharedGameObject mesasPedidos;
-        private MesaColocarPedido mesas;
-
-        public override void OnStart()
-        {
-            mesas = mesasPedidos.Value.GetComponent<MesaColocarPedido>();
-        }
+        [Tooltip("Silla para sentarme")]
+        public SharedGameObject miPedido;
 
         public override TaskStatus OnUpdate()
         {
-            miTarget.Value = mesas.dameMesaConEstePedido(miMenu.Value);
+            GameObject.Destroy(miPedido.Value);
             return TaskStatus.Success;
         }
     }
