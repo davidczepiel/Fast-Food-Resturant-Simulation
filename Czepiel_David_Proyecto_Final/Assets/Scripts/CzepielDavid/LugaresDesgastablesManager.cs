@@ -12,13 +12,14 @@
 
     public class LugaresDesgastablesManager : MonoBehaviour
     {
-        public GameObject padreLugares;
         public List<GameObject> lugares = new List<GameObject>();
-
+        public float tiempoRepararSolo = 20;
         public int usosHastaDesgaste = 1;
         private List<bool> ocupados = new List<bool>();
         private List<bool> reparrables = new List<bool>();
         private List<int> usosRestantes = new List<int>();
+
+        private List<float> timerRepararSolos = new List<float>();
 
         public GameObject lugarEmpiezaCola;
         public Vector3 desplazamiento;
@@ -29,25 +30,33 @@
         // Start is called before the first frame update
         private void Start()
         {
-            Transform[] allChildren = padreLugares.GetComponentsInChildren<Transform>();
-            foreach (Transform child in allChildren)
+            for (int i = 0; i < lugares.Count; i++)
             {
-                lugares.Add(child.gameObject);
+                float a = tiempoRepararSolo;
                 ocupados.Add(false);
                 reparrables.Add(false);
                 usosRestantes.Add(usosHastaDesgaste);
+                timerRepararSolos.Add(a);
             }
-
-            //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
-            lugares.RemoveAt(0);
-            ocupados.RemoveAt(0);
-            reparrables.RemoveAt(0);
-            usosRestantes.RemoveAt(0);
         }
 
         // Update is called once per frame
         private void Update()
         {
+            float tiempo = Time.deltaTime;
+            for (int i = 0; i < timerRepararSolos.Count; i++)
+            {
+                if (reparrables[i] && ocupados[i])
+                {
+                    timerRepararSolos[i] -= tiempo;
+                    if (timerRepararSolos[i] <= 0)
+                    {
+                        timerRepararSolos[i] = tiempoRepararSolo;
+                        reparrables[i] = false;
+                        ocupados[i] = false;
+                    }
+                }
+            }
         }
 
         public GameObject dameLugar()
@@ -107,9 +116,12 @@
         public void repararLugar(GameObject libre)
         {
             int result = lugares.FindIndex(element => element == libre);
-            ocupados[result] = false;
-            reparrables[result] = false;
-            usosRestantes[result] = 1;
+            if (result >= 0)
+            {
+                ocupados[result] = false;
+                reparrables[result] = false;
+                usosRestantes[result] = 1;
+            }
         }
 
         public bool hayHueco()

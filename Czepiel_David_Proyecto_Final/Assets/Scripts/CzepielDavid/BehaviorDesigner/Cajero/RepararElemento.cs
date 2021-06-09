@@ -28,6 +28,11 @@
             timer = tiempoReparar;
         }
 
+        public override void OnConditionalAbort()
+        {
+            manager.Value.GetComponent<LugaresDesgastablesManager>().repararLugar(target.Value);
+        }
+
         public override TaskStatus OnUpdate()
         {
             timer -= Time.deltaTime;
@@ -39,6 +44,11 @@
             else
 
                 return TaskStatus.Running;
+        }
+
+        public override void OnEnd()
+        {
+            base.OnEnd();
         }
     }
 }

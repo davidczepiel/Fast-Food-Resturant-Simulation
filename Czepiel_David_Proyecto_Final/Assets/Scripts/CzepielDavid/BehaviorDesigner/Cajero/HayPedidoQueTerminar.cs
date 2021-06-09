@@ -31,5 +31,13 @@
             else
                 return TaskStatus.Failure;
         }
+
+        public override void OnConditionalAbort()
+        {
+            int a;
+            a = 0;
+            a += a;
+            //manager.Value.GetComponent<LugaresDesgastablesManager>().repararLugar(target.Value);
+        }
     }
 }
