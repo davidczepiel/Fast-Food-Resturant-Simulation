@@ -17,6 +17,7 @@
         public SharedGameObject cajaManager;
         public SharedGameObject cocinaManager;
         public SharedGameObject miMenu;
+        public SharedGameObject miPensamiento;
         public SharedUInt itemCocinando;
         public SharedGameObject miTarget;
         private Menu menu;
@@ -49,6 +50,7 @@
             if (timer <= 0)
             {
                 miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
+                miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagen((MenuItem)itemCocinando.Value);
                 return TaskStatus.Success;
             }
             else
