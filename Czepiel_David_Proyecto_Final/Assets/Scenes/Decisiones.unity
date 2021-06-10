@@ -1091,7 +1091,7 @@ Transform:
   - {fileID: 1850213384}
   - {fileID: 1132635095}
   m_Father: {fileID: 981041126}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &166473118
 CapsuleCollider:
@@ -4053,7 +4053,7 @@ Transform:
   m_Children:
   - {fileID: 157992773}
   m_Father: {fileID: 981041126}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!195 &571884501
 NavMeshAgent:
@@ -4375,7 +4375,11 @@ MonoBehaviour:
   comer: {fileID: 21300000, guid: 6cf6c65e0cd83b342ab2728126321e99, type: 3}
   esperar: {fileID: 21300000, guid: 16dc4a31609574045a2ad058509902f6, type: 3}
   relax: {fileID: 21300000, guid: cad3033f75fb9704683a1d483ed9a3b8, type: 3}
-  tiempoMostrar: 2
+  cajaRegistradora: {fileID: 21300000, guid: d3602b804b8c1174685941b01c3ead5d, type: 3}
+  satisfecho: {fileID: 21300000, guid: 25e6e6ad6dcc4be4395f255703ac2419, type: 3}
+  hacerPedido: {fileID: 21300000, guid: 1478530ee5e9fd240abf20acc6903e97, type: 3}
+  recogerPedido: {fileID: 21300000, guid: ee06177884372da4bbe59eeb6d2a440d, type: 3}
+  tiempoMostrar: 100
   miImagen: {fileID: 0}
 --- !u!212 &593814667
 SpriteRenderer:
@@ -5165,7 +5169,7 @@ Transform:
   m_Children:
   - {fileID: 2056101652}
   m_Father: {fileID: 981041126}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!195 &666466094
 NavMeshAgent:
@@ -6001,7 +6005,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 981041126}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7286,7 +7290,6 @@ Transform:
   - {fileID: 676570136}
   - {fileID: 905357837}
   - {fileID: 212896700}
-  - {fileID: 1851918139}
   - {fileID: 1004059372}
   - {fileID: 759855885}
   - {fileID: 1382431144}
@@ -7294,6 +7297,7 @@ Transform:
   - {fileID: 666466093}
   - {fileID: 571884500}
   - {fileID: 166473117}
+  - {fileID: 1851918139}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7517,25 +7521,27 @@ MonoBehaviour:
       variableStartIndex: 
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-0.499710083,37.7777634)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4.395733,113.91037)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.conseguirPensamiento","NodeData":{"Offset":"(-139.013062,107.777664)"},"ID":2,"Name":"Conseguir
         Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(82.43248,117.567535)"},"ID":3,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(1.24966621,112.138885)"},"ID":4,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-893.0436,129.130432)"},"ID":5,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-174.418579,95.11628)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueTerminar","NodeData":{"Offset":"(-136.233887,111.307068)"},"ID":7,"Name":"Hay
-        Pedido Que Terminar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(63.03064,148.071777)"},"ID":8,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-366.6219,130.424622)"},"ID":9,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueEntregar","NodeData":{"Offset":"(-380.645569,151.077911)"},"ID":10,"Name":"Hay
-        Pedido Que Entregar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":1},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"UCM.IAV.Movimiento.DejarItemBandeja","NodeData":{"Offset":"(-231.74614,151.349075)"},"ID":11,"Name":"Dejar
-        Item Bandeja","Instant":true,"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":2},"SharedGameObjectmesasPedidos":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":3}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-97.77778,147.777649)"},"ID":12,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":4},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.QuitarBandejaMesa","NodeData":{"Offset":"(3.13073921,153.055176)"},"ID":13,"Name":"Quitar
-        Bandeja Mesa","Instant":true,"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SharedGameObjectmesasPedidos":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":6}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(120.751579,158.0065)"},"ID":14,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EntregarPedido","NodeData":{"Offset":"(232.385529,158.0065)"},"ID":15,"Name":"Entregar
-        Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":8},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(145.480927,140)"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueCompletar","NodeData":{"Offset":"(-112.368286,140.424316)"},"ID":17,"Name":"Hay
-        Pedido Que Completar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":9},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(50,156.6665)"},"ID":18,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PuedoAyudarCompletarAlgunPedido","NodeData":{"Offset":"(-409.666016,186.110718)"},"ID":19,"Name":"Puedo
-        Ayudar Completar Algun Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":10},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":11},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"List`1posibilidadesAyuda":[2,3]},{"Type":"UCM.IAV.Movimiento.SeleccionarElementoCompletarMenu","NodeData":{"Offset":"(-184.677612,193.90448)"},"ID":20,"Name":"Seleccionar
-        Elemento Completar Menu","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":12},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":13},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":14},"List`1items":[2,3]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-12.7305326,180.5625)"},"ID":21,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(101.062744,186.527588)"},"ID":22,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"UCM.IAV.Movimiento.DejarItemBandeja","NodeData":{"Offset":"(216.531616,186.472351)"},"ID":23,"Name":"Dejar
-        Item Bandeja","Instant":true,"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":16},"SharedGameObjectmesasPedidos":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":17}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(350,190)"},"ID":24,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":18},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.IncluirItemMenu","NodeData":{"Offset":"(480.3718,196.2669)"},"ID":25,"Name":"Incluir
-        Item Menu","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":19},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":20},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0}}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(320,180)"},"ID":26,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayClientesCola","NodeData":{"Offset":"(-81.8233261,149.248047)"},"ID":27,"Name":"Hay
-        Clientes Cola","Instant":true,"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":21},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":22},"SharedIntnumCaja":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"numeroCaja","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(52.3531647,154.705872)"},"ID":28,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":23},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.AtenderCliente","NodeData":{"Offset":"(190.443924,151.792831)"},"ID":29,"Name":"Atender
-        Cliente","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":24},"SharedIntnumCaja":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"numeroCaja","IsShared":true,"Int32mValue":0},"SingletiempoAtender":2}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(197.076584,129.6969)"},"ID":30,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-199.999954,123.333321)"},"ID":31,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-162.533783,157.530945)"},"ID":32,"Name":"Hay
-        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":25},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":26}},{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-57.2722626,236.96936)"},"ID":33,"Name":"Mostrar
-        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"papelera"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(8.615595,150.510483)"},"ID":34,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":27},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130.333374,152.777527)"},"ID":35,"Name":"Reparar
-        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":28},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":29},"SingletiempoReparar":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(209.999878,116.666641)"},"ID":36,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-130,160)"},"ID":37,"Name":"Hay
-        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":30},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":31}},{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-50.9093323,249.999985)"},"ID":38,"Name":"Mostrar
-        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"ba\u00f1o"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(10,150)"},"ID":39,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":32},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130,150)"},"ID":40,"Name":"Reparar
-        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":33},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":34},"SingletiempoReparar":30}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(703.9114,155.130524)"},"ID":41,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-98.96124,122.372192)"},"ID":42,"Name":"Mostrar
-        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"relax"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(132.8519,117.647156)"},"ID":43,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":35},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":36},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":37},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":38},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":39},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":40},{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"numeroCaja","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":41},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true}]}'
+        Pedido Que Terminar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(63.03064,148.071777)"},"ID":8,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-366.6219,130.424622)"},"ID":9,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueEntregar","NodeData":{"Offset":"(-575.089844,178.855682)"},"ID":10,"Name":"Hay
+        Pedido Que Entregar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":1},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"UCM.IAV.Movimiento.DejarItemBandeja","NodeData":{"Offset":"(-426.190521,179.126846)"},"ID":11,"Name":"Dejar
+        Item Bandeja","Instant":true,"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":2},"SharedGameObjectmesasPedidos":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":3}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-292.222168,175.55542)"},"ID":12,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":4},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.QuitarBandejaMesa","NodeData":{"Offset":"(-163.535873,166.944061)"},"ID":13,"Name":"Quitar
+        Bandeja Mesa","Instant":true,"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":5},"SharedGameObjectmesasPedidos":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":6}},{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-10.5543213,173.3335)"},"ID":14,"Name":"Mostrar
+        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"recogerPedido"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(120.751579,158.0065)"},"ID":15,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":7},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.EntregarPedido","NodeData":{"Offset":"(232.385529,158.0065)"},"ID":16,"Name":"Entregar
+        Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":8},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(145.480927,140)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayPedidoQueCompletar","NodeData":{"Offset":"(-112.368286,140.424316)"},"ID":18,"Name":"Hay
+        Pedido Que Completar","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":9},"SharedGameObjectmiPedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(50,156.6665)"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.PuedoAyudarCompletarAlgunPedido","NodeData":{"Offset":"(-409.666016,186.110718)"},"ID":20,"Name":"Puedo
+        Ayudar Completar Algun Pedido","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":10},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":11},"SharedGameObjectpedido":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"List`1posibilidadesAyuda":[2,3]},{"Type":"UCM.IAV.Movimiento.SeleccionarElementoCompletarMenu","NodeData":{"Offset":"(-184.677612,193.90448)"},"ID":21,"Name":"Seleccionar
+        Elemento Completar Menu","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":12},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":13},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":14},"List`1items":[2,3]},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(-12.7305326,180.5625)"},"ID":22,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":15},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(101.062744,186.527588)"},"ID":23,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"UCM.IAV.Movimiento.DejarItemBandeja","NodeData":{"Offset":"(216.531616,186.472351)"},"ID":24,"Name":"Dejar
+        Item Bandeja","Instant":true,"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":16},"SharedGameObjectmesasPedidos":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":17}},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(350,190)"},"ID":25,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":18},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.IncluirItemMenu","NodeData":{"Offset":"(480.3718,196.2669)"},"ID":26,"Name":"Incluir
+        Item Menu","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":19},"SharedGameObjectcocinaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":20},"SharedGameObjectmiMenu":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},"SharedUIntitemCocinando":{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0}}]}]}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(320,180)"},"ID":27,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayClientesCola","NodeData":{"Offset":"(-165.156631,149.248047)"},"ID":28,"Name":"Hay
+        Clientes Cola","Instant":true,"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":21},"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":22},"SharedIntnumCaja":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"numeroCaja","IsShared":true,"Int32mValue":0}},{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-35.555542,148.333252)"},"ID":29,"Name":"Mostrar
+        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"cajaregistradora"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(80.1309357,154.705872)"},"ID":30,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":23},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.AtenderCliente","NodeData":{"Offset":"(218.2217,151.792831)"},"ID":31,"Name":"Atender
+        Cliente","Instant":true,"SharedGameObjectcajaManager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":24},"SharedIntnumCaja":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"numeroCaja","IsShared":true,"Int32mValue":0},"SingletiempoAtender":2}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(197.076584,129.6969)"},"ID":32,"Name":"Selector","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-199.999954,123.333321)"},"ID":33,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-162.533783,157.530945)"},"ID":34,"Name":"Hay
+        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":25},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":26}},{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-57.2722626,236.96936)"},"ID":35,"Name":"Mostrar
+        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"papelera"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(8.615595,150.510483)"},"ID":36,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":27},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130.333374,152.777527)"},"ID":37,"Name":"Reparar
+        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":28},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":29},"SingletiempoReparar":2}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(209.999878,116.666641)"},"ID":38,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.HayLugarQueReparar","NodeData":{"Offset":"(-130,160)"},"ID":39,"Name":"Hay
+        Lugar Que Reparar","Instant":true,"SharedGameObjectpapeleras":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":30},"SharedGameObjectmiTarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":31}},{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-50.9093323,249.999985)"},"ID":40,"Name":"Mostrar
+        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"ba\u00f1o"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(10,150)"},"ID":41,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":32},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}},{"Type":"UCM.IAV.Movimiento.RepararElemento","NodeData":{"Offset":"(130,150)"},"ID":42,"Name":"Reparar
+        Elemento","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":33},"SharedGameObjectmanager":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":34},"SingletiempoReparar":30}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(703.9114,155.130524)"},"ID":43,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"UCM.IAV.Movimiento.MostrarPensamiento","NodeData":{"Offset":"(-98.96124,122.372192)"},"ID":44,"Name":"Mostrar
+        Pensamiento","Instant":true,"SharedGameObjectmiPensamiento":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true},"Pensamientopensamiento":"relax"},{"Type":"BehaviorDesigner.Runtime.Tasks.Tutorials.Seek","NodeData":{"Offset":"(132.8519,117.647156)"},"ID":45,"Name":"Seek","Instant":true,"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":35},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"}}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MiPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true,"GameObjectmValue":36},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"targetVector","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CajaManager","IsShared":true,"GameObjectmValue":37},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ba\u00f1osManager","IsShared":true,"GameObjectmValue":38},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PapelerasManager","IsShared":true,"GameObjectmValue":39},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLLegada","IsShared":true,"SinglemValue":1.2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"CocinaManager","IsShared":true,"GameObjectmValue":40},{"Type":"BehaviorDesigner.Runtime.SharedUInt","Name":"itemMenuHaciendo","IsShared":true,"UInt32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"distanciaLlegada","IsShared":true,"SinglemValue":1.2},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPedido","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"numeroCaja","IsShared":true,"Int32mValue":0},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"MesasPedidosManager","IsShared":true,"GameObjectmValue":41},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"miPensamiento","IsShared":true}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -7718,7 +7724,7 @@ Transform:
   - {fileID: 670734933}
   - {fileID: 593814665}
   m_Father: {fileID: 981041126}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 10, z: 0}
 --- !u!1 &1004298784
 GameObject:
@@ -8501,6 +8507,10 @@ MonoBehaviour:
   comer: {fileID: 0}
   esperar: {fileID: 0}
   relax: {fileID: 0}
+  cajaRegistradora: {fileID: 0}
+  satisfecho: {fileID: 0}
+  hacerPedido: {fileID: 0}
+  recogerPedido: {fileID: 0}
   tiempoMostrar: 2
   miImagen: {fileID: 0}
 --- !u!212 &1132635097
@@ -10187,7 +10197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuDefecto: {fileID: 461975695918182528, guid: d0f3e64466636a74aa6de425334a8e3b,
     type: 3}
-  clientePrefab: {fileID: 5459841688573554183, guid: 642d61ab4f047e546aa949e5f3a873bd,
+  clientePrefab: {fileID: 5292541307666497536, guid: 642d61ab4f047e546aa949e5f3a873bd,
     type: 3}
   uiManager: {fileID: 1076530127}
   elementosSiguientePedido: 
@@ -10586,7 +10596,7 @@ Transform:
   m_Children:
   - {fileID: 1577065755}
   m_Father: {fileID: 981041126}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!195 &1382431145
 NavMeshAgent:
@@ -10936,7 +10946,7 @@ Transform:
   m_Children:
   - {fileID: 93080991}
   m_Father: {fileID: 981041126}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!195 &1408092296
 NavMeshAgent:
@@ -13660,6 +13670,10 @@ MonoBehaviour:
   comer: {fileID: 0}
   esperar: {fileID: 0}
   relax: {fileID: 0}
+  cajaRegistradora: {fileID: 0}
+  satisfecho: {fileID: 0}
+  hacerPedido: {fileID: 0}
+  recogerPedido: {fileID: 0}
   tiempoMostrar: 2
   miImagen: {fileID: 0}
 --- !u!114 &1850213386
@@ -13724,9 +13738,9 @@ Canvas:
   m_TargetDisplay: 0
 --- !u!4 &1851918139 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+  m_CorrespondingSourceObject: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
     type: 3}
-  m_PrefabInstance: {fileID: 5459841689018462933}
+  m_PrefabInstance: {fileID: 5292541307685045469}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861369880
 GameObject:
@@ -15538,344 +15552,314 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139547381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &5459841689018462933
+--- !u!1001 &5292541307685045469
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 981041126}
     m_Modifications:
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 1314829518}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[2]
-      value: 
-      objectReference: {fileID: 1409656293}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[3]
-      value: 
-      objectReference: {fileID: 320027770}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[4]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[5]
-      value: 
-      objectReference: {fileID: 597980723}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[6]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[8]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[9]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[10]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[11]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[12]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[13]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[14]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[15]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[16]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[17]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[18]
-      value: 
-      objectReference: {fileID: 1409656293}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[19]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[20]
-      value: 
-      objectReference: {fileID: 1409656293}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[21]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[22]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[23]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[24]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[25]
-      value: 
-      objectReference: {fileID: 320027770}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[26]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[27]
-      value: 
-      objectReference: {fileID: 320027770}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[28]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[29]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[30]
-      value: 
-      objectReference: {fileID: 320027770}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[31]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[32]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[33]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[34]
-      value: 
-      objectReference: {fileID: 597980723}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[35]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[36]
-      value: 
-      objectReference: {fileID: 597980723}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[37]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[38]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[39]
-      value: 
-      objectReference: {fileID: 597980723}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[40]
-      value: 
-      objectReference: {fileID: 919172828}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[41]
-      value: 
-      objectReference: {fileID: 1314829518}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[42]
-      value: 
-      objectReference: {fileID: 1505748106}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[43]
-      value: 
-      objectReference: {fileID: 1409656293}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[44]
-      value: 
-      objectReference: {fileID: 320027770}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[45]
-      value: 
-      objectReference: {fileID: 597980723}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[46]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[47]
-      value: 
-      objectReference: {fileID: 1314829518}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[48]
-      value: 
-      objectReference: {fileID: 320027770}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[49]
-      value: 
-      objectReference: {fileID: 597980723}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[50]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[51]
-      value: 
-      objectReference: {fileID: 1314829518}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[52]
-      value: 
-      objectReference: {fileID: 729050096}
-    - target: {fileID: 5459841688573554176, guid: 642d61ab4f047e546aa949e5f3a873bd,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[53]
-      value: 
-      objectReference: {fileID: 2071865258}
-    - target: {fileID: 5459841688573554183, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541307666497536, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_Name
       value: Cliente
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841688573554183, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541307666497536, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 1314829518}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1409656293}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 320027770}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 597980723}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[8]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[9]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[10]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[11]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[12]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[13]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[14]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[15]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[16]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[17]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[18]
+      value: 
+      objectReference: {fileID: 1409656293}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[19]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[20]
+      value: 
+      objectReference: {fileID: 1409656293}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[21]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[22]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[23]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[24]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[25]
+      value: 
+      objectReference: {fileID: 320027770}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[26]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[27]
+      value: 
+      objectReference: {fileID: 320027770}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[28]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[29]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[30]
+      value: 
+      objectReference: {fileID: 320027770}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[31]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[32]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[33]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[34]
+      value: 
+      objectReference: {fileID: 597980723}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[35]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[36]
+      value: 
+      objectReference: {fileID: 597980723}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[37]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[38]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[39]
+      value: 
+      objectReference: {fileID: 597980723}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[40]
+      value: 
+      objectReference: {fileID: 919172828}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[41]
+      value: 
+      objectReference: {fileID: 1314829518}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[42]
+      value: 
+      objectReference: {fileID: 1505748106}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[43]
+      value: 
+      objectReference: {fileID: 1409656293}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[44]
+      value: 
+      objectReference: {fileID: 320027770}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[45]
+      value: 
+      objectReference: {fileID: 597980723}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[46]
+      value: 
+      objectReference: {fileID: 729050096}
+    - target: {fileID: 5292541307666497597, guid: 642d61ab4f047e546aa949e5f3a873bd,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[47]
+      value: 
+      objectReference: {fileID: 1314829518}
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 23
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.21
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.55
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 7.8
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9961947
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.08715578
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 5459841689721140718, guid: 642d61ab4f047e546aa949e5f3a873bd,
+    - target: {fileID: 5292541308123218918, guid: 642d61ab4f047e546aa949e5f3a873bd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0

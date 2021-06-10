@@ -7,7 +7,7 @@
     public enum Pensamiento
     {
         hamburguesa, patatas, bebida,
-        helado, baño, papelera, comer, esperar, relax
+        helado, baño, papelera, comer, esperar, relax, cajaregistradora, satisfecho, hacerPedido, recogerPedido
     };
 
     public class AgentePiensa : MonoBehaviour
@@ -23,6 +23,10 @@
         public Sprite comer;
         public Sprite esperar;
         public Sprite relax;
+        public Sprite cajaRegistradora;
+        public Sprite satisfecho;
+        public Sprite hacerPedido;
+        public Sprite recogerPedido;
 
         public float tiempoMostrar = 2;
         private float timer;
@@ -113,6 +117,22 @@
 
                 case Pensamiento.relax:
                     miImagen.sprite = relax;
+                    break;
+
+                case Pensamiento.cajaregistradora:
+                    miImagen.sprite = cajaRegistradora;
+                    break;
+
+                case Pensamiento.satisfecho:
+                    miImagen.sprite = satisfecho;
+                    break;
+
+                case Pensamiento.hacerPedido:
+                    miImagen.sprite = hacerPedido;
+                    break;
+
+                case Pensamiento.recogerPedido:
+                    miImagen.sprite = recogerPedido;
                     break;
             }
             timer = tiempoMostrar;
