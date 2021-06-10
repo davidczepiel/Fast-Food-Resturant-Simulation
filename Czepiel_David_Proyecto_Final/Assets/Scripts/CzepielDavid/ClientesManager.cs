@@ -9,7 +9,7 @@
         public List<List<bool>> menusPersonalizados = new List<List<bool>>();
         public GameObject menuDefecto;
         public GameObject clientePrefab;
-
+        public UIManager uiManager;
         public List<bool> elementosSiguientePedido = new List<bool>();
 
         public Vector3 posSpwan;
@@ -26,6 +26,7 @@
             elementosSiguientePedido.Add(false);
             elementosSiguientePedido.Add(false);
             elementosSiguientePedido.Add(false);
+            uiManager.mostrarElementos(elementosSiguientePedido);
         }
 
         // Update is called once per frame
@@ -70,6 +71,7 @@
         public void toggleMenuItem(int item)
         {
             elementosSiguientePedido[item] = !elementosSiguientePedido[item];
+            uiManager.cambiarVisibilidadElemento((MenuItem)item);
         }
 
         public void generarPedido()
