@@ -11,24 +11,26 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Esta condición tiene como objetivo preguntar a un manager de lugares desgastables por si tiene\n" +
+        "algún lugar desgastado para ir a arreglarlo, en caso de que tenga algo que reparar le pido que me diga el qué, para ir a arreglarlo")]
     public class HayLugarQueReparar : Conditional
     {
-        public SharedGameObject papeleras;
+        //Manager al que voy a preguntar por cosas que arreglar
+        public SharedGameObject lugaresManager;
 
+        //Variable en la que voy a almacenar el lugar que pueda necesitar ser reparado
         public SharedGameObject miTarget;
 
         public override TaskStatus OnUpdate()
         {
-            if (papeleras.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
+            //Pregunto por lugares que reparar, si los hay me quedo con uno de ellos para ir a repararlo
+            if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
             {
-                miTarget.Value = papeleras.Value.GetComponent<LugaresDesgastablesManager>().dameLugarParaArreglar();
+                miTarget.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarParaArreglar();
                 return TaskStatus.Success;
             }
             else
-            {
                 return TaskStatus.Failure;
-            }
         }
     }
 }

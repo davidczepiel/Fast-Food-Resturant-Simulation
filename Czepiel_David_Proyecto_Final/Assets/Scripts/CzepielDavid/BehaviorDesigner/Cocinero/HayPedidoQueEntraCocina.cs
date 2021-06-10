@@ -30,7 +30,7 @@
         {
             if (caja.hayPedidosParaEmpezar())
             {
-                pedido.Value = caja.pedidoPorEmpezar();
+                pedido.Value = caja.damePedidoPorEmpezar();
                 return TaskStatus.Success;
             }
             else

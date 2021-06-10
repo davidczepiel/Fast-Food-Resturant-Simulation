@@ -11,10 +11,10 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Esta condición tiene como objetivo comprobar si hay clientes en alguna de las cajas esperando\n" +
+        "En caso de que haya algún cliente, pregunto por la caja en la que se encuentra y me la quedo para ir a atenderle")]
     public class HayClientesCola : Conditional
     {
-        public SharedGameObject miTarget;
         public SharedGameObject cajaManager;
         private CajaManager caja;
         public SharedInt numCaja;
@@ -26,9 +26,10 @@
 
         public override TaskStatus OnUpdate()
         {
-            if (caja.hayClientesParaPedir())
+            //Si hay alguna caja con clientes que atender me quedo su número para ir a atender
+            if (caja.hayClientesEnColaParaPedir())
             {
-                numCaja.Value = caja.dameCajaAtender();
+                numCaja.Value = caja.dameNumeroDeCajaQueAtender();
                 return TaskStatus.Success;
             }
             else

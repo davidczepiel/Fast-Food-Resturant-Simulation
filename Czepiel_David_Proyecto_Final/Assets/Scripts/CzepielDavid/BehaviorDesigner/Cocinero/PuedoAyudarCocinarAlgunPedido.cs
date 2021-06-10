@@ -42,7 +42,7 @@
         {
             if (cocina.hayPedidosHaciendose())
             {
-                pedido.Value = cocina.pedidoEnElQueAyudar(posibilidadesAyuda);
+                pedido.Value = cocina.damePedidoEnElQueAyudar(posibilidadesAyuda);
                 if (pedido.Value != null)
                     return true;
                 else

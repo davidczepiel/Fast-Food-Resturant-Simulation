@@ -11,11 +11,15 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite ser entregado por un cajero")]
     public class HayPedidoQueEntregar : Conditional
     {
+        //Manager de la caja al que voy a preguntar por cosas relacionadas con los pedidos
         public SharedGameObject cajaManager;
+
+        //Variable en la que voy a almacenar un posible pedido que necesite ser entregado por un cajero
         public SharedGameObject miPedido;
+
         private CajaManager caja;
 
         public override void OnStart()
@@ -25,9 +29,10 @@
 
         public override TaskStatus OnUpdate()
         {
+            //Si hay algún pedido que necesite ser entregado me lo quedo
             if (caja.hayPedidosParaRecoger())
             {
-                miPedido.Value = caja.pedidoPorEntregar();
+                miPedido.Value = caja.damePedidoPorEntregar();
                 return TaskStatus.Success;
             }
             else

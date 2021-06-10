@@ -607,6 +607,7 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayPedidosQueCompletar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayPedidosQueEntregar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\IncluirItemMenu.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\PreparacionCajero.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\PuedoAyudarCompletarAlgunPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\RepararElemento.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\SeleccionarElementoCompletarMenu.cs" />
@@ -628,12 +629,11 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\Cocinar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoEnElQueAyudar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoQueEntraCocina.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoQueHacer.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoQueTerminoCocina.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidosQueTratar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PedidoNecesitaSerCocinado.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PedidoParteCocinaTerminado.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PedidoYaNoNecesitaCocina.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PreparacionCocinero.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PuedoAyudarCocinarAlgunPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\SeleccionarElementoCocinar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\ColaManager.cs" />

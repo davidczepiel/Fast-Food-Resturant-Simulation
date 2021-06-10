@@ -1,9 +1,9 @@
 ﻿namespace UCM.IAV.Movimiento
 {
     using System.Collections;
-    using System.Collections.Generic;
     using Bolt;
     using Ludiq;
+    using System.Collections.Generic;
     using UnityEngine;
     using BehaviorDesigner.Runtime;
     using BehaviorDesigner.Runtime.Tasks;
@@ -11,21 +11,24 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite se esté haciendo y le quede algún item\n" +
+        "que todacía no se ha empezado a hacer y puedo ayudar con ello")]
     public class PuedoAyudarCompletarAlgunPedido : Conditional
     {
+        //Caja a la que le voy a preguntar si puedo ayudar en algo con las opciones que puedo cocinar
         public SharedGameObject cajaManager;
-        public SharedGameObject cocinaManager;
+
         private CajaManager caja;
-        private CocinaManager cocina;
+
+        //Variable que va a almacenar un posible pedido en el que pueda ayudar en algo
         public SharedGameObject pedido;
 
+        //Lista de elementos en los que puedo ayudar a cocinar un menu
         public List<int> posibilidadesAyuda;
 
         public override void OnStart()
         {
             caja = cajaManager.Value.GetComponent<CajaManager>();
-            cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
         public override TaskStatus OnUpdate()
@@ -40,9 +43,10 @@
 
         private bool pedidosParaAyudar()
         {
+            //Si hay algo que se esté completando pregunto si puedo ayudar en algo
             if (caja.hayPedidosParaCompletar())
             {
-                pedido.Value = caja.pedidoEnElQueAyudar(posibilidadesAyuda);
+                pedido.Value = caja.damePedidoEnElQueAyudar(posibilidadesAyuda);
                 if (pedido.Value != null)
                     return true;
                 else

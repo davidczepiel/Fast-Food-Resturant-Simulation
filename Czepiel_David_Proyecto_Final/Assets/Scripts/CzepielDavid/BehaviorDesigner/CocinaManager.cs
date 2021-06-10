@@ -136,7 +136,7 @@
             return pedidosHaciendose.Contains(pedido);
         }
 
-        public GameObject pedidoEnElQueAyudar(List<int> posiblesElementos)
+        public GameObject damePedidoEnElQueAyudar(List<int> posiblesElementos)
         {
             GameObject pedido = null;
             int i = 0;

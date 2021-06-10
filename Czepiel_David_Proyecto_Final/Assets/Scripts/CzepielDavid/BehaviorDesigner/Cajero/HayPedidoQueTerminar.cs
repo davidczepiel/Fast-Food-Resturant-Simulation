@@ -11,10 +11,13 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Esta condición tiene como objetivo preguntar si hay algún pedido que necesite ser entregado\n" +
+        "o necesite ser completado por un cajero")]
     public class HayPedidoQueTerminar : Conditional
     {
+        //Manager de la caja al que voy a preguntar cosas sobre los pedidos
         public SharedGameObject cajaManager;
+
         private CajaManager caja;
 
         public override void OnStart()
@@ -30,14 +33,6 @@
             }
             else
                 return TaskStatus.Failure;
-        }
-
-        public override void OnConditionalAbort()
-        {
-            int a;
-            a = 0;
-            a += a;
-            //manager.Value.GetComponent<LugaresDesgastablesManager>().repararLugar(target.Value);
         }
     }
 }

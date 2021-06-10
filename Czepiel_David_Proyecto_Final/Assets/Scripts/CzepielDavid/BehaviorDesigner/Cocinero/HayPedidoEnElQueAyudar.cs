@@ -37,7 +37,7 @@
                 posibilidadesAyuda.Add((int)MenuItem.Hamburguesa);
                 posibilidadesAyuda.Add((int)MenuItem.Patatas);
 
-                pedido.Value = cocina.pedidoEnElQueAyudar(posibilidadesAyuda);
+                pedido.Value = cocina.damePedidoEnElQueAyudar(posibilidadesAyuda);
                 if (pedido.Value != null)
                 {
                     return TaskStatus.Success;

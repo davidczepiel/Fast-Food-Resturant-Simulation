@@ -11,11 +11,15 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite ser completado por un cajero")]
     public class HayPedidoQueCompletar : Conditional
     {
+        //Manager de la caja al que voy a preguntar por cosas de los pedidos
         public SharedGameObject cajaManager;
+
+        //Variable en la que voy a almacenar un posible pedido que necesite ser completado por un cajero
         public SharedGameObject miPedido;
+
         private CajaManager caja;
 
         public override void OnStart()
@@ -25,9 +29,10 @@
 
         public override TaskStatus OnUpdate()
         {
+            //Si hay algún pedido que completar me lo quedo
             if (caja.hayPedidosParaCompletar())
             {
-                miPedido.Value = caja.pedidoPorCompletar();
+                miPedido.Value = caja.damePedidoPorCompletar();
                 caja.añadirPedidoPorCompletar(miPedido.Value);
                 return TaskStatus.Success;
             }

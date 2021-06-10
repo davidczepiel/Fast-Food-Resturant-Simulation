@@ -11,26 +11,29 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
+        "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo ")]
     public class Cocinar : Action
     {
-        public SharedGameObject cajaManager;
-        public SharedGameObject cocinaManager;
+        //Menu en el que vamos a contribuir
         public SharedGameObject miMenu;
+
+        //Item que vamos a cocinar
         public SharedUInt itemCocinando;
-        private CajaManager caja;
-        private CocinaManager cocina;
+
+        //Tiempo que vamos a tardar en cocinar cualquier cosa
         public float tiempoCocinar = 2;
+
         private float timer;
 
         public override void OnStart()
         {
             timer = tiempoCocinar;
-            caja = cajaManager.Value.GetComponent<CajaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
+            //Mientras no se haya terminado el temporizador significa que seguimos cocinando
             timer -= Time.deltaTime;
             if (timer <= 0)
             {

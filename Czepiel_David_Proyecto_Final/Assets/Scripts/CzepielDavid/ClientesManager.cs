@@ -9,6 +9,8 @@
         public List<List<bool>> menusPersonalizados = new List<List<bool>>();
         public GameObject menuDefecto;
         public GameObject clientePrefab;
+        public GameObject cajeroPrefab;
+        public GameObject cocineroPrefab;
         public UIManager uiManager;
         public List<bool> elementosSiguientePedido = new List<bool>();
 
@@ -34,6 +36,14 @@
         {
             timer -= Time.deltaTime;
 
+            if (Input.GetKeyDown("space"))
+            {
+                Instantiate(cajeroPrefab, posSpwan, Quaternion.identity);
+            }
+            if (Input.GetKeyUp("space"))
+            {
+                Instantiate(cocineroPrefab, posSpwan, Quaternion.identity);
+            }
             if (timer <= 0)
             {
                 timer = cadencia;

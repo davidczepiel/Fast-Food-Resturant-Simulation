@@ -11,15 +11,19 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo incluir un elemento que esté cocinado en un menu que tengamos")]
     public class IncluirItemMenu : Action
     {
+        //Caja a la que le voy a informar sobre el pedido que estoy completando
         public SharedGameObject cajaManager;
-        public SharedGameObject cocinaManager;
+
+        //Variable que contiene el menu que estoy completando
         public SharedGameObject miMenu;
+
+        //Elemento que estoy añadiendo al menú
         public SharedUInt itemCocinando;
+
         private CajaManager caja;
-        private CocinaManager cocina;
 
         public override void OnStart()
         {
@@ -28,6 +32,7 @@
 
         public override TaskStatus OnUpdate()
         {
+            //Añado el item al menu y pregunto si está completado, en cuyo caso le indico a la caja que lo incorpore a la lista de pedidos por entregar
             miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
             if (miMenu.Value.GetComponent<Menu>().menuCompletado())
             {
