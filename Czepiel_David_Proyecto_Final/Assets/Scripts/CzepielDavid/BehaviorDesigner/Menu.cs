@@ -8,6 +8,8 @@
 
     public class Menu : MonoBehaviour
     {
+        public List<GameObject> misCosas;
+
         private List<bool> elementosMenu = new List<bool>() { false, false, false, false };
         private List<bool> elementosHaciendose = new List<bool>() { false, false, false, false };
         private List<bool> pedido = new List<bool>() { false, false, false, false };
@@ -23,15 +25,12 @@
 
         private void Start()
         {
-            //for (int i = 0; i < 4; i++)
-            //{
-            //    elementosMenu.Add(false);
-            //    elementosHaciendose.Add(false);
-            //    pedido.Add(false);
-            //}
+            for (int i = 0; i < misCosas.Count; i++)
+            {
+                misCosas[i].SetActive(false);
+            }
         }
 
-        // Update is called once per frame
         private void Update()
         {
         }
@@ -70,6 +69,7 @@
         public void itemMenuCompletado(MenuItem item)
         {
             elementosMenu[(int)item] = true;
+            misCosas[(int)item].SetActive(true);
             itemsParaComer++;
         }
 
@@ -111,10 +111,6 @@
             return recogido;
         }
 
-        /// <summary>
-        /// Devuelve true/false dependiendo de si ha terminado de comer los elementos principales (helado no)
-        /// </summary>
-        /// <returns></returns>
         public bool comer()
         {
             while (ordenComer < elementosMenu.Count && !elementosMenu[ordenComer]) ordenComer++;
