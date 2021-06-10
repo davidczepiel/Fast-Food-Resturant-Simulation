@@ -640,6 +640,8 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\DejarBandejaMesas.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\DejarItemBandeja.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Menu.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\MostrarPensamiento.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\conseguirPensamiento.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\ClientesManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresDesgastablesManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresManager.cs" />

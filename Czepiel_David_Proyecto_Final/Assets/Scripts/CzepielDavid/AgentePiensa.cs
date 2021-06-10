@@ -1,68 +1,122 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class AgentePiensa : MonoBehaviour
+﻿namespace UCM.IAV.Movimiento
 {
-    public GameObject camera;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
 
-    public Sprite hamburguesa;
-    public Sprite patatas;
-    public Sprite helado;
-    public Sprite bebida;
-
-    public float tiempoMostrar = 2;
-    private float timer;
-
-    public enum Pensamiento { hamburguesa, patatas, bebida, helado };
-
-    public SpriteRenderer miImagen;
-
-    // Start is called before the first frame update
-    private void Start()
+    public enum Pensamiento
     {
-        timer = tiempoMostrar;
-        camera = GameObject.Find("Main Camera");
-        miImagen = GetComponent<SpriteRenderer>();
-    }
+        hamburguesa, patatas, bebida,
+        helado, baño, papelera, comer, esperar, relax
+    };
 
-    // Update is called once per frame
-    private void Update()
+    public class AgentePiensa : MonoBehaviour
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0)
+        public GameObject camera;
+
+        public Sprite hamburguesa;
+        public Sprite patatas;
+        public Sprite bebida;
+        public Sprite helado;
+        public Sprite baño;
+        public Sprite papelera;
+        public Sprite comer;
+        public Sprite esperar;
+        public Sprite relax;
+
+        public float tiempoMostrar = 2;
+        private float timer;
+
+        public SpriteRenderer miImagen;
+
+        // Start is called before the first frame update
+        private void Start()
         {
-            miImagen.enabled = false;
+            timer = tiempoMostrar;
+            camera = GameObject.Find("Main Camera");
+            miImagen = GetComponent<SpriteRenderer>();
         }
-        this.transform.forward = (camera.transform.position - this.transform.position).normalized;
 
-        if (Input.GetKeyDown("space"))
+        // Update is called once per frame
+        private void Update()
         {
-            mostrarImagen(Pensamiento.hamburguesa);
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                miImagen.enabled = false;
+            }
+            this.transform.forward = (camera.transform.position - this.transform.position).normalized;
+
+            if (Input.GetKeyDown("space"))
+            {
+                mostrarImagen(Pensamiento.hamburguesa);
+            }
         }
-    }
 
-    public void mostrarImagen(Pensamiento nuevo)
-    {
-        switch (nuevo)
+        public void mostrarImagen(MenuItem nuevo)
         {
-            case Pensamiento.hamburguesa:
-                timer = tiempoMostrar;
-                miImagen.enabled = true;
-                miImagen.sprite = hamburguesa;
-                break;
+            switch (nuevo)
+            {
+                case MenuItem.Hamburguesa:
+                    mostrarImagen(Pensamiento.hamburguesa);
+                    break;
 
-            case Pensamiento.patatas:
-                timer = tiempoMostrar;
-                miImagen.enabled = true;
-                miImagen.sprite = patatas;
-                break;
+                case MenuItem.Patatas:
+                    mostrarImagen(Pensamiento.patatas);
+                    break;
 
-            case Pensamiento.bebida:
-                break;
+                case MenuItem.Bebida:
+                    mostrarImagen(Pensamiento.bebida);
+                    break;
 
-            case Pensamiento.helado:
-                break;
+                case MenuItem.Helado:
+                    mostrarImagen(Pensamiento.helado);
+                    break;
+            }
+        }
+
+        public void mostrarImagen(Pensamiento nuevo)
+        {
+            switch (nuevo)
+            {
+                case Pensamiento.hamburguesa:
+                    miImagen.sprite = hamburguesa;
+                    break;
+
+                case Pensamiento.patatas:
+                    miImagen.sprite = patatas;
+                    break;
+
+                case Pensamiento.bebida:
+                    miImagen.sprite = bebida;
+                    break;
+
+                case Pensamiento.helado:
+                    miImagen.sprite = helado;
+                    break;
+
+                case Pensamiento.baño:
+                    miImagen.sprite = baño;
+                    break;
+
+                case Pensamiento.papelera:
+                    miImagen.sprite = papelera;
+                    break;
+
+                case Pensamiento.comer:
+                    miImagen.sprite = comer;
+                    break;
+
+                case Pensamiento.esperar:
+                    miImagen.sprite = esperar;
+                    break;
+
+                case Pensamiento.relax:
+                    miImagen.sprite = relax;
+                    break;
+            }
+            timer = tiempoMostrar;
+            miImagen.enabled = true;
         }
     }
 }
