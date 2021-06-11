@@ -11,24 +11,27 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
+        "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo ")]
     public class SerAtendido : Action
     {
-        [Tooltip("Silla para sentarme")]
+        //Pedido que voy a hacer
         public SharedGameObject miPedido;
 
+        //Caja a la que le voy a solicitar mi pedido
         public SharedGameObject cajaManager;
-        private CajaManager caja;
+
+        //Caja en la que estoy siendo atendido
         private int miNumeroCaja;
 
         public override void OnStart()
         {
-            //    caja = cajaManager.Value.GetComponent<CajaManager>();
             miNumeroCaja = cajaManager.Value.GetComponent<CajaManager>().darCajaCliente();
         }
 
         public override TaskStatus OnUpdate()
         {
+            //Mientras no me atiendad, sigo esperando
             if (cajaManager.Value.GetComponent<CajaManager>().meHanAtendido(miNumeroCaja))
             {
                 cajaManager.Value.GetComponent<CajaManager>().hacerPedido(miNumeroCaja, miPedido.Value);

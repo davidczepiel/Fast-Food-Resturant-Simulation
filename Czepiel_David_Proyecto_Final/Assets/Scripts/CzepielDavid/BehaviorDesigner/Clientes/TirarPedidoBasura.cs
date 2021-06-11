@@ -11,10 +11,10 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo eliminar el pedido que un cliente tiene en brazos")]
     public class TirarPedidoBasura : Action
     {
-        [Tooltip("Silla para sentarme")]
+        //Pedido que voy a tirar
         public SharedGameObject miPedido;
 
         public override TaskStatus OnUpdate()

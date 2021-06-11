@@ -11,19 +11,14 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo liberar uno de los lugares que alguno de los clientes haya estado ocupando ")]
     public class LiberarLugar : Action
     {
-        [Tooltip("Silla para sentarme")]
-        public SharedGameObject miPedido;
-
+        //Lugar que he estado ocupando y que voy a liberra
         public SharedGameObject miTarget;
-        public SharedGameObject lugaresManager;
 
-        public override void OnStart()
-        {
-            //lugaresManager = GlobalVariables.Instance.GetVariable("PapelerasManager").ConvertTo<SharedGameObject>().Value;
-        }
+        //manager al que le voy a indicar que he liberado el lugar
+        public SharedGameObject lugaresManager;
 
         public override TaskStatus OnUpdate()
         {

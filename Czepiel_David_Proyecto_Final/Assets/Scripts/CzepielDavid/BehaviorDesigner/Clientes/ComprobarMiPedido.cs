@@ -11,12 +11,14 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo comprobar el pedido un cliente ha solicitado para ver si está listo\n" +
+        "En caso de que esté listo el cliente proseguirá a comerlo ")]
     public class ComprobarMiPedido : Conditional
     {
-        [Tooltip("The first variable to compare")]
+        //Variable que almacena el menu que el cliente va a estar esperado
         public SharedGameObject variable;
 
+        //Lugar al que voy a ir una vez que mi pedido esté listo para llevarmelo
         public SharedGameObject miTarget;
 
         private Menu miMenu;
@@ -28,6 +30,7 @@
 
         public override TaskStatus OnUpdate()
         {
+            //Si mi pedido está listo voy a por él, sino me quedo esperando
             if (miMenu.getListo())
             {
                 miTarget.Value = GameObject.Find("LugarRecogerPedido");

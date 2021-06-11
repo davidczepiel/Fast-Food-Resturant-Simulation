@@ -612,12 +612,10 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\RepararElemento.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\SeleccionarElementoCompletarMenu.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\BuscarLugarEsperar.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\BuscarLugarSentarme.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\ClienteSeVa.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Comer.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\ComprobarMiPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\EsperarEnCola.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\EsperarPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\LiberarLugar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\NecesitoIrBaño.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\PonermeEnLaCola.cs" />

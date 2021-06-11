@@ -11,7 +11,8 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
+        "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo ")]
     public class Comer : Action
     {
         [Tooltip("Silla para sentarme")]
@@ -32,12 +33,6 @@
             timer = tiempoComerAlgo;
         }
 
-        /// <summary>
-        /// Esta tarea se hace cargo de el fantasma pille a la cantante
-        /// y de avisarla de esto, modificando sus variables y tambien
-        /// cambiando las variables globales para que el fantasma continue con sus acciones
-        /// </summary>
-        /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
             float a = Time.deltaTime;

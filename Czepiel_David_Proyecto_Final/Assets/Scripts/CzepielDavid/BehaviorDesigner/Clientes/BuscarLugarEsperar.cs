@@ -11,10 +11,14 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo buscar un lugar en el que ponerme a esperar\n" +
+        "El agente va a tomar un target como posición y mediante unos offsets va a decidir una posición cercana en la que esperar ")]
     public class BuscarLugarEsperar : Action
     {
+        //Posición alrededor de la que esperaré
         public SharedVector3 targetVector;
+
+        //Offsets de separación de la posición original
         public Vector3 offsets;
 
         public override TaskStatus OnUpdate()
@@ -25,7 +29,6 @@
             desplazamiento.z = (offsets.z * ((float)Random.Range(-100, 100) / (float)100));
 
             targetVector.Value = desplazamiento + GameObject.Find("EsperarPedido").transform.position;
-
             return TaskStatus.Success;
         }
     }

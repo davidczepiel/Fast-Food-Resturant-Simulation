@@ -11,19 +11,17 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo comprobar si el bool de irBaño de un cliente es cierto " +
+        "para determinar si necesita ir al baño o no")]
     public class NecesitoIrAlBaño : Conditional
     {
-        public SharedGameObject variable;
-
+        //Bool que vamos a comprobar para realizar un comportamiento u otro
         public SharedBool irBaño;
 
         public override TaskStatus OnUpdate()
         {
-            if (irBaño.Value)
-                return TaskStatus.Success;
-            else
-                return TaskStatus.Failure;
+            if (irBaño.Value) return TaskStatus.Success;
+            else return TaskStatus.Failure;
         }
     }
 }
