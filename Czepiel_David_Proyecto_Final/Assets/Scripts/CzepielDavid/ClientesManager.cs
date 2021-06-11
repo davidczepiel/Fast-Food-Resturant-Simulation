@@ -112,31 +112,6 @@
             Instantiate(clientePrefab, posSpwan, Quaternion.identity);
         }
 
-        /*        public GameObject dameUnMenuHecho()
-        {
-            GameObject nuevo = Instantiate(menuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-
-            //if (menusPersonalizados.Count > 0)
-            //{
-            //    Menu actual = menusPersonalizados[0];
-            //    menusPersonalizados.RemoveAt(0);
-            //    return nuevo;
-            //}
-            //else
-            //{
-            Menu defecto = nuevo.GetComponent<Menu>();
-            defecto.añadirItemAlPedido(MenuItem.Hamburguesa);
-            defecto.añadirItemAlPedido(MenuItem.Patatas);
-            defecto.añadirItemAlPedido(MenuItem.Bebida);
-            defecto.añadirItemAlPedido(MenuItem.Helado);
-            defecto.itemMenuCompletado(MenuItem.Hamburguesa);
-            defecto.itemMenuCompletado(MenuItem.Patatas);
-            defecto.itemMenuCompletado(MenuItem.Bebida);
-            defecto.itemMenuCompletado(MenuItem.Helado);
-            return nuevo;
-            //}
-        }*/
-
         /// <summary>
         /// Se destruye el cliente que ha terminado su árbol de comportamiento
         /// </summary>

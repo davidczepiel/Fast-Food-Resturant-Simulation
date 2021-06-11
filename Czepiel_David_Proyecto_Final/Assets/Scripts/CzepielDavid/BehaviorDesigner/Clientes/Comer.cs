@@ -12,7 +12,7 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
-        "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo ")]
+        "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo")]
     public class Comer : Action
     {
         [Tooltip("Silla para sentarme")]

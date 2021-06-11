@@ -26,7 +26,7 @@
 
         public override void OnStart()
         {
-            miNumeroCaja = cajaManager.Value.GetComponent<CajaManager>().darCajaCliente();
+            miNumeroCaja = cajaManager.Value.GetComponent<CajaManager>().dameCajaParaQueMeAtiendan();
         }
 
         public override TaskStatus OnUpdate()
