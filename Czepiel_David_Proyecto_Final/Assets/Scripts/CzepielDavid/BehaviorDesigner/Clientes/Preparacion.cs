@@ -35,7 +35,7 @@
             distanciaLlegada.Value = 1.2f;
             irBaño.Value = false;
 
-            GameObject pedido = clientesManager.Value.GetComponent<ClientesManager>().dameUnMenu();
+            GameObject pedido = clientesManager.Value.GetComponent<AgentesManager>().dameUnMenu();
             miPedido.Value = pedido;
             return TaskStatus.Success;
         }

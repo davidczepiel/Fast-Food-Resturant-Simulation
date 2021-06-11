@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using UnityEngine;
 
-    public class ClientesManager : MonoBehaviour
+    public class AgentesManager : MonoBehaviour
     {
         //Lista de menus personalizados que el player solicita
         public List<List<bool>> menusPersonalizados = new List<List<bool>>();
@@ -26,7 +26,14 @@
         //Lista de elementos que va a tener el siguiente menu que vayamos a solicitar
         public List<bool> elementosSiguientePedido = new List<bool>();
 
-        public Vector3 posSpwan;
+        //Spawn de los clientes
+        public Vector3 posSpwanCliente;
+
+        //Spawn de los cajeros
+        public Vector3 posSpwanCajero;
+
+        //Spawn de los cocineros
+        public Vector3 posSpwanCcocinero;
 
         // Start is called before the first frame update
         private void Start()
@@ -36,19 +43,6 @@
             elementosSiguientePedido.Add(false);
             elementosSiguientePedido.Add(false);
             uiManager.mostrarElementos(elementosSiguientePedido);
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
-            if (Input.GetKeyDown("space"))
-            {
-                Instantiate(cajeroPrefab, posSpwan, Quaternion.identity);
-            }
-            if (Input.GetKeyUp("space"))
-            {
-                Instantiate(cocineroPrefab, posSpwan, Quaternion.identity);
-            }
         }
 
         /// <summary>
@@ -100,7 +94,7 @@
         /// Se genera un nuevo pedido con los datos que el jugador ha especificado a través de la UI
         /// Y se crea un cliente que vaya a solicitar dicho pedido
         /// </summary>
-        public void generarPedido()
+        public void generarCliente()
         {
             List<bool> nueva = new List<bool>();
             for (int i = 0; i < elementosSiguientePedido.Count; i++)
@@ -109,7 +103,23 @@
                 else nueva.Add(false);
             }
             menusPersonalizados.Add(nueva);
-            Instantiate(clientePrefab, posSpwan, Quaternion.identity);
+            Instantiate(clientePrefab, posSpwanCliente, Quaternion.identity);
+        }
+
+        /// <summary>
+        /// Este método tiene como objetivo crear un nuevo cajero
+        /// </summary>
+        public void generarCajero()
+        {
+            Instantiate(cajeroPrefab, posSpwanCajero, Quaternion.identity);
+        }
+
+        /// <summary>
+        /// Este método tiene como objetivo crear un nuevo cocinero
+        /// </summary>
+        public void generarCocinero()
+        {
+            Instantiate(cocineroPrefab, posSpwanCajero, Quaternion.identity);
         }
 
         /// <summary>

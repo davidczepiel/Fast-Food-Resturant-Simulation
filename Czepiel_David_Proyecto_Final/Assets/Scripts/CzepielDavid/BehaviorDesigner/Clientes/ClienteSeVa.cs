@@ -19,7 +19,7 @@
 
         public override TaskStatus OnUpdate()
         {
-            clientesManager.Value.GetComponent<ClientesManager>().clienteHaTerminado(this.gameObject);
+            clientesManager.Value.GetComponent<AgentesManager>().clienteHaTerminado(this.gameObject);
             return TaskStatus.Success;
         }
     }

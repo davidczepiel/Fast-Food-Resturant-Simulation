@@ -27,6 +27,12 @@
         //Desplazamiento entre clientes que esten en la cola
         public Vector3 desplazamiento;
 
+        public GameObject textoUsosRestantes;
+
+        public Vector3 desplazamientoTextoAereo = new Vector3(0, 2.5f, 0);
+
+        private List<GameObject> textosUsosRestantes = new List<GameObject>();
+
         //Lista de lugares ocupados
         private List<bool> ocupados = new List<bool>();
 
@@ -53,6 +59,12 @@
                 reparrables.Add(false);
                 usosRestantes.Add(usosHastaDesgaste);
                 timerRepararSolos.Add(tiempoRepararSolo);
+                textosUsosRestantes.Add(Instantiate(textoUsosRestantes, lugares[i].transform.position + desplazamientoTextoAereo, Quaternion.identity));
+            }
+
+            for (int i = 0; i < textosUsosRestantes.Count; i++)
+            {
+                textosUsosRestantes[i].GetComponent<TextoAereo>().ponerTexto(usosRestantes[i].ToString());
             }
         }
 
@@ -149,6 +161,7 @@
         {
             int result = lugares.FindIndex(element => element == libre);
             ocupados[result] = false;
+            textosUsosRestantes[result].GetComponent<TextoAereo>().ponerTexto(usosRestantes[result].ToString());
             if (usosRestantes[result] <= 0)
                 reparrables[result] = true;
         }
@@ -165,7 +178,8 @@
             {
                 ocupados[result] = false;
                 reparrables[result] = false;
-                usosRestantes[result] = 1;
+                usosRestantes[result] = usosHastaDesgaste;
+                textosUsosRestantes[result].GetComponent<TextoAereo>().ponerTexto(usosRestantes[result].ToString());
             }
         }
 
