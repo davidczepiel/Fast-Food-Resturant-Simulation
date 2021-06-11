@@ -619,7 +619,7 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\LiberarLugar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\NecesitoIrBaño.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\PonermeEnLaCola.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\Preparacion.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\PreparacionCliente.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\SerAtendido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TirarPedidoBasura.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TomarPedido.cs" />

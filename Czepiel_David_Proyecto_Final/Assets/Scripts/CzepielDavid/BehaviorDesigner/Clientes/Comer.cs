@@ -20,7 +20,7 @@
 
         private Menu miMenu;
 
-        public float tiempoComerAlgo = 1;
+        public float tiempoComerAlgo = 3;
 
         private float timer;
 

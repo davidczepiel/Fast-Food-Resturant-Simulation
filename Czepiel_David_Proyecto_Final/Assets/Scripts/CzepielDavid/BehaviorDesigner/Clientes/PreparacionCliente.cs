@@ -12,7 +12,7 @@
 
     [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
     [TaskDescription("Este task tiene como objetivo preparar las variables de los clientes para su correcto funcionamiento")]
-    public class Preparacion : Action
+    public class PreparacionCliente : Action
     {
         public SharedGameObject miPedido;
         public SharedGameObject miTarget;
@@ -22,6 +22,7 @@
         public SharedGameObject cajaManager;
         public SharedGameObject bañosManager;
         public SharedFloat distanciaLlegada;
+        public SharedGameObject calle;
         public SharedBool irBaño;
 
         public override TaskStatus OnUpdate()
@@ -32,6 +33,8 @@
             bañosManager.Value = GameObject.Find("Baño");
             cajaManager.Value = GameObject.Find("Mostrador");
             clientesManager.Value = GameObject.Find("ClientesManager");
+            calle.Value = GameObject.Find("Calle");
+
             distanciaLlegada.Value = 1.2f;
             irBaño.Value = false;
 
