@@ -11,12 +11,11 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo preparar las variables del cocinero antes de pasar a ejecutar el árbol de comportamiento"
+       )]
     public class PreparacionCocinero : Action
     {
-        [Tooltip("Silla para sentarme")]
         public SharedGameObject miPedido;
-
         public SharedGameObject miTarget;
         public SharedGameObject cocinaManager;
         public SharedGameObject cajaManager;
@@ -24,12 +23,6 @@
         public SharedFloat distanciaLlegada;
         public SharedGameObject mesasPedidos;
 
-        /// <summary>
-        /// Esta tarea se hace cargo de el fantasma pille a la cantante
-        /// y de avisarla de esto, modificando sus variables y tambien
-        /// cambiando las variables globales para que el fantasma continue con sus acciones
-        /// </summary>
-        /// <returns> Devuleve succes indicando que la tarea ha concluido exitosamente</returns>
         public override TaskStatus OnUpdate()
         {
             miTarget.Value = GameObject.Find("Cola");

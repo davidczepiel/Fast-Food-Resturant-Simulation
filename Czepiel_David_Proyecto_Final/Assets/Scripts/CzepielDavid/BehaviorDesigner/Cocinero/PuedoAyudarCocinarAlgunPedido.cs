@@ -11,20 +11,23 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos en la cocina en lo que el cocinero pueda ayudar \n" +
+        "en caso afirmativo el cocinero se lo lleva para trabajar en él")]
     public class PuedoAyudarCocinarAlgunPedido : Conditional
     {
-        public SharedGameObject cajaManager;
+        //Cocina manager al que le voy a preguntar por pedidos en los que peuda ayudar
         public SharedGameObject cocinaManager;
-        private CajaManager caja;
+
         private CocinaManager cocina;
+
+        //Variable que va a almacenar un posible pedido en el que el cocinero pueda ayudar en algo
         public SharedGameObject pedido;
 
+        //Lista de elementos en los que puede ayudar el cocinero
         public List<int> posibilidadesAyuda;
 
         public override void OnStart()
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
             cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
@@ -40,6 +43,7 @@
 
         private bool pedidosParaAyudar()
         {
+            //Si hay pedidos haciendose le pregunto por alguno en el que pueda ayudar
             if (cocina.hayPedidosHaciendose())
             {
                 pedido.Value = cocina.damePedidoEnElQueAyudar(posibilidadesAyuda);

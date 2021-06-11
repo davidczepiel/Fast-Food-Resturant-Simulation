@@ -11,23 +11,26 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos en la cocina que ya no necesiten ningún elemento cocinable \n" +
+        "en caso afirmativo el cocinero se lo lleva para darselo a los cajeros y que lo completen")]
     public class HayPedidoQueTerminoCocina : Conditional
     {
-        public SharedGameObject cajaManager;
+        //Cocina manager al que le voy a preguntar por los pedidos que me interesan
         public SharedGameObject cocinaManager;
-        private CajaManager caja;
+
         private CocinaManager cocina;
+
+        //Variable que va a almacenar el posible pedido que haya terminado de completar su parte de la cocina
         public SharedGameObject pedido;
 
         public override void OnStart()
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
             cocina = cocinaManager.Value.GetComponent<CocinaManager>();
         }
 
         public override TaskStatus OnUpdate()
         {
+            //Le pido un pedido de estos, si me da algo me lo quedo y lo saco de la cocina
             pedido.Value = cocina.pedidoTerminadoParteCocina();
             if (pedido.Value != null)
             {
