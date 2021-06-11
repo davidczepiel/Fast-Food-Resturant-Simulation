@@ -56,7 +56,7 @@
         {
             //Le pido a la cocina un lugar en el que pueda cocinar el item que coy a cocinar
             miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
-            miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagen((MenuItem)itemCocinando.Value);
+            miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagenMenuItem((MenuItem)itemCocinando.Value);
             return TaskStatus.Success;
         }
     }

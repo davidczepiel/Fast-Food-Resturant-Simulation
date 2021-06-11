@@ -12,7 +12,10 @@
 
     public class AgentePiensa : MonoBehaviour
     {
+        //Camara a la que nos vamos a mostrar
         public GameObject camera;
+
+        //Lista de sprites con los que vamos a trabajar
 
         public Sprite hamburguesa;
         public Sprite patatas;
@@ -29,60 +32,52 @@
         public Sprite recogerPedido;
         public Sprite pedidoCocinaTerminado;
 
-        public float tiempoMostrar = 2;
-        private float timer;
+        private SpriteRenderer miImagen;
 
-        public SpriteRenderer miImagen;
-
-        // Start is called before the first frame update
         private void Start()
         {
-            timer = tiempoMostrar;
             camera = GameObject.Find("Main Camera");
             miImagen = GetComponent<SpriteRenderer>();
         }
 
-        // Update is called once per frame
         private void Update()
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                miImagen.enabled = false;
-            }
             this.transform.forward = (camera.transform.position - this.transform.position).normalized;
-
-            if (Input.GetKeyDown("space"))
-            {
-                mostrarImagen(Pensamiento.hamburguesa);
-            }
         }
 
-        public void mostrarImagen(MenuItem nuevo)
+        /// <summary>
+        /// Ajustamos la imagen a mostrar a un item que nos indiquen
+        /// </summary>
+        /// <param name="item">item que queremos mostrar</param>
+        public void mostrarImagenMenuItem(MenuItem item)
         {
-            switch (nuevo)
+            switch (item)
             {
                 case MenuItem.Hamburguesa:
-                    mostrarImagen(Pensamiento.hamburguesa);
+                    mostrarImagenPensamiento(Pensamiento.hamburguesa);
                     break;
 
                 case MenuItem.Patatas:
-                    mostrarImagen(Pensamiento.patatas);
+                    mostrarImagenPensamiento(Pensamiento.patatas);
                     break;
 
                 case MenuItem.Bebida:
-                    mostrarImagen(Pensamiento.bebida);
+                    mostrarImagenPensamiento(Pensamiento.bebida);
                     break;
 
                 case MenuItem.Helado:
-                    mostrarImagen(Pensamiento.helado);
+                    mostrarImagenPensamiento(Pensamiento.helado);
                     break;
             }
         }
 
-        public void mostrarImagen(Pensamiento nuevo)
+        /// <summary>
+        /// Ajustamos la imagen a mostrar a un pensamiento concreto
+        /// </summary>
+        /// <param name="pensamiento">pensamiento a mostrar</param>
+        public void mostrarImagenPensamiento(Pensamiento pensamiento)
         {
-            switch (nuevo)
+            switch (pensamiento)
             {
                 case Pensamiento.hamburguesa:
                     miImagen.sprite = hamburguesa;
@@ -140,8 +135,6 @@
                     miImagen.sprite = pedidoCocinaTerminado;
                     break;
             }
-            timer = tiempoMostrar;
-            miImagen.enabled = true;
         }
     }
 }

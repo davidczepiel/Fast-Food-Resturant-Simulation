@@ -22,7 +22,7 @@
 
         public override TaskStatus OnUpdate()
         {
-            lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().liberarLugar(miTarget.Value);
+            lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dejarLibreLugar(miTarget.Value);
             return TaskStatus.Success;
         }
     }

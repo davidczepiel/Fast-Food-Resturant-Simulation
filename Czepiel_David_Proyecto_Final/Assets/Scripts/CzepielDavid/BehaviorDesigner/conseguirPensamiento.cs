@@ -11,14 +11,12 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo hacerse con el objeto que representa la imagen de cada agente y que informa" +
+        "de su siguiente objetivo")]
     public class conseguirPensamiento : Action
     {
+        //Variable en la que voy a almacenar el objeto en cuestion
         public SharedGameObject miPensamiento;
-
-        public override void OnStart()
-        {
-        }
 
         public override TaskStatus OnUpdate()
         {

@@ -35,7 +35,7 @@
         {
             //Me quedo con el manager y la posición en la cola que me corresponde con mi ticket
             lugares = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>();
-            pos = lugares.posDentroCola(miTicket.Value);
+            pos = lugares.damePosicionDentroCola(miTicket.Value);
         }
 
         public override TaskStatus OnUpdate()
@@ -43,20 +43,20 @@
             //Si me toca proseguimos
             if (lugares.meToca(miTicket.Value))
             {
-                GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugar();
+                GameObject lugar = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarAlQueIr();
                 miTarget.Value = lugar;
                 return TaskStatus.Success;
             }
             else
             {
                 //Si no me toca compruebo la posición de la cola que le corresponde a mi ticket para ir avanzando en ella
-                if (pos == lugares.posDentroCola(miTicket.Value))
+                if (pos == lugares.damePosicionDentroCola(miTicket.Value))
                 {
                     return TaskStatus.Running;
                 }
                 else
                 {
-                    miTargetVector.Value = lugares.dameLugarVector(miTicket.Value);
+                    miTargetVector.Value = lugares.damePosicionColaALaQueIr(miTicket.Value);
                     return TaskStatus.Failure;
                 }
             }

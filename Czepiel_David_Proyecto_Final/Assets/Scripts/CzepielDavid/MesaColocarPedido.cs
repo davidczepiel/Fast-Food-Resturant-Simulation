@@ -6,13 +6,17 @@
 
     public class MesaColocarPedido : MonoBehaviour
     {
-        // Start is called before the first frame update
-        private List<List<GameObject>> pedidosAcumulados = new List<List<GameObject>>();
-
+        //Padre de las mesas
         public GameObject padreLugares;
+
+        //Lista de mesas
         public List<GameObject> mesas = new List<GameObject>();
 
+        //Separación entre cada uno de los pedidos acumulados
         public Vector3 separacion = new Vector3(0, 2.5f, 0);
+
+        //lista de listas que representa los pedidos acumulados en cada mesa
+        private List<List<GameObject>> pedidosAcumulados = new List<List<GameObject>>();
 
         private void Start()
         {
@@ -28,14 +32,12 @@
             pedidosAcumulados.RemoveAt(0);
         }
 
-        // Update is called once per frame
-        private void Update()
+        /// <summary>
+        /// Devuelve la mesa con menos menus acumulados para dejar un nuevo menu en ella
+        /// </summary>
+        /// <returns>Mesa en la que dejar el menu</returns>
+        public GameObject dameMesaParaDejarMenu()
         {
-        }
-
-        public GameObject dameLugarPonerMenu()
-        {
-            GameObject lugar;
             int menorAcumulacion = 1000;
             int indice = 0;
             for (int i = 0; i < pedidosAcumulados.Count; i++)
@@ -49,6 +51,11 @@
             return mesas[indice];
         }
 
+        /// <summary>
+        /// Devuelve la mesa que contenga un pedido determinado
+        /// </summary>
+        /// <param name="pedido">pedido que estamos buscando</param>
+        /// <returns>mesa que contiene el pedido</returns>
         public GameObject dameMesaConEstePedido(GameObject pedido)
         {
             GameObject mesa = null;
@@ -65,13 +72,22 @@
             return mesa;
         }
 
+        /// <summary>
+        /// Se deja un pedido determinado en una mesa que nosostros indiquemos
+        /// </summary>
+        /// <param name="mesa">mesa en la que dejar el pedido</param>
+        /// <param name="pedido">pedido que vamos a dejar</param>
         public void dejarPedidoEnMesa(GameObject mesa, GameObject pedido)
         {
             pedidosAcumulados[mesas.IndexOf(mesa)].Add(pedido);
             pedido.transform.position = mesa.transform.position + (separacion * pedidosAcumulados[mesas.IndexOf(mesa)].Count);
         }
 
-        public void cogerPedido(GameObject pedido)
+        /// <summary>
+        /// Se elimina un pedido determinado de las acumulaciones de las  mesas
+        /// </summary>
+        /// <param name="pedido">pedido que queremos quitar</param>
+        public void quitarPedidoDeLasMesas(GameObject pedido)
         {
             int i = 0;
             while (i < pedidosAcumulados.Count)

@@ -11,22 +11,18 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo quitar uno de los pedidos almacenados en las mesas")]
     public class QuitarBandejaMesa : Action
     {
+        //menu que voy a quitar
         public SharedGameObject miMenu;
-        public SharedGameObject miTarget;
-        public SharedGameObject mesasPedidos;
-        private MesaColocarPedido mesas;
 
-        public override void OnStart()
-        {
-            mesas = mesasPedidos.Value.GetComponent<MesaColocarPedido>();
-        }
+        //Objeto manager de las mesas donde se dejan los pedidos
+        public SharedGameObject mesasPedidos;
 
         public override TaskStatus OnUpdate()
         {
-            mesas.cogerPedido(miMenu.Value);
+            mesasPedidos.Value.GetComponent<MesaColocarPedido>().quitarPedidoDeLasMesas(miMenu.Value);
             return TaskStatus.Success;
         }
     }

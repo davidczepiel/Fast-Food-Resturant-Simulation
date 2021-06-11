@@ -64,7 +64,7 @@
             if (timer <= 0)
             {
                 miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
-                miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagen((MenuItem)itemCocinando.Value);
+                miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagenMenuItem((MenuItem)itemCocinando.Value);
                 return TaskStatus.Success;
             }
             else

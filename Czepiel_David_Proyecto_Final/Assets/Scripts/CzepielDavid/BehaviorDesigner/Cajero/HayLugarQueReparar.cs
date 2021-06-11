@@ -26,7 +26,7 @@
             //Pregunto por lugares que reparar, si los hay me quedo con uno de ellos para ir a repararlo
             if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
             {
-                miTarget.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarParaArreglar();
+                miTarget.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarQueArreglar();
                 return TaskStatus.Success;
             }
             else

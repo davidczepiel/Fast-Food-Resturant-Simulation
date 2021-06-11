@@ -11,30 +11,28 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este Task tiene como objetivo que los agentes dejen un pedido en las mesas donde estos se completan")]
     public class DejarBandejaMesas : Action
     {
-        public SharedGameObject cajaManager;
-        public SharedGameObject cocinaManager;
+        //menu que vamos a dejar en las mesas
         public SharedGameObject miMenu;
-        public SharedUInt itemCocinando;
+
+        //Mesa concreta en la que lo vamos a soltar
         public SharedGameObject miTarget;
+
+        //Manager de las mesas al que le vamos a informar de qué vamos a dejar y dónde
         public SharedGameObject mesasPedidos;
+
         private MesaColocarPedido mesas;
-        private CajaManager caja;
-        private CocinaManager cocina;
-        public float tiempoCocinar = 2;
-        private float timer;
 
         public override void OnStart()
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
             mesas = mesasPedidos.Value.GetComponent<MesaColocarPedido>();
         }
 
         public override TaskStatus OnUpdate()
         {
-            miTarget.Value = mesas.dameLugarPonerMenu();
+            miTarget.Value = mesas.dameMesaParaDejarMenu();
             mesas.dejarPedidoEnMesa(miTarget.Value, miMenu.Value);
             return TaskStatus.Success;
         }

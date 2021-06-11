@@ -11,22 +11,22 @@
     using UnityEngine.AI;
 
     [TaskCategory("CzepielDavidProyectoFinal")]
-    [TaskDescription("Rellenar")]
+    [TaskDescription("Este task tiene como objetivo que los agentes vayan a la mesa donde se encuentra el pedido" +
+        "en el que están trabajando para que puedan o llevarse el pedido o añadir algún item que hayan cocinado")]
     public class DejarItemBandeja : Action
     {
+        //menu con el que estamos trabajando
         public SharedGameObject miMenu;
-        public SharedGameObject miTarget;
-        public SharedGameObject mesasPedidos;
-        private MesaColocarPedido mesas;
 
-        public override void OnStart()
-        {
-            mesas = mesasPedidos.Value.GetComponent<MesaColocarPedido>();
-        }
+        //Lugar al que vamos a ir a por el meni
+        public SharedGameObject miTarget;
+
+        //Manager que controla las mesas en las que dejamos los pedidos
+        public SharedGameObject mesasPedidos;
 
         public override TaskStatus OnUpdate()
         {
-            miTarget.Value = mesas.dameMesaConEstePedido(miMenu.Value);
+            miTarget.Value = mesasPedidos.Value.GetComponent<MesaColocarPedido>().dameMesaConEstePedido(miMenu.Value);
             return TaskStatus.Success;
         }
     }

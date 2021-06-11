@@ -598,7 +598,6 @@
     <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
     <Compile Include="Assets\Scripts\Agente.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\AgentePiensa.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CajaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\AtenderCliente.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\EntregarPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cajero\HayClientesCola.cs" />
@@ -623,7 +622,6 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\SerAtendido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TirarPedidoBasura.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Clientes\TomarPedido.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\CocinaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\Cocinar.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoQueEntraCocina.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\HayPedidoQueTerminoCocina.cs" />
@@ -633,17 +631,17 @@
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PreparacionCocinero.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\PuedoAyudarCocinarAlgunPedido.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Cocinero\SeleccionarElementoCocinar.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\ColaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\DejarBandejaMesas.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\DejarItemBandeja.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\Menu.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\MostrarPensamiento.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\QuitarBandejaMesa.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\BehaviorDesigner\conseguirPensamiento.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\CajaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\ClientesManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\CocinaManager.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\LugaresDesgastablesManager.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\LugaresManager.cs" />
+    <Compile Include="Assets\Scripts\CzepielDavid\Menu.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\MesaColocarPedido.cs" />
-    <Compile Include="Assets\Scripts\CzepielDavid\QuitarBandejaMesa.cs" />
     <Compile Include="Assets\Scripts\CzepielDavid\UIManager.cs" />
     <Compile Include="Assets\Scripts\Direccion.cs" />
     <Compile Include="Assets\Scripts\JugadorAgente.cs" />

@@ -12,37 +12,54 @@
 
     public class LugaresDesgastablesManager : MonoBehaviour
     {
+        //Lista de lugares que vamos a controlar
         public List<GameObject> lugares = new List<GameObject>();
+
+        //Tiempo que tardan en repararse solos en caso de bloqueo
         public float tiempoRepararSolo = 20;
+
+        //Usos hasta romper uno de los lugares
         public int usosHastaDesgaste = 1;
-        private List<bool> ocupados = new List<bool>();
-        private List<bool> reparrables = new List<bool>();
-        private List<int> usosRestantes = new List<int>();
 
-        private List<float> timerRepararSolos = new List<float>();
-
+        //Lugar en el que empieza a formarse una cola
         public GameObject lugarEmpiezaCola;
+
+        //Desplazamiento entre clientes que esten en la cola
         public Vector3 desplazamiento;
 
+        //Lista de lugares ocupados
+        private List<bool> ocupados = new List<bool>();
+
+        //Lista de lugares que necesitan ser reparados
+        private List<bool> reparrables = new List<bool>();
+
+        //Lista que contiene los usos restantes de cada uno de estos lugares
+        private List<int> usosRestantes = new List<int>();
+
+        //Timers de cada uno de los lugares para que se reparen solos
+        private List<float> timerRepararSolos = new List<float>();
+
+        //Ticket que se le ofrece al próximo agente que llega a la cola
         private int ticketActual = 0;
+
+        //Ticket que le toca avanzar
         private int turno = 0;
 
-        // Start is called before the first frame update
         private void Start()
         {
             for (int i = 0; i < lugares.Count; i++)
             {
-                float a = tiempoRepararSolo;
                 ocupados.Add(false);
                 reparrables.Add(false);
                 usosRestantes.Add(usosHastaDesgaste);
-                timerRepararSolos.Add(a);
+                timerRepararSolos.Add(tiempoRepararSolo);
             }
         }
 
-        // Update is called once per frame
         private void Update()
         {
+            //Se recorren aquellos lugares que estén tanto reparandose como ocupados y si el timer expira se reparan solos
+            //Debido a que esto singnifica que ha habido un bloqueo
             float tiempo = Time.deltaTime;
             for (int i = 0; i < timerRepararSolos.Count; i++)
             {
@@ -59,20 +76,26 @@
             }
         }
 
-        public GameObject dameLugar()
+        /// <summary>
+        /// Devuelve el lugar al que le toca ir al siguiente agente que sale de la cola
+        /// </summary>
+        /// <returns>Lugar al que el agente debe ir</returns>
+        public GameObject dameLugarAlQueIr()
         {
             int i = 0;
-            while (i < ocupados.Count && (ocupados[i] || reparrables[i]))
-            {
-                i++;
-            }
+            while (i < ocupados.Count && (ocupados[i] || reparrables[i])) i++;
 
             ocupados[i] = true;
             usosRestantes[i] -= 1;
+
             return lugares[i];
         }
 
-        public Vector3 dameLugarVector(int turnoCliente)
+        /// <summary>
+        /// Devuelve el lugar al que le toca ir al siguiente agente en la cola
+        /// </summary>
+        /// <returns>Lugar al que el agente debe ir</returns>
+        public Vector3 damePosicionColaALaQueIr(int turnoCliente)
         {
             int cantidadDesplazar = turnoCliente - turno;
             Vector3 pos = lugarEmpiezaCola.transform.position;
@@ -80,6 +103,10 @@
             return pos;
         }
 
+        /// <summary>
+        /// Devuelve si hay algún lugar que necesite ser reparado
+        /// </summary>
+        /// <returns>Bool necesidad reparar algo</returns>
         public bool hayLugarQueArreglar()
         {
             int i = 0;
@@ -89,7 +116,11 @@
             return i < lugares.Count;
         }
 
-        public GameObject dameLugarParaArreglar()
+        /// <summary>
+        /// Devuelve el objeto que representa el lugar que necesita ser reparado
+        /// </summary>
+        /// <returns>objeto a reparar</returns>
+        public GameObject dameLugarQueArreglar()
         {
             int i = 0;
             while (i < lugares.Count && (!reparrables[i] || (reparrables[i] && ocupados[i])))
@@ -100,12 +131,21 @@
             return lugares[i];
         }
 
+        /// <summary>
+        /// Devuelve la posicion del objeto que representa el lugar que necesita ser reparado
+        /// </summary>
+        /// <returns>posicion del objeto a reparar</returns>
         public Vector3 dameLugarParaArreglarVector()
         {
-            return dameLugarParaArreglar().transform.position;
+            return dameLugarQueArreglar().transform.position;
         }
 
-        public void liberarLugar(GameObject libre)
+        /// <summary>
+        /// Un agente deja libre uno de los lugares que estaba ocupando
+        /// En caso de que ese lugar ya no le queden usos queda marcado como que necesita reparaciones
+        /// </summary>
+        /// <param name="libre">lugar liberado</param>
+        public void dejarLibreLugar(GameObject libre)
         {
             int result = lugares.FindIndex(element => element == libre);
             ocupados[result] = false;
@@ -113,9 +153,14 @@
                 reparrables[result] = true;
         }
 
+        /// <summary>
+        /// Se repara un lugar especificado
+        /// </summary>
+        /// <param name="libre">GameObject que se ha reparado</param>
         public void repararLugar(GameObject libre)
         {
             int result = lugares.FindIndex(element => element == libre);
+            //Si no ha dado error reparamos
             if (result >= 0)
             {
                 ocupados[result] = false;
@@ -124,7 +169,11 @@
             }
         }
 
-        public bool hayHueco()
+        /// <summary>
+        /// Devuelve si hay algún lugar al que un agente pueda proceder a usar
+        /// </summary>
+        /// <returns>bool de si hay lugares libres</returns>
+        public bool hayLugarLibre()
         {
             int i = 0;
             while (i < ocupados.Count && (ocupados[i] || reparrables[i]))
@@ -134,9 +183,14 @@
             return i < ocupados.Count;
         }
 
+        /// <summary>
+        /// Devuelve si un ticket determinado es el siguiente al que le toca y hay huecos
+        /// </summary>
+        /// <param name="turnoEsperando"></param>
+        /// <returns></returns>
         public bool meToca(int turnoEsperando)
         {
-            if (turnoEsperando == turno && hayHueco())
+            if (turnoEsperando == turno && hayLugarLibre())
             {
                 turno++;
                 return true;
@@ -145,12 +199,21 @@
                 return false;
         }
 
-        public int dameLugarCola()
+        /// <summary>
+        /// Devuelve el siguiente ticket disponible
+        /// </summary>
+        /// <returns>numero de ticket</returns>
+        public int dameTicket()
         {
             return ticketActual++;
         }
 
-        public int posDentroCola(int ticketCliente)
+        /// <summary>
+        /// Devuelve la posición dentro de la cola que le corresponde a un ticket determinado
+        /// </summary>
+        /// <param name="ticketCliente"></param>
+        /// <returns>posición en la cola</returns>
+        public int damePosicionDentroCola(int ticketCliente)
         {
             return ticketCliente - turno;
         }
