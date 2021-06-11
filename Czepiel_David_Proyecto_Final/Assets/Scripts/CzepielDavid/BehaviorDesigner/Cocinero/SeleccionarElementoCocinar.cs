@@ -31,7 +31,7 @@
         public SharedGameObject miTarget;
 
         //Tiempo que voy a tardar en cocinar algo
-        public float tiempoCocinar = 2;
+        public float decidirSiguienteItem = 2;
 
         private float timer;
         private Menu menu;
@@ -39,7 +39,7 @@
 
         public override void OnStart()
         {
-            timer = tiempoCocinar;
+            timer = decidirSiguienteItem;
             cocina = cocinaManager.Value.GetComponent<CocinaManager>();
             menu = miMenu.Value.GetComponent<Menu>();
 
@@ -60,7 +60,7 @@
         public override TaskStatus OnUpdate()
         {
             timer -= Time.deltaTime;
-            //SI he decidido el elemento que voy a cocinar me quedo con el lugar en el que debo hacerlo y muestro mi objetivo visualmente
+            //SI he decidido el elemento qué voy a cocinar me quedo con el lugar en el que debo hacerlo y muestro mi objetivo visualmente
             if (timer <= 0)
             {
                 miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);

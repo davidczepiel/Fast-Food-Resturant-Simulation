@@ -54,7 +54,7 @@
         public GameObject dameUnMenu()
         {
             //Generamos un menu
-            GameObject nuevo = Instantiate(menuPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+            GameObject nuevo = Instantiate(menuPrefab, new Vector3(0, 100, 0), Quaternion.identity);
 
             //Personalizamos el menu o hacemos uno completo
             List<bool> actual;
