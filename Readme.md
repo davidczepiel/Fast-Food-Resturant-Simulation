@@ -12,39 +12,35 @@ Autor:David Czepiel
 
 <a href="https://drive.google.com/file/d/1zzbcrSOFX1oWClB_fgw5CMvfTMb1YiYa/view" target="_blank">Video Demo 2</a>
 
-Restaurante:
 ![Restaurante](./Resources/Mapa.jpg?raw=true)
 
 # Introducción
 -----------------------------
 
-El proyecto trata de un prototipo de un simulador de un restaurante de comida rápida. Este prototipo está implementado en Unity 
+El proyecto trata de un prototipo que pretende simulador un restaurante de comida rápida. Este prototipo está implementado en Unity 
 haciendo uso de la herramienta de Behavior Designer. La cual es utilizada para desarrollar el comportamiento de los diversos agentes de la escena.
 En este proyecto vamos a encontrar tres tipos de agentes. Los clientes, los cuales vendrán al local a realizar una visita ordinaria, en la que pedirán su
 orden, la comerán, recogerán, opcionalmente irán al servicio y por último se irán del local.
 Luego tenemos a los cajeros, los cuales serán los encargados de atender a los clientes y de realizar pedidos sencillos, como las bebidas o los helados.
-Aparte, estos serán los encargados de reparar los váteres los cuales acabarán atascandose y de vaciar las papeleras las cuales también tienen 
-usos limitados.
+Aparte, estos serán los encargados de reparar los váteres los cuales acabarán atascandose tras determinados usos y de vaciar las papeleras las cuales   
+se llenarán tras determinados usos y dejarán de ser utilizables.
 Por último encontramos a los cocineros, los cuales serán los encargados de realizar los pedidos más elaborados que los clientes pidan, como las hamburguesas
 o las patatas fritas.
-Por último, en este proyecto se va a ofrecer una interfaz donde se mostrarán los controles para navegar por la escena y una serie de botones que sirven 
-para añadir más agentes a la escena y poder personalizar los menús de aquellos clientes que vayamos añadiendo.
 
 
-# EXPLICACIÓN DE LOS COMPORTAMIENTOS INTELIGENTES
+# EXPLICACIÓN DE LOS AGENTES INTELIGENTES
 Clientes
 ---------------------
 
-Cliente:
 ![Cliente](./Resources/Cliente.JPG?raw=true)
 
-Estos agentes presentan el siguiente arbol de comportamiento:
+Estos agentes presentan el siguiente árbol de comportamiento:
 
-ArbolCliente:
 ![ArbolCliente](./Resources/ArbolCliente.JPG?raw=true)
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
-- El cliente entra al local y lo primero que hace es ponerse en la cola del mostrador, en caso de que no haya nadie y le toque esperará en el mostrador hasta ser atendido
+
+- El cliente entra al local y lo primero que hace es ponerse en la cola del mostrador, en caso de que no haya nadie esperará en el mostrador hasta ser atendido
 - Una vez ha sido atendido se hará a un lado a esperar a que su pedido esté listo
 - Una vez su pedido esté listo, se lo llevará y se irá al comedor a sentarse en una silla y comerse su pedido. En caso de que no haya ningún hueco hará cola a la entrada del comedor hasta que se libere algún asiento.
 - Una vez haya terminado de comer su menú, se irá a la zona de las papeleras a tirar sus restos, en caso de que no haya ninguna papelera libre o que estén todas llenas hará cola frente a estas hasta que alguna papelera se quede libre o sea vaciada por los cajeros
@@ -54,26 +50,25 @@ La ejecución de este árbol provoca que los clientes realicen los siguientes pa
 Cajeros
 ---------------------------------
 
-Cajero:
 ![Cajero](./Resources/Cajero.JPG?raw=true)
 
-Estos agentes presentan el siguiente arbol de comportamiento:
+Estos agentes presentan el siguiente árbol de comportamiento:
 
-ArbolCajero:
 ![ArbolCajero](./Resources/ArbolCajero.JPG?raw=true)
 
 
-La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
+La ejecución de este árbol provoca que los cajeros realicen los siguientes pasos:
 
-- Si no tienen ningún cliente al que atender y no hay ningún pedido que hacer ni ninguno en el que puedan ayudar a completar, ni tenga nada que reparar, se irán a la despensa a descansar
 - Cuando venga algún cliente y se ponga en el mostrador el cajero vendrá a atenderle para tomar su orden
-- Cuando los cocineros hayan terminado de hacer los elementos del menú solicitado que necestietn ser elaborados en la cocina el cajero tomará el pedido para completarlo con bebidas y/o helado en caso de que el pedido lo requiera
+- Cuando los cocineros hayan terminado de hacer los elementos del menú solicitado que necestiten ser elaborados en la cocina el cajero tomará el pedido para completarlo con bebidas y/o helado en caso de que el pedido lo requiera
 - Cuando haya algún pedido que haya sido completado el cajero irá a por el y se lo dará al cliente que lo haya solicitado
 - En caso de que no tenga ningún cliente al que atender y haya algún elemento que arreglar, como una papelera o un váter, irá hacia este a repararlo
+- Si no ocurre nada de lo anterior, ni hay clientes ni pedidos ni nadad que reparar, se irá a la despensa a descansar
+
 
 Esta clase de agente priorizará las tareas que puede realizar y lo hará con el siguiente orden de prioridad
-- Completar y entregar menús que hayan sido completados.
-- Atender nuevos clientes que se encuentren en el mostrados y no hayan sido atendidos.
+- Completar menús y entregar aquellos que hayan sido completados.
+- Atender nuevos clientes que se encuentren en el mostrados y no hayan sido atendidos todavía.
 - Vaciar aquellas papeleras que se hayan llenado
 - Reparar aquellos váteres que hayan sido atascados
 - Irse a la despensa a descansar
@@ -82,20 +77,19 @@ Esta clase de agente priorizará las tareas que puede realizar y lo hará con el
 Cocineros
 ---------------------------------
 
-Cocinero:
 ![Cocinero](./Resources/Cocinero.JPG?raw=true)
 
-Estos agentes presentan el siguiente arbol de comportamiento:
+Estos agentes presentan el siguiente árbol de comportamiento:
 
-ArbolCocinero:
 ![ArbolCocinero](./Resources/ArbolCocinero.JPG?raw=true)
 
-La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
+La ejecución de este árbol provoca que los cocineros realicen los siguientes pasos:
 
-- Si no tiene ningún pedido con elementos que necesiten ser elaborados en la cocina ni puede ayudar a completar algún otro pedido, se irá a la despensa a descansar
-- Cuando entre en la cocina algún pedido nuevo irá a por él para ver si tiene algún elemento que solo se pueda hacer en la cocina, si no lo tiene lo deja en las mesas para que los cajeros lo completen. En caso de que si tenga algo que necesita cocinarse en la cocina, tomará nota y se pondrá a prepararlo
-- En caso de que no haya ningún menu nuevo que entre en la cocina mirará si hay alguno que ya se esté haciendo en esta y si puede ayudar a hacer algo de este lo anotará y se pondrá a cocinar
+- Cuando entre en la cocina algún pedido nuevo irá a por él para ver si tiene algún elemento que solo se pueda hacer en la cocina, si no lo tiene lo deja en las mesas para que los cajeros lo completen. En caso de que sí tenga algo que necesita cocinarse en la cocina, tomará nota y se pondrá a prepararlo
+- En caso de que no haya ningún menu nuevo que entre en la cocina mirará si hay alguno que ya se esté haciendo en esta, y si tiene elementos en los que pueda ayudar lo anotará y se pondrá a cocinar
 - Cada vez que termine de cocinar algo se irá a la mesa donde se encuentra el menú y añadirá dicho elemento, en caso de que dicho menú no necesite de más elementos que se cocinen en la cocina avisará a los cajeros para que lo completen o lo entreguen
+- Si no tiene ningún pedido que empezar, ni ninguno en el que ayuda, se irá a la despensa a descansar
+
 
 Esta clase de agente priorizará las tareas que puede realizar y lo hará con el siguiente orden de prioridad
 - Ir a ver posibles menús nuevos para ver si necesitan que algo se prepare en la cocina o ni siquiera necesitan pasar por esta
@@ -103,14 +97,49 @@ Esta clase de agente priorizará las tareas que puede realizar y lo hará con el
 - Ayudar en algún pedido que ya se esté preparando dentro de la cocina
 - Irse a la despensa a descansar
 
+# CONTROLES
+
+La interfaz que se le va a ofrecer al jugador va a ser la que se muestra en la siguiente imágen
+
+![Interfaz](./Resources/Interfaz.JPG?raw=true)
+
+En ella se muestra en la parte superior derecha una imagen con una serie de teclas, estas representan los controles utilizados para controlar la cámara.
+La cual se puede mover haciendo uso de las teclas WASD, y además, podemos controlar su altura con las teclas Q y E, para poder ver con más o menos detalle a los agentes.
+Por otro lado encontramos el resto de elementos de la interfaz, los cuales son todos botones, aquellos que se encuentran en la parte inferior se corresponder con aquellos
+relacionados con los clientes, los cuatro que representan items del menú, sirven para configurar el menú de los nuevos clientes que vayamos a hacer spwan, para completar
+estos botones, tenemos el botón de la derecha del todo "Mandar" el cual nos sirve para crear un nuevo cliente que vaya a pedir un menú que conste de los items que se muestren
+en dicho botón. Por ejemplo, en la imagen mostrada, pulsar dicho botón provocaría la aparición de un cliente cuyo menú constara de todos los elementos posibles del local.
+Dichos clientes aparecerán en la calle.
+
+Por otro lado, encontramos en la parte superior izquierda dos botones más, los cuales sirven para hacer spawn de trabajadores, tenemos uno destinado a los cocineros 
+y otro a los cajeros. Dichos nuevos trabajadores aparecerán en la cocina.
+
+
+# FEEDCAK VISUAL
+
+En este proyecto se ofrecen dos tipos de feedback visual, el primero es el que se muestra en la siguiente imágen.
+
+![FeedBackUsosRestantes](./Resources/Usosrestantes.JPG?raw=true)
+
+El cual representa los usos que les quedan a determinados elementos del escenario para que se gasten y tenga que venir un cajero a repararlos.
+El siguiente tipo de feedback visual que se ofrece lo podemos observar en las siguientes imágenes.
+
+![ClienteIntencion](./Resources/ClientesSimulandoPedidaDeOrdenes.JPG?raw=true)
+![CajeroIntencion](./Resources/CajerosEscogiendoItemCompletar.JPG?raw=true)
+![CocineroIntencion](./Resources/CocinerosEscogiendoPedidoQueHacer.JPG?raw=true)
+
+Como podemos ver, este feedback visual consiste en una serie de imágenes que se muestran encima de los agentes con el objetivo de indicar su objetivo actual.
+Por ejemplo, en la imágen de los cocineros podemos distinguir un cocinero cocinando hamburguesa y otro patatas.
+O en la imágen de los clientes podemos distinguir aquellos clientes que están esperando de aquellos que están pidiendo y de aquel que se lleva su pedido
+
+
+
+
 ASSETS Y REFERENCIAS
 ================================
-* [Assets perro](https://assetstore.unity.com/packages/3d/characters/animals/5-animated-voxel-animals-145754)
-* [Assets ratas](https://assetstore.unity.com/packages/3d/characters/creatures/meshtint-free-burrow-cute-series-184837)
+* [Assets restaurante](https://assetstore.unity.com/packages/3d/characters/animals/5-animated-voxel-animals-145754)
 * AI for Games 3rd Edition (2019) - Ian Millington
 	
-La solucion ha sido basada en el codigo proporcionado por Federico Peinado referente a comportamientos de movimiento
-combinados mendiante pesos.
 
 
 
