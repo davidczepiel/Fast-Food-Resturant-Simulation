@@ -36,12 +36,12 @@ Clientes
 ---------------------
 
 Cliente:
-![Cliente](./Resources/Cliente.jpg?raw=true)
+![Cliente](./Resources/Cliente.JPG?raw=true)
 
 Estos agentes presentan el siguiente arbol de comportamiento:
 
 ArbolCliente:
-![ArbolCliente](./Resources/ArbolCliente.jpg?raw=true)
+![ArbolCliente](./Resources/ArbolCliente.JPG?raw=true)
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
 - El cliente entra al local y lo primero que hace es ponerse en la cola del mostrador, en caso de que no haya nadie y le toque esperará en el mostrador hasta ser atendido
@@ -55,12 +55,12 @@ Cajeros
 ---------------------------------
 
 Cajero:
-![Cajero](./Resources/Cajero.jpg?raw=true)
+![Cajero](./Resources/Cajero.JPG?raw=true)
 
 Estos agentes presentan el siguiente arbol de comportamiento:
 
 ArbolCajero:
-![ArbolCajero](./Resources/ArbolCajero.jpg?raw=true)
+![ArbolCajero](./Resources/ArbolCajero.JPG?raw=true)
 
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
@@ -83,12 +83,12 @@ Cocineros
 ---------------------------------
 
 Cocinero:
-![Cocinero](./Resources/Cocinero.jpg?raw=true)
+![Cocinero](./Resources/Cocinero.JPG?raw=true)
 
 Estos agentes presentan el siguiente arbol de comportamiento:
 
 ArbolCocinero:
-![ArbolCocinero](./Resources/ArbolCocinero.jpg?raw=true)
+![ArbolCocinero](./Resources/ArbolCocinero.JPG?raw=true)
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
 
