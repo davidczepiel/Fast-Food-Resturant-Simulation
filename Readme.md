@@ -3,6 +3,7 @@
 # Facultad de Informática - Videojuegos
 
 Proyecto final de la asignatura de Inteligencia Articicial para Videojuegos 
+
 Autor:David Czepiel
 
 
@@ -10,6 +11,9 @@ Autor:David Czepiel
 <a href="https://drive.google.com/file/d/1ILV0cGxd4ZwSc96NijXEZe5AN-QSOZHc/view" target="_blank">Video Demo 1</a>
 
 <a href="https://drive.google.com/file/d/1zzbcrSOFX1oWClB_fgw5CMvfTMb1YiYa/view" target="_blank">Video Demo 2</a>
+
+Restaurante:
+![Restaurante](./Resources/Mapa.jpg?raw=true)
 
 # Introducción
 -----------------------------
