@@ -25,7 +25,7 @@ public class PreparacionCliente : Action
 
     public override TaskStatus OnUpdate()
     {
-        miTarget.Value = GameObject.Find("Cola");
+        miTarget.Value = GameObject.Find("Calle");
         comedorManager.Value = GameObject.Find("Comedor");
         papelerasManager.Value = GameObject.Find("PuntoPapeleras");
         bañosManager.Value = GameObject.Find("Baño");
