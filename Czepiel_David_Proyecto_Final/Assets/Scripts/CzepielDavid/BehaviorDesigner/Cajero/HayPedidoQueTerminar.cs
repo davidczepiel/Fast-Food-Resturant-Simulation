@@ -1,38 +1,35 @@
-﻿namespace UCM.IAV.Movimiento
+﻿using System.Collections;
+using System.Collections.Generic;
+using Bolt;
+using Ludiq;
+using UnityEngine;
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+using UnityEngine.AI;
+
+[TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+[TaskDescription("Esta condición tiene como objetivo preguntar si hay algún pedido que necesite ser entregado\n" +
+    "o necesite ser completado por un cajero")]
+public class HayPedidoQueTerminar : Conditional
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using Bolt;
-    using Ludiq;
-    using UnityEngine;
-    using BehaviorDesigner.Runtime;
-    using BehaviorDesigner.Runtime.Tasks;
-    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-    using UnityEngine.AI;
+    //Manager de la caja al que voy a preguntar cosas sobre los pedidos
+    public SharedGameObject cajaManager;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Esta condición tiene como objetivo preguntar si hay algún pedido que necesite ser entregado\n" +
-        "o necesite ser completado por un cajero")]
-    public class HayPedidoQueTerminar : Conditional
+    private CajaManager caja;
+
+    public override void OnStart()
     {
-        //Manager de la caja al que voy a preguntar cosas sobre los pedidos
-        public SharedGameObject cajaManager;
+        caja = cajaManager.Value.GetComponent<CajaManager>();
+    }
 
-        private CajaManager caja;
-
-        public override void OnStart()
+    public override TaskStatus OnUpdate()
+    {
+        if (caja.hayPedidosParaRecoger() || caja.hayPedidosParaCompletar())
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
+            return TaskStatus.Success;
         }
-
-        public override TaskStatus OnUpdate()
-        {
-            if (caja.hayPedidosParaRecoger() || caja.hayPedidosParaCompletar())
-            {
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Failure;
-        }
+        else
+            return TaskStatus.Failure;
     }
 }

@@ -1,41 +1,38 @@
-﻿namespace UCM.IAV.Movimiento
+﻿using System.Collections;
+using System.Collections.Generic;
+using Bolt;
+using Ludiq;
+using UnityEngine;
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+using UnityEngine.AI;
+
+[TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+[TaskDescription("Este task tiene como objetivo darle al cliente su pedido \n" +
+    "Lo que hace es dejar indicar que el pedido está listo y esperar a que el pedido este" +
+    "recogido, lo que indica que el cliente ha venido a por él y se lo ha llevado")]
+public class EntregarPedido : Action
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using Bolt;
-    using Ludiq;
-    using UnityEngine;
-    using BehaviorDesigner.Runtime;
-    using BehaviorDesigner.Runtime.Tasks;
-    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-    using UnityEngine.AI;
+    //Pedido que estoy entregando
+    public SharedGameObject miPedido;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Este task tiene como objetivo darle al cliente su pedido \n" +
-        "Lo que hace es dejar indicar que el pedido está listo y esperar a que el pedido este" +
-        "recogido, lo que indica que el cliente ha venido a por él y se lo ha llevado")]
-    public class EntregarPedido : Action
+    private Menu menu;
+
+    public override void OnStart()
     {
-        //Pedido que estoy entregando
-        public SharedGameObject miPedido;
+        menu = miPedido.Value.GetComponent<Menu>();
+        menu.setListo(true);
+    }
 
-        private Menu menu;
-
-        public override void OnStart()
+    public override TaskStatus OnUpdate()
+    {
+        //Mientras el pedido no haya sido recogido por el cliente sigo esperando
+        if (menu.getRecogido())
         {
-            menu = miPedido.Value.GetComponent<Menu>();
-            menu.setListo(true);
+            return TaskStatus.Success;
         }
-
-        public override TaskStatus OnUpdate()
-        {
-            //Mientras el pedido no haya sido recogido por el cliente sigo esperando
-            if (menu.getRecogido())
-            {
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Running;
-        }
+        else
+            return TaskStatus.Running;
     }
 }

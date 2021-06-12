@@ -1,39 +1,36 @@
-﻿namespace UCM.IAV.Movimiento
+﻿using System.Collections;
+using System.Collections.Generic;
+using Bolt;
+using Ludiq;
+using UnityEngine;
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+using UnityEngine.AI;
+
+[TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+[TaskDescription("Esta condición tiene como objetivo comprobar si hay clientes en alguna de las cajas esperando\n" +
+    "En caso de que haya algún cliente, pregunto por la caja en la que se encuentra y me la quedo para ir a atenderle")]
+public class HayClientesCola : Conditional
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using Bolt;
-    using Ludiq;
-    using UnityEngine;
-    using BehaviorDesigner.Runtime;
-    using BehaviorDesigner.Runtime.Tasks;
-    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-    using UnityEngine.AI;
+    public SharedGameObject cajaManager;
+    private CajaManager caja;
+    public SharedInt numCaja;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Esta condición tiene como objetivo comprobar si hay clientes en alguna de las cajas esperando\n" +
-        "En caso de que haya algún cliente, pregunto por la caja en la que se encuentra y me la quedo para ir a atenderle")]
-    public class HayClientesCola : Conditional
+    public override void OnStart()
     {
-        public SharedGameObject cajaManager;
-        private CajaManager caja;
-        public SharedInt numCaja;
+        caja = cajaManager.Value.GetComponent<CajaManager>();
+    }
 
-        public override void OnStart()
+    public override TaskStatus OnUpdate()
+    {
+        //Si hay alguna caja con clientes que atender me quedo su número para ir a atender
+        if (caja.hayClientesEnColaParaPedir())
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
+            numCaja.Value = caja.dameNumeroDeCajaQueAtender();
+            return TaskStatus.Success;
         }
-
-        public override TaskStatus OnUpdate()
-        {
-            //Si hay alguna caja con clientes que atender me quedo su número para ir a atender
-            if (caja.hayClientesEnColaParaPedir())
-            {
-                numCaja.Value = caja.dameNumeroDeCajaQueAtender();
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Failure;
-        }
+        else
+            return TaskStatus.Failure;
     }
 }

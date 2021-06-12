@@ -1,59 +1,56 @@
-﻿namespace UCM.IAV.Movimiento
+﻿using System.Collections;
+using Bolt;
+using Ludiq;
+using System.Collections.Generic;
+using UnityEngine;
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+using UnityEngine.AI;
+
+[TaskCategory("CzepielDavidProyectoFinal/Cajero")]
+[TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite se esté haciendo y le quede algún item\n" +
+    "que todacía no se ha empezado a hacer y puedo ayudar con ello")]
+public class PuedoAyudarCompletarAlgunPedido : Conditional
 {
-    using System.Collections;
-    using Bolt;
-    using Ludiq;
-    using System.Collections.Generic;
-    using UnityEngine;
-    using BehaviorDesigner.Runtime;
-    using BehaviorDesigner.Runtime.Tasks;
-    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-    using UnityEngine.AI;
+    //Caja a la que le voy a preguntar si puedo ayudar en algo con las opciones que puedo cocinar
+    public SharedGameObject cajaManager;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
-    [TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite se esté haciendo y le quede algún item\n" +
-        "que todacía no se ha empezado a hacer y puedo ayudar con ello")]
-    public class PuedoAyudarCompletarAlgunPedido : Conditional
+    private CajaManager caja;
+
+    //Variable que va a almacenar un posible pedido en el que pueda ayudar en algo
+    public SharedGameObject pedido;
+
+    //Lista de elementos en los que puedo ayudar a cocinar un menu
+    public List<int> posibilidadesAyuda;
+
+    public override void OnStart()
     {
-        //Caja a la que le voy a preguntar si puedo ayudar en algo con las opciones que puedo cocinar
-        public SharedGameObject cajaManager;
+        caja = cajaManager.Value.GetComponent<CajaManager>();
+    }
 
-        private CajaManager caja;
-
-        //Variable que va a almacenar un posible pedido en el que pueda ayudar en algo
-        public SharedGameObject pedido;
-
-        //Lista de elementos en los que puedo ayudar a cocinar un menu
-        public List<int> posibilidadesAyuda;
-
-        public override void OnStart()
+    public override TaskStatus OnUpdate()
+    {
+        if (pedidosParaAyudar())
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
+            return TaskStatus.Success;
         }
+        else
+            return TaskStatus.Failure;
+    }
 
-        public override TaskStatus OnUpdate()
+    private bool pedidosParaAyudar()
+    {
+        //Si hay algo que se esté completando pregunto si puedo ayudar en algo
+        if (caja.hayPedidosParaCompletar())
         {
-            if (pedidosParaAyudar())
-            {
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Failure;
-        }
-
-        private bool pedidosParaAyudar()
-        {
-            //Si hay algo que se esté completando pregunto si puedo ayudar en algo
-            if (caja.hayPedidosParaCompletar())
-            {
-                pedido.Value = caja.damePedidoEnElQueAyudar(posibilidadesAyuda);
-                if (pedido.Value != null)
-                    return true;
-                else
-                    return false;
-            }
+            pedido.Value = caja.damePedidoEnElQueAyudar(posibilidadesAyuda);
+            if (pedido.Value != null)
+                return true;
             else
                 return false;
         }
+        else
+            return false;
     }
 }

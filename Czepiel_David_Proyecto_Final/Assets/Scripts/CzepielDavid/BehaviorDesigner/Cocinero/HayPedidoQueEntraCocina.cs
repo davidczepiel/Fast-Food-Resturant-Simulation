@@ -1,43 +1,40 @@
-﻿namespace UCM.IAV.Movimiento
+﻿using System.Collections;
+using System.Collections.Generic;
+using Bolt;
+using Ludiq;
+using UnityEngine;
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+using UnityEngine.AI;
+
+[TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
+[TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos nuevos en la cocina \n" +
+    "en caso afirmativo el cocinero se lo lleva para trabajar en él")]
+public class HayPedidoQueEntraCocina : Conditional
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using Bolt;
-    using Ludiq;
-    using UnityEngine;
-    using BehaviorDesigner.Runtime;
-    using BehaviorDesigner.Runtime.Tasks;
-    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-    using UnityEngine.AI;
+    //Caja manager al que le voy a preguntar por si hay nuevos pedidos
+    public SharedGameObject cajaManager;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
-    [TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos nuevos en la cocina \n" +
-        "en caso afirmativo el cocinero se lo lleva para trabajar en él")]
-    public class HayPedidoQueEntraCocina : Conditional
+    private CajaManager caja;
+
+    //Variable que va a almacenar el posible nuevo pedido que haya llegado
+    public SharedGameObject pedido;
+
+    public override void OnStart()
     {
-        //Caja manager al que le voy a preguntar por si hay nuevos pedidos
-        public SharedGameObject cajaManager;
+        caja = cajaManager.Value.GetComponent<CajaManager>();
+    }
 
-        private CajaManager caja;
-
-        //Variable que va a almacenar el posible nuevo pedido que haya llegado
-        public SharedGameObject pedido;
-
-        public override void OnStart()
+    public override TaskStatus OnUpdate()
+    {
+        //En caso de que haya algún pedido nuevo el cocinero se lo queda
+        if (caja.hayPedidosParaEmpezar())
         {
-            caja = cajaManager.Value.GetComponent<CajaManager>();
+            pedido.Value = caja.damePedidoPorEmpezar();
+            return TaskStatus.Success;
         }
-
-        public override TaskStatus OnUpdate()
-        {
-            //En caso de que haya algún pedido nuevo el cocinero se lo queda
-            if (caja.hayPedidosParaEmpezar())
-            {
-                pedido.Value = caja.damePedidoPorEmpezar();
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Failure;
-        }
+        else
+            return TaskStatus.Failure;
     }
 }

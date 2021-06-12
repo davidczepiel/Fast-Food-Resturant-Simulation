@@ -1,48 +1,45 @@
-﻿namespace UCM.IAV.Movimiento
+﻿using System.Collections;
+using System.Collections.Generic;
+using Bolt;
+using Ludiq;
+using UnityEngine;
+using BehaviorDesigner.Runtime;
+using BehaviorDesigner.Runtime.Tasks;
+using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
+using UnityEngine.AI;
+
+[TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
+[TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
+    "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo ")]
+public class Cocinar : Action
 {
-    using System.Collections;
-    using System.Collections.Generic;
-    using Bolt;
-    using Ludiq;
-    using UnityEngine;
-    using BehaviorDesigner.Runtime;
-    using BehaviorDesigner.Runtime.Tasks;
-    using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-    using UnityEngine.AI;
+    //Menu en el que vamos a contribuir
+    public SharedGameObject miMenu;
 
-    [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
-    [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
-        "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo ")]
-    public class Cocinar : Action
+    //Item que vamos a cocinar
+    public SharedUInt itemCocinando;
+
+    //Tiempo que vamos a tardar en cocinar cualquier cosa
+    public float tiempoCocinar = 2;
+
+    private float timer;
+
+    public override void OnStart()
     {
-        //Menu en el que vamos a contribuir
-        public SharedGameObject miMenu;
+        timer = tiempoCocinar;
+    }
 
-        //Item que vamos a cocinar
-        public SharedUInt itemCocinando;
-
-        //Tiempo que vamos a tardar en cocinar cualquier cosa
-        public float tiempoCocinar = 2;
-
-        private float timer;
-
-        public override void OnStart()
+    public override TaskStatus OnUpdate()
+    {
+        //Mientras no se haya terminado el temporizador significa que seguimos cocinando
+        timer -= Time.deltaTime;
+        if (timer <= 0)
         {
-            timer = tiempoCocinar;
+            miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
+            miMenu.Value = null;
+            return TaskStatus.Success;
         }
-
-        public override TaskStatus OnUpdate()
-        {
-            //Mientras no se haya terminado el temporizador significa que seguimos cocinando
-            timer -= Time.deltaTime;
-            if (timer <= 0)
-            {
-                miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
-                miMenu.Value = null;
-                return TaskStatus.Success;
-            }
-            else
-                return TaskStatus.Running;
-        }
+        else
+            return TaskStatus.Running;
     }
 }
