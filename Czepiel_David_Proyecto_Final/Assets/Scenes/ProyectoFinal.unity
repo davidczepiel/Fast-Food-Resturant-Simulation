@@ -2257,7 +2257,7 @@ MonoBehaviour:
   - {fileID: 226415909}
   - {fileID: 1263690831}
   tiempoRepararSolo: 20
-  usosHastaDesgaste: 8
+  usosHastaDesgaste: 4
   lugarEmpiezaCola: {fileID: 1961881894}
   desplazamiento: {x: -2.5, y: 0, z: 0}
   textoUsosRestantes: {fileID: 1372151898869483313, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
@@ -3710,7 +3710,7 @@ MonoBehaviour:
   - {fileID: 256350146}
   - {fileID: 719700057}
   tiempoRepararSolo: 20
-  usosHastaDesgaste: 4
+  usosHastaDesgaste: 2
   lugarEmpiezaCola: {fileID: 1394027721}
   desplazamiento: {x: -2.5, y: 0, z: 0}
   textoUsosRestantes: {fileID: 1372151898869483313, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
