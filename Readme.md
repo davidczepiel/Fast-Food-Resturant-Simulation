@@ -34,7 +34,14 @@ para añadir más agentes a la escena y poder personalizar los menús de aquello
 # EXPLICACIÓN DE LOS COMPORTAMIENTOS INTELIGENTES
 Clientes
 ---------------------
+
+Cliente:
+![Cliente](./Resources/Cliente.jpg?raw=true)
+
 Estos agentes presentan el siguiente arbol de comportamiento:
+
+ArbolCliente:
+![ArbolCliente](./Resources/ArbolCliente.jpg?raw=true)
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
 - El cliente entra al local y lo primero que hace es ponerse en la cola del mostrador, en caso de que no haya nadie y le toque esperará en el mostrador hasta ser atendido
@@ -46,7 +53,15 @@ La ejecución de este árbol provoca que los clientes realicen los siguientes pa
 
 Cajeros
 ---------------------------------
+
+Cajero:
+![Cajero](./Resources/Cajero.jpg?raw=true)
+
 Estos agentes presentan el siguiente arbol de comportamiento:
+
+ArbolCajero:
+![ArbolCajero](./Resources/ArbolCajero.jpg?raw=true)
+
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
 
@@ -64,9 +79,16 @@ Esta clase de agente priorizará las tareas que puede realizar y lo hará con el
 - Irse a la despensa a descansar
 
 
-Cocinero
+Cocineros
 ---------------------------------
+
+Cocinero:
+![Cocinero](./Resources/Cocinero.jpg?raw=true)
+
 Estos agentes presentan el siguiente arbol de comportamiento:
+
+ArbolCocinero:
+![ArbolCocinero](./Resources/ArbolCocinero.jpg?raw=true)
 
 La ejecución de este árbol provoca que los clientes realicen los siguientes pasos:
 
