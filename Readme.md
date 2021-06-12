@@ -4,13 +4,13 @@
 
 Proyecto final de la asignatura de Inteligencia Articicial para Videojuegos 
 
-Autor:David Czepiel
+Autor: David Czepiel
 
 
 # Trabajo Final
-<a href="https://drive.google.com/file/d/1ILV0cGxd4ZwSc96NijXEZe5AN-QSOZHc/view" target="_blank">Video Demo 1</a>
+<a href="https://drive.google.com/file/d/1ILV0cGxd4ZwSc96NijXEZe5AN-QSOZHc/view" target="_blank">Video Explicación Proyecto</a>
 
-<a href="https://drive.google.com/file/d/1zzbcrSOFX1oWClB_fgw5CMvfTMb1YiYa/view" target="_blank">Video Demo 2</a>
+<a href="https://drive.google.com/file/d/1zzbcrSOFX1oWClB_fgw5CMvfTMb1YiYa/view" target="_blank">Ejecutable</a>
 
 ![Restaurante](./Resources/Mapa.jpg?raw=true)
 
@@ -21,11 +21,15 @@ El proyecto trata de un prototipo que pretende simulador un restaurante de comid
 haciendo uso de la herramienta de Behavior Designer. La cual es utilizada para desarrollar el comportamiento de los diversos agentes de la escena.
 En este proyecto vamos a encontrar tres tipos de agentes. Los clientes, los cuales vendrán al local a realizar una visita ordinaria, en la que pedirán su
 orden, la comerán, recogerán, opcionalmente irán al servicio y por último se irán del local.
-Luego tenemos a los cajeros, los cuales serán los encargados de atender a los clientes y de realizar pedidos sencillos, como las bebidas o los helados.
+Luego tenemos a los cajeros, los cuales serán los encargados de atender a los clientes y de realizar pedidos sencillos, como las bebidas o los helados. Aquellos 
+pedidos que reciban de los clientes se dejarán en una serie de mesas donde se pueden ver todos los pedidos en los que se están trabajando y cómo se van incluyendo los 
+diferentes items en estos.
 Aparte, estos serán los encargados de reparar los váteres los cuales acabarán atascandose tras determinados usos y de vaciar las papeleras las cuales   
 se llenarán tras determinados usos y dejarán de ser utilizables.
 Por último encontramos a los cocineros, los cuales serán los encargados de realizar los pedidos más elaborados que los clientes pidan, como las hamburguesas
 o las patatas fritas.
+
+Es posible ver este proyecto en ejecución en el siguiente [vídeo](https://drive.google.com/file/d/1t60b6t9Tly3rDMyMseNAqdmOyPgfNV2R/view?usp=sharing)
 
 
 # EXPLICACIÓN DE LOS AGENTES INTELIGENTES
@@ -46,6 +50,10 @@ La ejecución de este árbol provoca que los clientes realicen los siguientes pa
 - Una vez haya terminado de comer su menú, se irá a la zona de las papeleras a tirar sus restos, en caso de que no haya ninguna papelera libre o que estén todas llenas hará cola frente a estas hasta que alguna papelera se quede libre o sea vaciada por los cajeros
 - En caso de que en su pedido hubiera incluido bebida, se irá al servicio, igual que en las papeleras hará cola mientras no haya servicio libre o estén todos atascados
 - Por último saldrá del local y su comportamiento habrá terminado
+
+Se puede observar el ciclo de ejecución completo de un cliente en el siguiente [video](https://drive.google.com/file/d/1FqBi00TZsP_2sUTdR4leUXKIftHZa0ie/view?usp=sharing)
+En este [video] (https://drive.google.com/file/d/17LH1zlIXlTrJxSFQ-CFZ3elDmiHjEMCr/view?usp=sharing) podemos observar cómo los clientes hacen cola para realizar sus pedidos.
+Y en este [video](https://drive.google.com/file/d/1EhDpYpI4LNsqusduK9-v2XuSBouqtRwI/view?usp=sharing) podemos observar cómo los clientes forman colas en las papeleras y en los baños
 
 Cajeros
 ---------------------------------
@@ -73,6 +81,10 @@ Esta clase de agente priorizará las tareas que puede realizar y lo hará con el
 - Reparar aquellos váteres que hayan sido atascados
 - Irse a la despensa a descansar
 
+Se puede observar el ciclo de ejecución de un cajero en el siguiente [video](https://drive.google.com/file/d/1FdsQPcoiiWfAKZvplZDoHKG2f-4jM0bJ/view?usp=sharing)
+En este [video](https://drive.google.com/file/d/1gqgiUKZFCJT62RnO5ciTV3BR8jDuw5B9/view?usp=sharing) podemos observar cómo los cajeros vacían las papeleras.
+Y en este [video](https://drive.google.com/file/d/1mNLxwnKjuZ2PuQEbYva-GraqcUA_ZEHc/view?usp=sharing) podemos observar cómo los cajeros reparan los váteres.
+
 
 Cocineros
 ---------------------------------
@@ -97,6 +109,8 @@ Esta clase de agente priorizará las tareas que puede realizar y lo hará con el
 - Ayudar en algún pedido que ya se esté preparando dentro de la cocina
 - Irse a la despensa a descansar
 
+Se puede observar el ciclo de ejecución de un cocinero en el siguiente [video](https://drive.google.com/file/d/1Xym8_v2Tv4gjr24OqV_l2quVvIEONnx5/view?usp=sharing)
+
 # CONTROLES
 
 La interfaz que se le va a ofrecer al jugador va a ser la que se muestra en la siguiente imágen
@@ -105,6 +119,7 @@ La interfaz que se le va a ofrecer al jugador va a ser la que se muestra en la s
 
 En ella se muestra en la parte superior derecha una imagen con una serie de teclas, estas representan los controles utilizados para controlar la cámara.
 La cual se puede mover haciendo uso de las teclas WASD, y además, podemos controlar su altura con las teclas Q y E, para poder ver con más o menos detalle a los agentes.
+
 Por otro lado encontramos el resto de elementos de la interfaz, los cuales son todos botones, aquellos que se encuentran en la parte inferior se corresponder con aquellos
 relacionados con los clientes, los cuatro que representan items del menú, sirven para configurar el menú de los nuevos clientes que vayamos a hacer spwan, para completar
 estos botones, tenemos el botón de la derecha del todo "Mandar" el cual nos sirve para crear un nuevo cliente que vaya a pedir un menú que conste de los items que se muestren
@@ -117,7 +132,7 @@ y otro a los cajeros. Dichos nuevos trabajadores aparecerán en la cocina.
 
 # FEEDCAK VISUAL
 
-En este proyecto se ofrecen dos tipos de feedback visual, el primero es el que se muestra en la siguiente imágen.
+En este proyecto se ofrecen tres tipos de feedback visual, el primero es el que se muestra en la siguiente imágen.
 
 ![FeedBackUsosRestantes](./Resources/Usosrestantes.JPG?raw=true)
 
@@ -132,12 +147,16 @@ Como podemos ver, este feedback visual consiste en una serie de imágenes que se
 Por ejemplo, en la imágen de los cocineros podemos distinguir un cocinero cocinando hamburguesa y otro patatas.
 O en la imágen de los clientes podemos distinguir aquellos clientes que están esperando de aquellos que están pidiendo y de aquel que se lleva su pedido
 
+El último tipo de feedback visual que se ofrece el de los elementos de los pedidos añadiendose a estos mientras los trabajadores los van haciendo.
+Esto lo podemos observar en la siguiente imágen.
+
+![ImagenPedidos](./Resources/PedidosFormandose.JPG?raw=true)
 
 
 
 ASSETS Y REFERENCIAS
 ================================
-* [Assets restaurante](https://assetstore.unity.com/packages/3d/characters/animals/5-animated-voxel-animals-145754)
+* [Assets restaurante](https://assetstore.unity.com/packages/3d/props/interior/restaurant-interior-full-pack-153273)
 * AI for Games 3rd Edition (2019) - Ian Millington
 	
 
