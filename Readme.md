@@ -52,7 +52,7 @@ La ejecución de este árbol provoca que los clientes realicen los siguientes pa
 - Por último saldrá del local y su comportamiento habrá terminado
 
 Se puede observar el ciclo de ejecución completo de un cliente en el siguiente [video](https://drive.google.com/file/d/1FqBi00TZsP_2sUTdR4leUXKIftHZa0ie/view?usp=sharing)
-En este [video] (https://drive.google.com/file/d/17LH1zlIXlTrJxSFQ-CFZ3elDmiHjEMCr/view?usp=sharing) podemos observar cómo los clientes hacen cola para realizar sus pedidos.
+En este [video](https://drive.google.com/file/d/17LH1zlIXlTrJxSFQ-CFZ3elDmiHjEMCr/view?usp=sharing) podemos observar cómo los clientes hacen cola para realizar sus pedidos.
 Y en este [video](https://drive.google.com/file/d/1EhDpYpI4LNsqusduK9-v2XuSBouqtRwI/view?usp=sharing) podemos observar cómo los clientes forman colas en las papeleras y en los baños
 
 Cajeros
