@@ -147,11 +147,12 @@ Como podemos ver, este feedback visual consiste en una serie de imágenes que se
 Por ejemplo, en la imágen de los cocineros podemos distinguir un cocinero cocinando hamburguesa y otro patatas.
 O en la imágen de los clientes podemos distinguir aquellos clientes que están esperando de aquellos que están pidiendo y de aquel que se lleva su pedido
 
-El último tipo de feedback visual que se ofrece el de los elementos de los pedidos añadiendose a estos mientras los trabajadores los van haciendo.
+El último tipo de feedback visual que se ofrece el de los elementos de los pedidos añadiendose a estos mientras los trabajadores los van haciendo. 
 Esto lo podemos observar en la siguiente imágen.
 
 ![ImagenPedidos](./Resources/PedidosFormandose.JPG?raw=true)
 
+Y estos mismos elementos siendo comidos, lo cual podemos observar en el siguiente [video](https://drive.google.com/file/d/1VE0UO2E7Op9auYlh5btnFyfTZD427NyQ/view?usp=sharing)
 
 
 ASSETS Y REFERENCIAS

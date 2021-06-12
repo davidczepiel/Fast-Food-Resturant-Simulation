@@ -152,7 +152,11 @@ public class Menu : MonoBehaviour
     public bool comer()
     {
         while (ordenComer < elementosMenu.Count && !elementosMenu[ordenComer]) ordenComer++;
-        if (ordenComer < elementosMenu.Count) elementosMenu[ordenComer] = false;
+        if (ordenComer < elementosMenu.Count)
+        {
+            elementosMenu[ordenComer] = false;
+            misCosas[ordenComer].SetActive(false);
+        }
 
         ordenComer++;
         return ordenComer >= elementosMenu.Count;
