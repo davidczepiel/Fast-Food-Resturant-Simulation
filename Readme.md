@@ -129,7 +129,7 @@ Por otro lado, encontramos en la parte superior izquierda dos botones más, los 
 y otro a los cajeros. Dichos nuevos trabajadores aparecerán en la cocina.
 
 
-# FEEDCAK VISUAL
+# FEEDBACK VISUAL
 
 En este proyecto se ofrecen tres tipos de feedback visual, el primero es el que se muestra en la siguiente imágen.
 
