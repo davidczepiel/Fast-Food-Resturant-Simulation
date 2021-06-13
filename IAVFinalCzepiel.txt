@@ -1,0 +1,22 @@
+IAV Grupo 08 Práctica 4
+
+David Czepiel
+Pablo Villapún Martín
+Nicolás Fernández Descalzo
+William Molina Cumba
+Marco Iván Merino Hernández
+
+Enlace gitHub: https://github.com/MarcoIMH/IAV21-G08
+
+
+Planteamiento de la práctica:
+	Desarrollo de un prototipo de IA para Videojuegos, en forma de controlador automático de uno de
+	los dos bandos enfrentados en el escenario de batalla del juego de estrategia en tiempo real
+	proporcionado por el profesor. Este controlador  usa, al menos, un mapa
+	de influencia (elaborado con los datos de ambos bandos) para tomar mejores decisiones sobre
+	qué órdenes dar a sus unidades e instalaciones en cada momento.
+
+Ampliaciones:
+	No se ha realizado ninguna de las ampliaciones propuestas.
+
+
