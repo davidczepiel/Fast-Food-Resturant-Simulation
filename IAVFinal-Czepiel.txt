@@ -1,0 +1,34 @@
+IAVFinal-Czepiel
+Autor: David Czepiel
+
+Enlace gitHub: https://github.com/davidczepiel/IAVFinal-Czepiel
+
+
+Planteamiento de la práctica:
+
+El proyecto trata de un prototipo que pretende simulador un restaurante de comida rápida. Este prototipo está implementado en Unity 
+haciendo uso de la herramienta de Behavior Designer. La cual es utilizada para desarrollar el comportamiento de los diversos agentes de la escena.
+En este proyecto vamos a encontrar tres tipos de agentes. Los clientes, los cuales vendrán al local a realizar una visita ordinaria, en la que pedirán su
+orden, la comerán, recogerán, opcionalmente irán al servicio y por último se irán del local.
+Luego tenemos a los cajeros, los cuales serán los encargados de atender a los clientes y de realizar pedidos sencillos, como las bebidas o los helados. Aquellos 
+pedidos que reciban de los clientes se dejarán en una serie de mesas donde se pueden ver todos los pedidos en los que se están trabajando y cómo se van incluyendo los 
+diferentes items en estos.
+Aparte, estos serán los encargados de reparar los váteres los cuales acabarán atascandose tras determinados usos y de vaciar las papeleras las cuales   
+se llenarán tras determinados usos y dejarán de ser utilizables.
+Por último encontramos a los cocineros, los cuales serán los encargados de realizar los pedidos más elaborados que los clientes pidan, como las hamburguesas
+o las patatas fritas.
+Este proyecto ofrece una interfaz con una serie de botonos que permiten añadir más agentes a la escena, y personalizar los pedidos de aquellos clientes 
+que vayamos añadiendo.
+
+
+
+
+Ampliaciones: 
+
+Ha sido posible realizar todas las ampliaciones planteadas en un principio, las cuales se listan a continuación.
+- Extender la interfaz para que aparte de poder generar clientes se puedan añadir más cocineros y cajeros.
+- Mostrar en cada uno de los lugares que se pueda desgastar (tanto los váteres como las papeleras) el número de usos restantes que les queda hasta averiarse.
+- Añadir “feedback” visual que permita ver el objetivo de los agentes en cada momento
+- Añadir “feedback” visual a los pedidos para ver cómo sus elementos se van añadiendo en la cocina y cómo los clientes se los van comiendo
+
+

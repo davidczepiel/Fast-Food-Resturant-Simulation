@@ -8,9 +8,9 @@ Autor: David Czepiel
 
 
 # Trabajo Final
-<a href="https://drive.google.com/file/d/1ILV0cGxd4ZwSc96NijXEZe5AN-QSOZHc/view" target="_blank">Video Explicación Proyecto</a>
+<a href="https://drive.google.com/file/d/1flir1s0gZp28OH_fsL3MxWGsSqCp5Uwx/view?usp=sharing" target="_blank">Build del proyecto</a>
 
-<a href="https://drive.google.com/file/d/1zzbcrSOFX1oWClB_fgw5CMvfTMb1YiYa/view" target="_blank">Ejecutable</a>
+<a href="https://drive.google.com/file/d/1zzbcrSOFX1oWClB_fgw5CMvfTMb1YiYa/view" target="_blank">Video Presentación</a>
 
 ![Restaurante](./Resources/Mapa.jpg?raw=true)
 
@@ -69,7 +69,7 @@ La ejecución de este árbol provoca que los cajeros realicen los siguientes pas
 
 - Cuando venga algún cliente y se ponga en el mostrador el cajero vendrá a atenderle para tomar su orden
 - Cuando los cocineros hayan terminado de hacer los elementos del menú solicitado que necestiten ser elaborados en la cocina el cajero tomará el pedido para completarlo con bebidas y/o helado en caso de que el pedido lo requiera
-- Cuando haya algún pedido que haya sido completado el cajero irá a por el y se lo dará al cliente que lo haya solicitado
+- Cuando haya algún pedido que haya sido completado, el cajero irá a por él y se lo dará al cliente que lo haya solicitado
 - En caso de que no tenga ningún cliente al que atender y haya algún elemento que arreglar, como una papelera o un váter, irá hacia este a repararlo
 - Si no ocurre nada de lo anterior, ni hay clientes ni pedidos ni nadad que reparar, se irá a la despensa a descansar
 
@@ -97,7 +97,7 @@ Estos agentes presentan el siguiente árbol de comportamiento:
 
 La ejecución de este árbol provoca que los cocineros realicen los siguientes pasos:
 
-- Cuando entre en la cocina algún pedido nuevo irá a por él para ver si tiene algún elemento que solo se pueda hacer en la cocina, si no lo tiene lo deja en las mesas para que los cajeros lo completen. En caso de que sí tenga algo que necesita cocinarse en la cocina, tomará nota y se pondrá a prepararlo
+- Cuando entre en la cocina algún pedido nuevo, irá a por él para ver si tiene algún elemento que solo se pueda hacer en la cocina, si no lo tiene lo deja en las mesas para que los cajeros lo completen. En caso de que sí tenga algo que necesita cocinarse en la cocina, tomará nota y se pondrá a prepararlo
 - En caso de que no haya ningún menu nuevo que entre en la cocina mirará si hay alguno que ya se esté haciendo en esta, y si tiene elementos en los que pueda ayudar lo anotará y se pondrá a cocinar
 - Cada vez que termine de cocinar algo se irá a la mesa donde se encuentra el menú y añadirá dicho elemento, en caso de que dicho menú no necesite de más elementos que se cocinen en la cocina avisará a los cajeros para que lo completen o lo entreguen
 - Si no tiene ningún pedido que empezar, ni ninguno en el que ayuda, se irá a la despensa a descansar
@@ -120,8 +120,7 @@ La interfaz que se le va a ofrecer al jugador va a ser la que se muestra en la s
 En ella se muestra en la parte superior derecha una imagen con una serie de teclas, estas representan los controles utilizados para controlar la cámara.
 La cual se puede mover haciendo uso de las teclas WASD, y además, podemos controlar su altura con las teclas Q y E, para poder ver con más o menos detalle a los agentes.
 
-Por otro lado encontramos el resto de elementos de la interfaz, los cuales son todos botones, aquellos que se encuentran en la parte inferior se corresponder con aquellos
-relacionados con los clientes, los cuatro que representan items del menú, sirven para configurar el menú de los nuevos clientes que vayamos a hacer spwan, para completar
+Por otro lado encontramos el resto de elementos de la interfaz, los cuales son todos botones, aquellos que se encuentran en la parte inferior están relacionados con los clientes, los cuatro que representan items del menú, sirven para configurar el menú de los nuevos clientes que vayamos a instanciar, para completar
 estos botones, tenemos el botón de la derecha del todo "Mandar" el cual nos sirve para crear un nuevo cliente que vaya a pedir un menú que conste de los items que se muestren
 en dicho botón. Por ejemplo, en la imagen mostrada, pulsar dicho botón provocaría la aparición de un cliente cuyo menú constara de todos los elementos posibles del local.
 Dichos clientes aparecerán en la calle.
@@ -152,7 +151,31 @@ Esto lo podemos observar en la siguiente imágen.
 
 ![ImagenPedidos](./Resources/PedidosFormandose.JPG?raw=true)
 
-Y estos mismos elementos siendo comidos, lo cual podemos observar en el siguiente [video](https://drive.google.com/file/d/1VE0UO2E7Op9auYlh5btnFyfTZD427NyQ/view?usp=sharing)
+Estos mismos elementos van desapareciendo a medida que van siendo comidos, lo cual podemos observar en el siguiente [video](https://drive.google.com/file/d/1VE0UO2E7Op9auYlh5btnFyfTZD427NyQ/view?usp=sharing)
+
+
+# LOS MENÚS
+
+![ImagenMenu](./Resources/Menu.JPG?raw=true)
+
+Los menús que se tratan en este proyecto constan como máximo, de cuatro elementos diferentes: hamburguesas,patatas,bebida y helado.
+Estos menús son solicitados por los clientes, los cuales ya tienen configurado lo que van a solicitar desde que son instanciados.
+Una vez que el cliente es atendido el menú es situado en las mesas de la cocina, donde se van acumulando los son solicitados y donde 
+se pueden ve cómo sus elementos se van añadiendo.
+El ciclo de ejecución de un menú dentro de la cocina sigue el siguiente curso:
+
+- Primero el menú entra en la cocina cuando el cliente es atendido
+- Un cocinero viene a ver el menú, si no tiene nada que se haga en la cocina, avisa de ello y se lo da a los cajeros para que lo completen
+- Cuando un menú no necesita más elementos de la cocina pasa a ser controlado por los cajeros, los cuales irán añadiendo elementos hasta que esté completo
+- Cuando el menú esté completo un cajero lo tomará y se lo dará al cliente que lo solicitó
+
+La coperación de los trabajadores para hacer los menús se divide en, los cocineros y los cajeros. El funcionamiento de esto se basa en que el menú tiene una serie de elementos
+que hay que hacer, cada trabajador analizará el menú, y verá si le falta algún elemento, nadie lo está haciendo, y dicho trabajador es capaz de hacerlo, en cuyo caso
+lo apunta, para que ningún otro trabajador se ponga con ello y se pone a preparar dicho elemento.
+
+La parte de los menús que puede ser realizada por los cajeros (bebidas y helados) no puede empezar a hacerse hasta que todos los elementos del menú que tengan
+que ser preparados en la cocina estén ya listos en dicho menú. Esto supone que para que los cajeros se ponga a completar un menú con bebidas y helados, dicho menú tiene 
+que haber recibido el visto bueno de un cocinero indicando que dicho menú ya no necesitara nada de la cocina.
 
 
 ASSETS Y REFERENCIAS
