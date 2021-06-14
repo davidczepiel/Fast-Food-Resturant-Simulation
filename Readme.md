@@ -10,7 +10,7 @@ Autor: David Czepiel
 # Trabajo Final
 <a href="https://drive.google.com/file/d/1flir1s0gZp28OH_fsL3MxWGsSqCp5Uwx/view?usp=sharing" target="_blank">Build del proyecto</a>
 
-<a href="https://drive.google.com/file/d/1Akb77ZBhpW99c5sLz293R_OZavpquAZY/view?usp=sharing" target="_blank">Video Presentación</a>
+<a href="https://drive.google.com/file/d/10LaSn3GrznNe91LK2knzhNjU5gUVVQHN/view?usp=sharing" target="_blank">Video Presentación</a>
 
 Tanto el ejecutable como el video están disponibles en el propio repositorio.
 
