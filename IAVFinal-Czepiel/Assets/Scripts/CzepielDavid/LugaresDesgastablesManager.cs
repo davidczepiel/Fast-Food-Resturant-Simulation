@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-using BehaviorDesigner.Runtime;
-using BehaviorDesigner.Runtime.Tasks;
-
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 public class LugaresDesgastablesManager : MonoBehaviour
 {

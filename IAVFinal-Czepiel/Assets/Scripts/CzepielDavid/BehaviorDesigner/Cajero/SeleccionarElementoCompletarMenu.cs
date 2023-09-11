@@ -41,10 +41,10 @@ public class SeleccionarElementoCompletarMenu : Action
         //Recorro los items que puedo cocinar y si el menu los requiere y todacia no los tiene me lo adjuido y me voy a cocinarlo
         for (uint i = 0; i < items.Count; i++)
         {
-            if (menu.menuRequiereItem((MenuItem)items[(int)i]) && !menu.itemHecho((MenuItem)items[(int)i]))
+            if (menu.isItemOrdered((MenuItem)items[(int)i]) && !menu.itemTakenIntoAccount((MenuItem)items[(int)i]))
             {
                 itemCocinando.Value = (uint)items[(int)i];
-                menu.empezarHacerItem((MenuItem)itemCocinando.Value);
+                menu.startPreparingItem((MenuItem)itemCocinando.Value);
                 break;
             }
         }

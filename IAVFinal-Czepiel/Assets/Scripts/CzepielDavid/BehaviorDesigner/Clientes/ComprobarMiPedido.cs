@@ -29,7 +29,7 @@ public class ComprobarMiPedido : Conditional
     public override TaskStatus OnUpdate()
     {
         //Si mi pedido está listo voy a por él, sino me quedo esperando
-        if (miMenu.getListo())
+        if (miMenu.getOrderReady())
         {
             miTarget.Value = GameObject.Find("LugarRecogerPedido");
             return TaskStatus.Success;

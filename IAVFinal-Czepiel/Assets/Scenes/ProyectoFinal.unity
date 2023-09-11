@@ -4026,7 +4026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314829520}
+      - m_Target: {fileID: 1076530127}
         m_MethodName: toggleMenuItem
         m_Mode: 3
         m_Arguments:
@@ -6109,7 +6109,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314829520}
-        m_MethodName: generarCocinero
+        m_MethodName: spawnChef
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6433,7 +6433,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314829520}
-        m_MethodName: generarCajero
+        m_MethodName: spawnCashier
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8352,7 +8352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d4da3aac464b448acdd24bbf412778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imagenesMandar:
+  agentsManager: {fileID: 1314829520}
+  currentMealItems:
   - {fileID: 1652583434}
   - {fileID: 688281763}
   - {fileID: 43023859}
@@ -9563,7 +9564,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314829520}
+      - m_Target: {fileID: 1076530127}
         m_MethodName: toggleMenuItem
         m_Mode: 3
         m_Arguments:
@@ -9874,7 +9875,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314829520}
+      - m_Target: {fileID: 1076530127}
         m_MethodName: toggleMenuItem
         m_Mode: 3
         m_Arguments:
@@ -10419,6 +10420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e37d0ec8b4721042a64b33c03e15ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 1076530127}
   menuPrefab: {fileID: 461975695918182528, guid: d0f3e64466636a74aa6de425334a8e3b,
     type: 3}
   clientePrefab: {fileID: 6907488456476427353, guid: 642d61ab4f047e546aa949e5f3a873bd,
@@ -10427,7 +10429,6 @@ MonoBehaviour:
     type: 3}
   cocineroPrefab: {fileID: 6042787518312104964, guid: 19b5dfce7391e5d43a32a2d475ec1138,
     type: 3}
-  uiManager: {fileID: 1076530127}
   elementosSiguientePedido: 
   posSpwanCliente: {x: 5.3, y: -4.3, z: -16}
   posSpwanCajero: {x: 0, y: -4.3, z: 44}
@@ -13869,7 +13870,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314829520}
-        m_MethodName: generarCliente
+        m_MethodName: spawnCustomer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15547,7 +15548,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314829520}
+      - m_Target: {fileID: 1076530127}
         m_MethodName: toggleMenuItem
         m_Mode: 3
         m_Arguments:
@@ -16460,7 +16461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8605f932cfa39d4fa8b4955410fee10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 15
+  movementVelocity: 15
 --- !u!20 &2057832034
 Camera:
   m_ObjectHideFlags: 0

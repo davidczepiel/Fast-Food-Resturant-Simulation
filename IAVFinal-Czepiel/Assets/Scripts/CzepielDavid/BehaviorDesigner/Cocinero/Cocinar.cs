@@ -35,7 +35,7 @@ public class Cocinar : Action
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
+            miMenu.Value.GetComponent<Menu>().completeOrderItem((MenuItem)itemCocinando.Value);
             miMenu.Value = null;
             return TaskStatus.Success;
         }

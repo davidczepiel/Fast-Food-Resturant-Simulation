@@ -17,7 +17,7 @@ public class ClienteSeVa : Action
 
     public override TaskStatus OnUpdate()
     {
-        clientesManager.Value.GetComponent<AgentesManager>().clienteHaTerminado(this.gameObject);
+        clientesManager.Value.GetComponent<AgentesManager>().despawnCustomer(this.gameObject);
         return TaskStatus.Success;
     }
 }

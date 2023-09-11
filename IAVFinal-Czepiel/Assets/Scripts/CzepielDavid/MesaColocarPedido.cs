@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MesaColocarPedido : MonoBehaviour
 {
-    //Padre de las mesas
-    public GameObject padreLugares;
+    [SerializeField]
+    GameObject padreLugares;
 
-    //Lista de mesas
-    public List<GameObject> mesas = new List<GameObject>();
+    [SerializeField]
+    List<GameObject> mesas = new List<GameObject>();
 
-    //Separación entre cada uno de los pedidos acumulados
-    public Vector3 separacion = new Vector3(0, 2.5f, 0);
+    [SerializeField]
+    Vector3 separacion = new Vector3(0, 2.5f, 0);
 
     //lista de listas que representa los pedidos acumulados en cada mesa
     private List<List<GameObject>> pedidosAcumulados = new List<List<GameObject>>();

@@ -36,7 +36,7 @@ public class PreparacionCliente : Action
         distanciaLlegada.Value = 1.2f;
         irBaño.Value = false;
 
-        GameObject pedido = clientesManager.Value.GetComponent<AgentesManager>().dameUnMenu();
+        GameObject pedido = clientesManager.Value.GetComponent<AgentesManager>().giveNewCustomerOrder();
         miPedido.Value = pedido;
         return TaskStatus.Success;
     }

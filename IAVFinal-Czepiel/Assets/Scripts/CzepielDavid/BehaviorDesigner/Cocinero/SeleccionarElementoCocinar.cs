@@ -42,16 +42,16 @@ public class SeleccionarElementoCocinar : Action
         menu = miMenu.Value.GetComponent<Menu>();
 
         //Si el meú no tiene hamburguesa me pongo a hacer hamburguesa
-        if (menu.menuRequiereItem(MenuItem.Hamburguesa) && !menu.itemHecho(MenuItem.Hamburguesa))
+        if (menu.isItemOrdered(MenuItem.Hamburguesa) && !menu.itemTakenIntoAccount(MenuItem.Hamburguesa))
         {
             itemCocinando.Value = (int)MenuItem.Hamburguesa;
-            menu.empezarHacerItem((MenuItem)itemCocinando.Value);
+            menu.startPreparingItem((MenuItem)itemCocinando.Value);
         }
         //Si el meú no tiene patatas me pongo a hacer patatas
-        else if (menu.menuRequiereItem(MenuItem.Patatas) && !menu.itemHecho(MenuItem.Patatas))
+        else if (menu.isItemOrdered(MenuItem.Patatas) && !menu.itemTakenIntoAccount(MenuItem.Patatas))
         {
             itemCocinando.Value = (int)MenuItem.Patatas;
-            menu.empezarHacerItem((MenuItem)itemCocinando.Value);
+            menu.startPreparingItem((MenuItem)itemCocinando.Value);
         }
     }
 

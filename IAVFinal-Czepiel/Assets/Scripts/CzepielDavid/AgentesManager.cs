@@ -4,57 +4,51 @@ using UnityEngine;
 
 public class AgentesManager : MonoBehaviour
 {
-    //Lista de menus personalizados que el player solicita
-    public List<List<bool>> menusPersonalizados = new List<List<bool>>();
+    [SerializeField]
+    UIManager uiManager;
 
-    //Prefab del menu que vamos a ofrecer
-    public GameObject menuPrefab;
+    [SerializeField]
+    GameObject menuPrefab;
+    [SerializeField]
+    GameObject clientePrefab;
+    [SerializeField]
+    GameObject cajeroPrefab;
+    [SerializeField]
+    GameObject cocineroPrefab;
 
-    //Prefab de los clientes que vamos a hacer spawn
-    public GameObject clientePrefab;
+    [SerializeField]
+    Vector3 posSpwanCliente;
+    [SerializeField]
+    Vector3 posSpwanCajero;
+    [SerializeField]
+    Vector3 posSpwanCocinero;
 
-    //Prefab de los cajeros que vamos a hacer spawn
-    public GameObject cajeroPrefab;
+    List<bool> elementosSiguientePedido = new List<bool>();
+    List<List<bool>> menusPersonalizados = new List<List<bool>>();
 
-    //Prefab de los cocineros que vamos a hacer spawn
-    public GameObject cocineroPrefab;
-
-    public UIManager uiManager;
-
-    //Lista de elementos que va a tener el siguiente menu que vayamos a solicitar
-    public List<bool> elementosSiguientePedido = new List<bool>();
-
-    //Spawn de los clientes
-    public Vector3 posSpwanCliente;
-
-    //Spawn de los cajeros
-    public Vector3 posSpwanCajero;
-
-    //Spawn de los cocineros
-    public Vector3 posSpwanCocinero;
-
-    // Start is called before the first frame update
     private void Start()
     {
-        elementosSiguientePedido.Add(false);
-        elementosSiguientePedido.Add(false);
-        elementosSiguientePedido.Add(false);
-        elementosSiguientePedido.Add(false);
-        uiManager.mostrarElementos(elementosSiguientePedido);
+        elementosSiguientePedido = new List<bool>() { false, false, false, false };
+        uiManager.ShowMealItems(elementosSiguientePedido);
     }
 
     /// <summary>
-    /// Se devuelve un gameObject que contiene un menu
-    /// EN caso de que dispongamos de menus personalizados ofrecemos uno de estos
-    /// en caso contrario creamos uno completo y lo devolvemos
+    /// Toggles a specific item for the next customer order
     /// </summary>
-    /// <returns>GameObject que contiene el menú solicitado</returns>
-    public GameObject dameUnMenu()
-    {
-        //Generamos un menu
-        GameObject nuevo = Instantiate(menuPrefab, new Vector3(0, 100, 0), Quaternion.identity);
+    /// <param name="item"> Item added/removed from the next customer order</param>
+    public void toggleMenuItem(int item) { elementosSiguientePedido[item] = !elementosSiguientePedido[item]; }
 
-        //Personalizamos el menu o hacemos uno completo
+    /// <summary>
+    /// Returns a gameobject with the next customer's order
+    /// In case there are custom orders available, one of those is returned
+    /// Otherwise an order with all of the menu items is returned
+    /// </summary>
+    /// <returns> Gameobject with the next customer's order </returns>
+    public GameObject giveNewCustomerOrder()
+    {
+        GameObject newOrder = Instantiate(menuPrefab, new Vector3(0, 100, 0), Quaternion.identity);
+        Menu menu = newOrder.GetComponent<Menu>();
+        //Take the lastest custom order or create a new one with all of the available items
         List<bool> actual;
         if (menusPersonalizados.Count > 0)
         {
@@ -62,37 +56,17 @@ public class AgentesManager : MonoBehaviour
             menusPersonalizados.RemoveAt(0);
         }
         else
-        {
-            actual = new List<bool>();
-            actual.Add(true);
-            actual.Add(true);
-            actual.Add(true);
-            actual.Add(true);
-        }
-        Menu menu = nuevo.GetComponent<Menu>();
-        for (int i = 0; i < actual.Count; i++)
-        {
-            if (actual[i]) menu.añadirItemAlPedido((MenuItem)i);
-        }
-        return nuevo;
+            actual = new List<bool>() { true, true, true, true};
+
+        menu.setCustomerOrder(actual);
+        return newOrder;
     }
 
-    /// <summary>
-    /// Ajustamos un item determinado para que en el siguiente pedido que se solicite este item se ajuste a
-    /// lo que el ususario ha indicado
-    /// </summary>
-    /// <param name="item"> Item que queremos añadir/quitar del siguiente menu</param>
-    public void toggleMenuItem(int item)
-    {
-        elementosSiguientePedido[item] = !elementosSiguientePedido[item];
-        uiManager.cambiarVisibilidadElemento((MenuItem)item);
-    }
 
-    /// <summary>
-    /// Se genera un nuevo pedido con los datos que el jugador ha especificado a través de la UI
-    /// Y se crea un cliente que vaya a solicitar dicho pedido
-    /// </summary>
-    public void generarCliente()
+    ////////////SPAWN AGENTS///////////////
+    public void spawnCashier() { Instantiate(cajeroPrefab, posSpwanCajero, Quaternion.identity); }
+    public void spawnChef() { Instantiate(cocineroPrefab, posSpwanCocinero, Quaternion.identity); }
+    public void spawnCustomer()
     {
         List<bool> nueva = new List<bool>();
         for (int i = 0; i < elementosSiguientePedido.Count; i++)
@@ -103,29 +77,5 @@ public class AgentesManager : MonoBehaviour
         menusPersonalizados.Add(nueva);
         Instantiate(clientePrefab, posSpwanCliente, Quaternion.identity);
     }
-
-    /// <summary>
-    /// Este método tiene como objetivo crear un nuevo cajero
-    /// </summary>
-    public void generarCajero()
-    {
-        Instantiate(cajeroPrefab, posSpwanCajero, Quaternion.identity);
-    }
-
-    /// <summary>
-    /// Este método tiene como objetivo crear un nuevo cocinero
-    /// </summary>
-    public void generarCocinero()
-    {
-        Instantiate(cocineroPrefab, posSpwanCocinero, Quaternion.identity);
-    }
-
-    /// <summary>
-    /// Se destruye el cliente que ha terminado su árbol de comportamiento
-    /// </summary>
-    /// <param name="cliente"> cliente que vamos a eliminar</param>
-    public void clienteHaTerminado(GameObject cliente)
-    {
-        GameObject.Destroy(cliente);
-    }
+    public void despawnCustomer(GameObject cliente) { Destroy(cliente); }
 }

@@ -31,8 +31,8 @@ public class IncluirItemMenu : Action
     public override TaskStatus OnUpdate()
     {
         //Añado el item al menu y pregunto si está completado, en cuyo caso le indico a la caja que lo incorpore a la lista de pedidos por entregar
-        miMenu.Value.GetComponent<Menu>().itemMenuCompletado((MenuItem)itemCocinando.Value);
-        if (miMenu.Value.GetComponent<Menu>().menuCompletado())
+        miMenu.Value.GetComponent<Menu>().completeOrderItem((MenuItem)itemCocinando.Value);
+        if (miMenu.Value.GetComponent<Menu>().isOrderFinished())
         {
             caja.añadirPedidoPorRegoger(miMenu.Value);
             caja.eliminarPedidoPorCompletar(miMenu.Value);

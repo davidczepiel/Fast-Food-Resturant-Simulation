@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.4.21f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{06B8FADC-79E7-ED90-D41D-458CFA59EDE6}</ProjectGuid>
+    <ProjectGuid>{AC1602EB-803F-D50F-689C-1281F60C9358}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -47,14 +49,10 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>4.9.1.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.4.21f1</UnityVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.21f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -261,62 +259,65 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="BehaviorDesigner.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Behavior Designer/Editor/BehaviorDesigner.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Behavior Designer/Editor/BehaviorDesigner.Editor.dll</HintPath>
     </Reference>
     <Reference Include="BehaviorDesigner.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Behavior Designer/Runtime/BehaviorDesigner.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Behavior Designer/Runtime/BehaviorDesigner.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Antlr3.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Bolt.Core.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Bolt.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Core.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Bolt.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Bolt.Flow.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.Flow.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Bolt.Flow.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.State.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Bolt.State.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Bolt.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Bolt.State.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Bolt.State.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Core.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Ludiq.Core.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Ludiq.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Core.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Ludiq.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Graphs.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Ludiq.Graphs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Graphs.Runtime">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Ludiq.Graphs.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Ludiq.Platforms">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/Ludiq.Platforms.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/Ludiq.Platforms.dll</HintPath>
     </Reference>
     <Reference Include="MiscUtil">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/MiscUtil.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/MiscUtil.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Assets/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Assets/Ludiq/Assemblies/YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -673,42 +674,42 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/Czepiel_David_Proyecto_Final/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Universidad/3Universidad/Inteligencia Artificial/IA/ProyectoFinal/IAVFinal-Czepiel-David/IAVFinal-Czepiel/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{0142CD99-3CAE-1FBB-8BC9-00222B51F506}</Project>
+      <Project>{4B5202D7-FDB9-A22F-E734-EF951CF77F0A}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
   </ItemGroup>

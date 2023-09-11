@@ -1,164 +1,87 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public enum MenuItem { Hamburguesa, Patatas, Bebida, Helado };
 
 public class Menu : MonoBehaviour
 {
-    //Lista de objetos que representan los elementos del menu
-    public List<GameObject> misCosas;
+    [SerializeField]
+    List<GameObject> menuItems;
 
-    //Lista de elementos que el menu tiene completados
-    private List<bool> elementosMenu = new List<bool>() { false, false, false, false };
+    private List<bool> itemsOrdered = new List<bool>() { false, false, false, false };
+    private List<bool> completedItems = new List<bool>() { false, false, false, false };
+    private List<bool> itemsInProccess = new List<bool>() { false, false, false, false };
 
-    //Lista de elementos que el menu tiene haciendose
-    private List<bool> elementosHaciendose = new List<bool>() { false, false, false, false };
+    private bool mealIsReadyForTheCustomer = false;
+    private bool mealGivenToCustomer = false;
 
-    //Lista de elementos que el menu requiere
-    private List<bool> pedido = new List<bool>() { false, false, false, false };
-
-    private int ordenComer = 0;
-
-    //Bool que indica si un pedido esta listo
-    private bool listo = false;
-
-    //Bool que indica si un pedido ha sido recogido
-    private bool recogido = false;
+    private int nextItemIndexToEat = 0;
 
     private void Start()
     {
-        for (int i = 0; i < misCosas.Count; i++)
-        {
-            misCosas[i].SetActive(false);
-        }
+        //Disable everything because the workers need to complete the order
+        for (int i = 0; i < menuItems.Count; i++)
+            menuItems[i].SetActive(false);
     }
 
-    /// <summary>
-    /// Este metodo sirve para incluir algún item concreto a los que el menu va a necesitar
-    /// </summary>
-    /// <param name="item">item que añadimos al menu</param>
-    public void añadirItemAlPedido(MenuItem item)
+    public void setCustomerOrder(List<bool> customerOrder) { itemsOrdered = customerOrder; }
+
+    //Methods for the workers to update the order 
+    public bool isItemOrdered(MenuItem item) { return itemsOrdered[(int)item]; }
+    public void startPreparingItem(MenuItem item) { itemsInProccess[(int)item] = true; }
+    public bool itemTakenIntoAccount(MenuItem item) { return completedItems[(int)item] || itemsInProccess[(int)item]; }
+    public void completeOrderItem(MenuItem item)
     {
-        pedido[(int)item] = true;
+        completedItems[(int)item] = true;
+        menuItems[(int)item].SetActive(true);
     }
 
     /// <summary>
-    /// Metodo que sirve para comprobar si un item está hecho o en proceso
+    /// Tells whether the chefs are done with this order or not
     /// </summary>
-    /// <param name="item">item a comprobar</param>
-    /// <returns>bool que indica lo que se ha solicitado</returns>
-    public bool itemHecho(MenuItem item)
+    /// <returns> True if the order doesnt need any burguer/fries to be prepared </returns>
+    public bool isTheKitchenDoneWithThisOrder()
     {
-        return elementosMenu[(int)item] || elementosHaciendose[(int)item];
+        bool kitchenDoneWithThisOrder = true;
+        //If either a hamburguer or fries are needed for the order, the kitchen is not done with this meal yet 
+        if (!completedItems[0] && itemsOrdered[0]) kitchenDoneWithThisOrder = false;
+        if (!completedItems[1] && itemsOrdered[1]) kitchenDoneWithThisOrder = false;
+        return kitchenDoneWithThisOrder;
     }
 
+    //Is the order ready for the customer?
+    public void setOrderReady(bool a) { mealIsReadyForTheCustomer = a; }
+    public bool getOrderReady() { return mealIsReadyForTheCustomer; }
     /// <summary>
-    /// Metodo que sirve para preguntar si un menu ya tiene todos los elementos de la cocina que necesita completados
+    /// Tells whether the order has all the items ordered and can be given to the customer or not
     /// </summary>
-    /// <returns>bool que indica si ha completado su parte de la cocina</returns>
-    public bool cocinaTerminado()
-    {
-        bool cierto = true;
-        if (!elementosMenu[0] && pedido[0])
-            cierto = false;
-        if (!elementosMenu[1] && pedido[1])
-            cierto = false;
-
-        return cierto;
-    }
-
-    /// <summary>
-    /// Metodo que sirve para comprobar si un menú necesita de un item concreto para ser completado
-    /// </summary>
-    /// <param name="item">item que preguntar</param>
-    /// <returns>bool que indica si lo necesita o no</returns>
-    public bool menuRequiereItem(MenuItem item)
-    {
-        return pedido[(int)item];
-    }
-
-    /// <summary>
-    /// Metodo que srve para indicar que vamos a comenzar a hacer un item concreto
-    /// </summary>
-    /// <param name="item">item que hemos compenzar a preparar</param>
-    public void empezarHacerItem(MenuItem item)
-    {
-        elementosHaciendose[(int)item] = true;
-    }
-
-    /// <summary>
-    /// Metodo que sirve para indicar que un item determinado ha sido completado
-    /// </summary>
-    /// <param name="item">item que hemos completado</param>
-    public void itemMenuCompletado(MenuItem item)
-    {
-        elementosMenu[(int)item] = true;
-        misCosas[(int)item].SetActive(true);
-    }
-
-    /// <summary>
-    /// Metodo que sirve para comprobar si un menu tiene todos los items que necesita y ha sido completado
-    /// </summary>
-    /// <returns>bool de si ha sido completado o no</returns>
-    public bool menuCompletado()
+    /// <returns> True if the order is ready for the customer, false otherwise </returns>
+    public bool isOrderFinished()
     {
         int i = 0;
-        while (i < pedido.Count && pedido[i] == elementosMenu[i]) i++;
-
-        return i >= pedido.Count;
+        while (i < itemsOrdered.Count && itemsOrdered[i] == completedItems[i]) i++;
+        return i >= itemsOrdered.Count;
     }
 
-    /// <summary>
-    /// Metodo que eestablece un valor a la variable listo
-    /// </summary>
-    /// <param name="a">valor a establecer</param>
-    public void setListo(bool a)
-    {
-        listo = a;
-    }
+    //Has the order been given to the customer?
+    public void setOrderGivenToCustomer(bool a) { mealGivenToCustomer = a; }
+    public bool getOrderGivenToCustomer() { return mealGivenToCustomer; }
 
     /// <summary>
-    /// Metodo para recibir el valor de la variable listo
+    /// Called each time the customer eats an item, this updates the order visually to display only the items left (that havent been eaten yet)
+    /// and tells whether customer just finished his order 
     /// </summary>
-    /// <returns>valor de la variable</returns>
-    public bool getListo()
-    {
-        return listo;
-    }
-
-    /// <summary>
-    /// Metodo que eestablece un valor a la variable recogido
-    /// </summary>
-    /// <param name="a">valor a establecer</param>
-    public void setRecogido(bool a)
-    {
-        recogido = a;
-    }
-
-    /// <summary>
-    /// Metodo para recibir el valor de la variable listo
-    /// </summary>
-    /// <returns>valor de la variable</returns>
-    public bool getRecogido()
-    {
-        return recogido;
-    }
-
-    /// <summary>
-    /// Metodo que sirve para determinar si un pedido ha sido comido por completo
-    /// </summary>
-    /// <returns>Bool que indica si ha sido comido por completo</returns>
+    /// <returns> True if the customer has finished his order, false otherwise </returns>
     public bool comer()
     {
-        while (ordenComer < elementosMenu.Count && !elementosMenu[ordenComer]) ordenComer++;
-        if (ordenComer < elementosMenu.Count)
+        while (nextItemIndexToEat < completedItems.Count && !completedItems[nextItemIndexToEat]) nextItemIndexToEat++;
+        if (nextItemIndexToEat < completedItems.Count)
         {
-            elementosMenu[ordenComer] = false;
-            misCosas[ordenComer].SetActive(false);
+            completedItems[nextItemIndexToEat] = false;
+            menuItems[nextItemIndexToEat].SetActive(false);
         }
 
-        ordenComer++;
-        return ordenComer >= elementosMenu.Count;
+        nextItemIndexToEat++;
+        return nextItemIndexToEat >= completedItems.Count;
     }
 }

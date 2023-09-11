@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Este task tiene como objetivo darle al cliente su pedido \n" +
@@ -22,13 +15,13 @@ public class EntregarPedido : Action
     public override void OnStart()
     {
         menu = miPedido.Value.GetComponent<Menu>();
-        menu.setListo(true);
+        menu.setOrderReady(true);
     }
 
     public override TaskStatus OnUpdate()
     {
         //Mientras el pedido no haya sido recogido por el cliente sigo esperando
-        if (menu.getRecogido())
+        if (menu.getOrderGivenToCustomer())
         {
             return TaskStatus.Success;
         }

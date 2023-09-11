@@ -47,7 +47,7 @@ public class PedidoNecesitaSerCocinado : Conditional
         //en este menú
         for (int i = 0; i < posibilidadesAyuda.Count; i++)
         {
-            if (pedido.Value.GetComponent<Menu>().menuRequiereItem((MenuItem)posibilidadesAyuda[i]))
+            if (pedido.Value.GetComponent<Menu>().isItemOrdered((MenuItem)posibilidadesAyuda[i]))
             {
                 return true;
             }

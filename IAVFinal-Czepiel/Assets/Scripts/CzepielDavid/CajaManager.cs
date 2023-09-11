@@ -209,7 +209,7 @@ public class CajaManager : MonoBehaviour
             Menu menu = actual.GetComponent<Menu>();
             for (int j = 0; j < posiblesElementos.Count; j++)
             {
-                if (menu.menuRequiereItem((MenuItem)posiblesElementos[j]) && !menu.itemHecho((MenuItem)posiblesElementos[j]))
+                if (menu.isItemOrdered((MenuItem)posiblesElementos[j]) && !menu.itemTakenIntoAccount((MenuItem)posiblesElementos[j]))
                 {
                     bucle = false;
                     pedido = actual;

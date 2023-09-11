@@ -155,7 +155,7 @@ public class CocinaManager : MonoBehaviour
             Menu menu = actual.GetComponent<Menu>();
             for (int j = 0; j < posiblesElementos.Count; j++)
             {
-                if (menu.menuRequiereItem((MenuItem)posiblesElementos[j]) && !menu.itemHecho((MenuItem)posiblesElementos[j]))
+                if (menu.isItemOrdered((MenuItem)posiblesElementos[j]) && !menu.itemTakenIntoAccount((MenuItem)posiblesElementos[j]))
                 {
                     bucle = false;
                     pedido = actual;
@@ -182,7 +182,7 @@ public class CocinaManager : MonoBehaviour
         {
             GameObject actual = pedidosHaciendose[i];
             Menu menu = actual.GetComponent<Menu>();
-            if (menu.cocinaTerminado())
+            if (menu.isTheKitchenDoneWithThisOrder())
             {
                 pedido = actual;
                 bucle = false;

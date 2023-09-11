@@ -21,7 +21,7 @@ public class TomarPedido : Action
     public override TaskStatus OnUpdate()
     {
         //Tomo el pedido y me lo llevo en brazos
-        miPedido.Value.GetComponent<Menu>().setRecogido(true);
+        miPedido.Value.GetComponent<Menu>().setOrderGivenToCustomer(true);
         miPedido.Value.transform.position = this.transform.position + (this.transform.forward * 2);
         miPedido.Value.transform.parent = this.transform;
         return TaskStatus.Success;

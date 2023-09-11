@@ -40,7 +40,7 @@ public class Comer : Action
             bool terminado = miMenu.comer();
             if (terminado)
             {
-                if (miMenu.menuRequiereItem(MenuItem.Bebida))
+                if (miMenu.isItemOrdered(MenuItem.Bebida))
                     irBaño.Value = true;
                 else
                     irBaño.Value = false;

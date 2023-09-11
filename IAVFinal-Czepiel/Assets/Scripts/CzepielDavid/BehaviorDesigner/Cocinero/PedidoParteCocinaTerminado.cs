@@ -40,7 +40,7 @@ public class PedidoParteCocinaTerminado : Action
         cocina.quitarPedido(miMenu.Value);
 
         //Se mete en una lista u otra
-        if (menu.menuCompletado())
+        if (menu.isOrderFinished())
             caja.añadirPedidoPorRegoger(miMenu.Value);
         else
             caja.añadirPedidoPorCompletar(miMenu.Value);
