@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
 [TaskDescription("Este task tiene como objetivo tomar un menú y comenzar a hacer algún item que no tenga todavía \n" +
@@ -61,7 +55,7 @@ public class SeleccionarElementoCocinar : Action
         //SI he decidido el elemento qué voy a cocinar me quedo con el lugar en el que debo hacerlo y muestro mi objetivo visualmente
         if (timer <= 0)
         {
-            miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
+            miTarget.Value = cocina.getPlaceToPrepareItem((MenuItem)itemCocinando.Value);
             miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagenMenuItem((MenuItem)itemCocinando.Value);
             return TaskStatus.Success;
         }

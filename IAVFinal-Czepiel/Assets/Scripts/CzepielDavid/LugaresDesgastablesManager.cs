@@ -19,45 +19,36 @@ public class LugaresDesgastablesManager : MonoBehaviour
     //Desplazamiento entre clientes que esten en la cola
     public Vector3 desplazamiento;
 
-    public GameObject textoUsosRestantes;
+    public TextoAereo textoUsosRestantes;
 
     public Vector3 desplazamientoTextoAereo = new Vector3(0, 2.5f, 0);
 
-    private List<GameObject> textosUsosRestantes = new List<GameObject>();
+    private List<TextoAereo> textosUsosRestantes = new List<TextoAereo>();
 
-    //Lista de lugares ocupados
-    private List<bool> ocupados = new List<bool>();
-
-    //Lista de lugares que necesitan ser reparados
-    private List<bool> reparrables = new List<bool>();
-
-    //Lista que contiene los usos restantes de cada uno de estos lugares
-    private List<int> usosRestantes = new List<int>();
+    private List<bool> ocuppiedPlaces = new List<bool>();
+    private List<bool> reparablePlaces = new List<bool>();
+    private List<int> usesLeft = new List<int>();
 
     //Timers de cada uno de los lugares para que se reparen solos
     private List<float> timerRepararSolos = new List<float>();
 
-    //Ticket que se le ofrece al próximo agente que llega a la cola
-    private int ticketActual = 0;
-
-    //Ticket que le toca avanzar
-    private int turno = 0;
+    private int nextTicket = 0;
+    private int currenTurnTicketNumber = 0;
 
     private void Start()
     {
+        //Each place is set to available and fully functional 
         for (int i = 0; i < lugares.Count; i++)
         {
-            ocupados.Add(false);
-            reparrables.Add(false);
-            usosRestantes.Add(usosHastaDesgaste);
+            ocuppiedPlaces.Add(false);
+            reparablePlaces.Add(false);
+            usesLeft.Add(usosHastaDesgaste);
             timerRepararSolos.Add(tiempoRepararSolo);
             textosUsosRestantes.Add(Instantiate(textoUsosRestantes, lugares[i].transform.position + desplazamientoTextoAereo, Quaternion.identity));
         }
 
         for (int i = 0; i < textosUsosRestantes.Count; i++)
-        {
-            textosUsosRestantes[i].GetComponent<TextoAereo>().ponerTexto(usosRestantes[i].ToString());
-        }
+            textosUsosRestantes[i].ponerTexto(usesLeft[i].ToString());
     }
 
     private void Update()
@@ -67,160 +58,147 @@ public class LugaresDesgastablesManager : MonoBehaviour
         float tiempo = Time.deltaTime;
         for (int i = 0; i < timerRepararSolos.Count; i++)
         {
-            if (reparrables[i] && ocupados[i])
+            if (reparablePlaces[i] && ocuppiedPlaces[i])
             {
                 timerRepararSolos[i] -= tiempo;
                 if (timerRepararSolos[i] <= 0)
                 {
                     timerRepararSolos[i] = tiempoRepararSolo;
-                    reparrables[i] = false;
-                    ocupados[i] = false;
+                    reparablePlaces[i] = false;
+                    ocuppiedPlaces[i] = false;
                 }
             }
         }
     }
 
     /// <summary>
-    /// Devuelve el lugar al que le toca ir al siguiente agente que sale de la cola
+    /// Returns whether any place is currently available or not
     /// </summary>
-    /// <returns>Lugar al que el agente debe ir</returns>
-    public GameObject dameLugarAlQueIr()
+    /// <returns> True if there is at least one available place, false otherwise </returns>
+    public bool isThereAnyAvailablePlace()
     {
         int i = 0;
-        while (i < ocupados.Count && (ocupados[i] || reparrables[i])) i++;
+        while (i < ocuppiedPlaces.Count && (ocuppiedPlaces[i] || reparablePlaces[i]))
+            i++;
+        return i < ocuppiedPlaces.Count;
+    }
 
-        ocupados[i] = true;
-        usosRestantes[i] -= 1;
+    /// <summary>
+    /// Returns the first available place
+    /// </summary>
+    /// <returns> Place for the agent to go to </returns>
+    public GameObject getAvailablePlace()
+    {
+        int i = 0;
+        while (i < ocuppiedPlaces.Count && (ocuppiedPlaces[i] || reparablePlaces[i])) i++;
+
+        ocuppiedPlaces[i] = true;
+        usesLeft[i] -= 1;
 
         return lugares[i];
     }
 
     /// <summary>
-    /// Devuelve el lugar al que le toca ir al siguiente agente en la cola
+    /// Leave a place free for another agent to use/interact with
     /// </summary>
-    /// <returns>Lugar al que el agente debe ir</returns>
-    public Vector3 damePosicionColaALaQueIr(int turnoCliente)
+    /// <param name="libre"> Place that an agent is leaving </param>
+    public void leavePlace(GameObject libre)
     {
-        int cantidadDesplazar = turnoCliente - turno;
-        Vector3 pos = lugarEmpiezaCola.transform.position;
-        pos += (desplazamiento * cantidadDesplazar);
-        return pos;
+        int result = lugares.FindIndex(element => element == libre);
+        ocuppiedPlaces[result] = false;
+        textosUsosRestantes[result].GetComponent<TextoAereo>().ponerTexto(usesLeft[result].ToString());
+        //Is the place is no longer available set it as reparable
+        if (usesLeft[result] <= 0)
+            reparablePlaces[result] = true;
     }
 
     /// <summary>
-    /// Devuelve si hay algún lugar que necesite ser reparado
+    /// Gives an agent its position in the queue for using any of the available places
     /// </summary>
-    /// <returns>Bool necesidad reparar algo</returns>
-    public bool hayLugarQueArreglar()
+    /// <returns> Ticket number for the agent </returns>
+    public int getQueueTicket()
+    {
+        return nextTicket++;
+    }
+
+    /// <summary>
+    /// Returns the position inside the queue given the next turn's ticket number
+    /// </summary>
+    /// <param name="clientTicketnumber"> </param>
+    /// <returns> Position inside the queue </returns>
+    public int getPositionInsideQueue(int clientTicketnumber)
+    {
+        return clientTicketnumber - currenTurnTicketNumber;
+    }
+
+    /// <summary>
+    /// Returns whether its an agents turn to use any of the available places or not
+    /// </summary>
+    /// <param name="clientTicketNumber"> Ticket number of the client that is asking </param>
+    /// <returns> True if it's this client's turn, false otherwise </returns>
+    public bool isItMyTurn(int clientTicketNumber)
+    {
+        if (clientTicketNumber == currenTurnTicketNumber && isThereAnyAvailablePlace())
+        {
+            currenTurnTicketNumber++;
+            return true;
+        }
+        else return false;
+    }
+
+    /// <summary>
+    /// Returns a world position inside the queue for the agent to wait at
+    /// </summary>
+    /// <returns> Position where the agent should wait for his turn </returns>
+    public Vector3 getQueuePositionToWait(int turnoCliente)
+    {
+        int displacementAmount = turnoCliente - currenTurnTicketNumber;
+        Vector3 finalPos = lugarEmpiezaCola.transform.position;
+        finalPos += (desplazamiento * displacementAmount);
+        return finalPos;
+    }
+
+    /// <summary>
+    /// Returns whether any of the available places needs a repair or not
+    /// </summary>
+    /// <returns> True if any of the places needs a repair, false otherwise </returns>
+    public bool isThereAnyPlaceToRepair()
     {
         int i = 0;
-        while (i < lugares.Count && (!reparrables[i] || (reparrables[i] && ocupados[i])))
+        while (i < lugares.Count && (!reparablePlaces[i] || (reparablePlaces[i] && ocuppiedPlaces[i])))
             i++;
-
         return i < lugares.Count;
     }
 
     /// <summary>
-    /// Devuelve el objeto que representa el lugar que necesita ser reparado
+    /// Returns the first place that needs a repair 
     /// </summary>
-    /// <returns>objeto a reparar</returns>
-    public GameObject dameLugarQueArreglar()
+    /// <returns> Place to repair </returns>
+    public GameObject getPlaceToRepair()
     {
         int i = 0;
-        while (i < lugares.Count && (!reparrables[i] || (reparrables[i] && ocupados[i])))
+        while (i < lugares.Count && (!reparablePlaces[i] || (reparablePlaces[i] && ocuppiedPlaces[i])))
             i++;
 
-        reparrables[i] = true;
-        ocupados[i] = true;
+        reparablePlaces[i] = true;
+        ocuppiedPlaces[i] = true;
         return lugares[i];
     }
 
     /// <summary>
-    /// Devuelve la posicion del objeto que representa el lugar que necesita ser reparado
+    /// Repairs a given place and leaves it available for the customers to use 
     /// </summary>
-    /// <returns>posicion del objeto a reparar</returns>
-    public Vector3 dameLugarParaArreglarVector()
+    /// <param name="repairedPlace"> Place that was just repaired </param>
+    public void repairPlace(GameObject repairedPlace)
     {
-        return dameLugarQueArreglar().transform.position;
-    }
-
-    /// <summary>
-    /// Un agente deja libre uno de los lugares que estaba ocupando
-    /// En caso de que ese lugar ya no le queden usos queda marcado como que necesita reparaciones
-    /// </summary>
-    /// <param name="libre">lugar liberado</param>
-    public void dejarLibreLugar(GameObject libre)
-    {
-        int result = lugares.FindIndex(element => element == libre);
-        ocupados[result] = false;
-        textosUsosRestantes[result].GetComponent<TextoAereo>().ponerTexto(usosRestantes[result].ToString());
-        if (usosRestantes[result] <= 0)
-            reparrables[result] = true;
-    }
-
-    /// <summary>
-    /// Se repara un lugar especificado
-    /// </summary>
-    /// <param name="libre">GameObject que se ha reparado</param>
-    public void repararLugar(GameObject libre)
-    {
-        int result = lugares.FindIndex(element => element == libre);
+        int result = lugares.FindIndex(element => element == repairedPlace);
         //Si no ha dado error reparamos
         if (result >= 0)
         {
-            ocupados[result] = false;
-            reparrables[result] = false;
-            usosRestantes[result] = usosHastaDesgaste;
-            textosUsosRestantes[result].GetComponent<TextoAereo>().ponerTexto(usosRestantes[result].ToString());
+            ocuppiedPlaces[result] = false;
+            reparablePlaces[result] = false;
+            usesLeft[result] = usosHastaDesgaste;
+            textosUsosRestantes[result].GetComponent<TextoAereo>().ponerTexto(usesLeft[result].ToString());
         }
-    }
-
-    /// <summary>
-    /// Devuelve si hay algún lugar al que un agente pueda proceder a usar
-    /// </summary>
-    /// <returns>bool de si hay lugares libres</returns>
-    public bool hayLugarLibre()
-    {
-        int i = 0;
-        while (i < ocupados.Count && (ocupados[i] || reparrables[i]))
-        {
-            i++;
-        }
-        return i < ocupados.Count;
-    }
-
-    /// <summary>
-    /// Devuelve si un ticket determinado es el siguiente al que le toca y hay huecos
-    /// </summary>
-    /// <param name="turnoEsperando"></param>
-    /// <returns></returns>
-    public bool meToca(int turnoEsperando)
-    {
-        if (turnoEsperando == turno && hayLugarLibre())
-        {
-            turno++;
-            return true;
-        }
-        else
-            return false;
-    }
-
-    /// <summary>
-    /// Devuelve el siguiente ticket disponible
-    /// </summary>
-    /// <returns>numero de ticket</returns>
-    public int dameTicket()
-    {
-        return ticketActual++;
-    }
-
-    /// <summary>
-    /// Devuelve la posición dentro de la cola que le corresponde a un ticket determinado
-    /// </summary>
-    /// <param name="ticketCliente"></param>
-    /// <returns>posición en la cola</returns>
-    public int damePosicionDentroCola(int ticketCliente)
-    {
-        return ticketCliente - turno;
     }
 }

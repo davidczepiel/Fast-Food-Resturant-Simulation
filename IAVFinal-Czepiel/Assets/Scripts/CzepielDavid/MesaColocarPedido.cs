@@ -13,28 +13,29 @@ public class MesaColocarPedido : MonoBehaviour
     [SerializeField]
     Vector3 separacion = new Vector3(0, 2.5f, 0);
 
-    //lista de listas que representa los pedidos acumulados en cada mesa
+    //List of lists that will contain all the customer orders being done
     private List<List<GameObject>> pedidosAcumulados = new List<List<GameObject>>();
 
     private void Start()
     {
         Transform[] allChildren = padreLugares.GetComponentsInChildren<Transform>();
+        //For each child gameobject a new list is created to save the customer's orders
         foreach (Transform child in allChildren)
         {
             mesas.Add(child.gameObject);
             pedidosAcumulados.Add(new List<GameObject>());
         }
 
-        //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
+        //Remove the first element, because by default it represents the parent gameobject
         mesas.RemoveAt(0);
         pedidosAcumulados.RemoveAt(0);
     }
 
     /// <summary>
-    /// Devuelve la mesa con menos menus acumulados para dejar un nuevo menu en ella
+    /// Returns the table with the least amount of orders stored in it 
     /// </summary>
-    /// <returns>Mesa en la que dejar el menu</returns>
-    public GameObject dameMesaParaDejarMenu()
+    /// <returns> Table gameobject with the lowest amount of orders </returns>
+    public GameObject getTableToLeaveNewStartingOrder()
     {
         int menorAcumulacion = 1000;
         int indice = 0;
@@ -50,17 +51,17 @@ public class MesaColocarPedido : MonoBehaviour
     }
 
     /// <summary>
-    /// Devuelve la mesa que contenga un pedido determinado
+    /// Returns the table that contains the order specified by the parameter
     /// </summary>
-    /// <param name="pedido">pedido que estamos buscando</param>
-    /// <returns>mesa que contiene el pedido</returns>
-    public GameObject dameMesaConEstePedido(GameObject pedido)
+    /// <param name="order"> Order that we are looking for </param>
+    /// <returns> Table that contains the order </returns>
+    public GameObject getTableThatContainsThisOrder(GameObject order)
     {
         GameObject mesa = null;
         int i = 0;
         while (i < pedidosAcumulados.Count)
         {
-            if (pedidosAcumulados[i].Contains(pedido))
+            if (pedidosAcumulados[i].Contains(order))
             {
                 mesa = mesas[i];
                 break;
@@ -71,34 +72,33 @@ public class MesaColocarPedido : MonoBehaviour
     }
 
     /// <summary>
-    /// Se deja un pedido determinado en una mesa que nosostros indiquemos
+    /// Takes a menu and leaves it on top of a given table
     /// </summary>
-    /// <param name="mesa">mesa en la que dejar el pedido</param>
-    /// <param name="pedido">pedido que vamos a dejar</param>
-    public void dejarPedidoEnMesa(GameObject mesa, GameObject pedido)
+    /// <param name="mesa"> Table where the order is going to be stored </param>
+    /// <param name="pedido"> Order to store </param>
+    public void leaveOrderOnTopOfTable(GameObject mesa, GameObject pedido)
     {
         pedidosAcumulados[mesas.IndexOf(mesa)].Add(pedido);
         pedido.transform.position = mesa.transform.position + (separacion * pedidosAcumulados[mesas.IndexOf(mesa)].Count);
     }
 
     /// <summary>
-    /// Se elimina un pedido determinado de las acumulaciones de las  mesas
+    /// Removes a specific order fromt he tables 
     /// </summary>
-    /// <param name="pedido">pedido que queremos quitar</param>
-    public void quitarPedidoDeLasMesas(GameObject pedido)
+    /// <param name="order"> Order to remove </param>
+    public void removeOrderFromTables(GameObject order)
     {
+        //Search for the table that contains the givne order 
         int i = 0;
         while (i < pedidosAcumulados.Count)
         {
-            if (pedidosAcumulados[i].Contains(pedido)) break;
+            if (pedidosAcumulados[i].Contains(order)) break;
             i++;
         }
 
-        pedidosAcumulados[i].Remove(pedido);
-
+        pedidosAcumulados[i].Remove(order);
+        //Update the placement of the rest of orders stored in that same table
         for (int j = 0; j < pedidosAcumulados[i].Count; j++)
-        {
             pedidosAcumulados[i][j].transform.position = mesas[i].transform.position + (separacion * (1 + j));
-        }
     }
 }

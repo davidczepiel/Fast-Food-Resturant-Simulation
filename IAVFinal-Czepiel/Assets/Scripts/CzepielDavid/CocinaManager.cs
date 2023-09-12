@@ -1,161 +1,117 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class CocinaManager : MonoBehaviour
 {
-    //Padre de las zonas en las que se cocinan hamburguesas
-    public GameObject padreLugaresHacerHamburguesa;
+    public GameObject fatherOfPlacesToPrepareHamburguers;
+    public GameObject fatherOfPlacesToPrepareFries;
+    public GameObject fatherOfPlacesToPrepareDrinks;
+    public GameObject fatherOfPlacesToPrepareIceCreams;
 
-    //zonas en las que se cocinan hamburguesas
-    public List<GameObject> lugaresHacerHamburguesas = new List<GameObject>();
+    List<GameObject> placesToPrepareHamburguers = new List<GameObject>();
+    List<GameObject> placesToPrepareFries = new List<GameObject>();
+    List<GameObject> placesToPrepareDrinks = new List<GameObject>();
+    List<GameObject> placesToPrepareIceCreams = new List<GameObject>();
 
-    //Padre de las zonas en las que se cocinan Patatas
-    public GameObject padreLugaresHacerPatatas;
-
-    //zonas en las que se cocinan patatas
-    public List<GameObject> lugaresHacerPatatas = new List<GameObject>();
-
-    //Padre de las zonas en las que se cocinan bebidas
-    public GameObject padreLugaresHacerBebida;
-
-    //zonas en las que se cocinan bebidas
-    public List<GameObject> lugaresHacerBebidas = new List<GameObject>();
-
-    //Padre de las zonas en las que se cocinan helado
-    public GameObject padreLugaresHacerHelado;
-
-    //zonas en las que se cocinan helado
-    public List<GameObject> lugaresHacerHelados = new List<GameObject>();
-
-    //pedidos que se estan cocinando en cada momento
-    public List<GameObject> pedidosHaciendose = new List<GameObject>();
+    List<GameObject> ordersInProgress = new List<GameObject>();
 
     private void Start()
     {
-        Transform[] allChildren = padreLugaresHacerHamburguesa.GetComponentsInChildren<Transform>();
-        foreach (Transform child in allChildren)
-        {
-            lugaresHacerHamburguesas.Add(child.gameObject);
-        }
-        //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
-        lugaresHacerHamburguesas.RemoveAt(0);
+        Transform[] allChildren = fatherOfPlacesToPrepareHamburguers.GetComponentsInChildren<Transform>();
+        allChildren = fatherOfPlacesToPrepareFries.GetComponentsInChildren<Transform>();
+        allChildren = fatherOfPlacesToPrepareDrinks.GetComponentsInChildren<Transform>();
+        allChildren = fatherOfPlacesToPrepareIceCreams.GetComponentsInChildren<Transform>();
 
-        allChildren = padreLugaresHacerPatatas.GetComponentsInChildren<Transform>();
         foreach (Transform child in allChildren)
-        {
-            lugaresHacerPatatas.Add(child.gameObject);
-        }
-        //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
-        lugaresHacerPatatas.RemoveAt(0);
+            placesToPrepareHamburguers.Add(child.gameObject);
+        foreach (Transform child in allChildren)
+            placesToPrepareFries.Add(child.gameObject);
+        foreach (Transform child in allChildren)
+            placesToPrepareDrinks.Add(child.gameObject);
+        foreach (Transform child in allChildren)
+            placesToPrepareIceCreams.Add(child.gameObject);
 
-        allChildren = padreLugaresHacerBebida.GetComponentsInChildren<Transform>();
-        foreach (Transform child in allChildren)
-        {
-            lugaresHacerBebidas.Add(child.gameObject);
-        }
-        //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
-        lugaresHacerBebidas.RemoveAt(0);
-
-        allChildren = padreLugaresHacerHelado.GetComponentsInChildren<Transform>();
-        foreach (Transform child in allChildren)
-        {
-            lugaresHacerHelados.Add(child.gameObject);
-        }
-        //Esto es debido a que se mete en el vector al propio padre, lo cual no interesa
-        lugaresHacerHelados.RemoveAt(0);
+        placesToPrepareHamburguers.RemoveAt(0);
+        placesToPrepareFries.RemoveAt(0);
+        placesToPrepareDrinks.RemoveAt(0);
+        placesToPrepareIceCreams.RemoveAt(0);
     }
 
     /// <summary>
-    /// Devuelve un lugar concreto en el que se pueda cocinar un item determinado
+    /// Returns a random place from the available ones where an employee can start preparing specific order item 
     /// </summary>
-    /// <param name="item"></param>
-    /// <returns></returns>
-    public GameObject dameLugarHacerItem(MenuItem item)
+    /// <param name="item"> item that the employee is going to start </param>
+    /// <returns> Place where the employee can prepare the item </returns>
+    public GameObject getPlaceToPrepareItem(MenuItem item)
     {
         switch (item)
         {
-            case MenuItem.Hamburguesa:
-                return dameLugarAleatorio(lugaresHacerHamburguesas);
-                break;
-
-            case MenuItem.Patatas:
-                return dameLugarAleatorio(lugaresHacerPatatas);
-                break;
-
-            case MenuItem.Bebida:
-                return dameLugarAleatorio(lugaresHacerBebidas);
-                break;
-
-            case MenuItem.Helado:
-                return dameLugarAleatorio(lugaresHacerHelados);
-                break;
-
-            default:
-                return null;
-                break;
+            case MenuItem.Hamburguesa: return getRandomElementFromList(placesToPrepareHamburguers);
+            case MenuItem.Patatas: return getRandomElementFromList(placesToPrepareFries);
+            case MenuItem.Bebida: return getRandomElementFromList(placesToPrepareDrinks);
+            case MenuItem.Helado: return getRandomElementFromList(placesToPrepareIceCreams);
+            default: return null;
         }
     }
 
     /// <summary>
-    /// Metodo que devuelve una entrada aleatoria de una lista dada
+    /// Returns a random element from a given list
     /// </summary>
-    /// <param name="lugares">lista de lugares disponibles</param>
-    /// <returns>lugar aleatorio sacado de la lista</returns>
-    private GameObject dameLugarAleatorio(List<GameObject> lugares)
+    /// <param name="lugares"> List of elements to choose form </param>
+    /// <returns> Random element from the list </returns>
+    private GameObject getRandomElementFromList(List<GameObject> lugares)
     {
         int i = Random.Range(0, lugares.Count - 1);
         return lugares[i];
     }
 
     /// <summary>
-    /// Metodo que sirve para indicar que un nuevo menu se va a empezar a cocinar
+    /// Marks an order as if it is being done rigth now
     /// </summary>
-    /// <param name="nuevo">nuevo menu a cocinar</param>
-    public void empezarPedido(GameObject nuevo)
+    /// <param name="newOrder"> New order that was just started </param>
+    public void markOrderAsInCompletion(GameObject newOrder)
     {
-        if (!pedidosHaciendose.Contains(nuevo))
-            pedidosHaciendose.Add(nuevo);
+        if (!ordersInProgress.Contains(newOrder))
+            ordersInProgress.Add(newOrder);
     }
 
     /// <summary>
     /// Metodo que sirve para sacar un menu determinado de a lista de menus que se estan haciendo
     /// </summary>
     /// <param name="pedido">menu que vamos a quitar</param>
-    public void quitarPedido(GameObject pedido)
+    public void removeOrderFromInCompletionList(GameObject pedido)
     {
-        if (pedidosHaciendose.Contains(pedido))
-            pedidosHaciendose.Remove(pedido);
+        if (ordersInProgress.Contains(pedido))
+            ordersInProgress.Remove(pedido);
     }
 
     /// <summary>
-    /// Metodo para informar de si hay pedidos haciendose en este momento
+    /// Returns whether there are any orders being done or not 
     /// </summary>
-    /// <returns>bool que indica si hay pedidos asi</returns>
-    public bool hayPedidosHaciendose()
+    /// <returns> True if any order is being done right now, false otherwise </returns>
+    public bool areThereAnyOrdersBeingDone()
     {
-        return pedidosHaciendose.Count > 0;
+        return ordersInProgress.Count > 0;
     }
 
     /// <summary>
-    /// Metodo que devuelve un pedido en el que haya alguno de los elementos que se ofrece que todavía no se haya hecho
-    /// ni se esté haciendo.
-    /// EN caso de que no exista se devuelve null
+    /// Returns the first order that hasnt been completed yet so that an employee can help on its completion given 
+    /// a list of order items that the employee can help with 
     /// </summary>
-    /// <param name="posiblesElementos">posibles items a tener en cuenta</param>
-    /// <returns>Pedido en el que ayudar o null</returns>
-    public GameObject damePedidoEnElQueAyudar(List<int> posiblesElementos)
+    /// <param name="itemsThatTheEmployeeCanHelpWith"> List of elements that the employee can help with </param>
+    /// <returns> Order gameobject that has not been completed yet or null if there are no orders to complete </returns>
+    public GameObject getOrderToHelpWith(List<int> itemsThatTheEmployeeCanHelpWith)
     {
         GameObject pedido = null;
         int i = 0;
         bool bucle = true;
-        while (i < pedidosHaciendose.Count && bucle)
+        while (i < ordersInProgress.Count && bucle)
         {
-            GameObject actual = pedidosHaciendose[i];
+            GameObject actual = ordersInProgress[i];
             Menu menu = actual.GetComponent<Menu>();
-            for (int j = 0; j < posiblesElementos.Count; j++)
+            for (int j = 0; j < itemsThatTheEmployeeCanHelpWith.Count; j++)
             {
-                if (menu.isItemOrdered((MenuItem)posiblesElementos[j]) && !menu.itemTakenIntoAccount((MenuItem)posiblesElementos[j]))
+                if (menu.isItemOrdered((MenuItem)itemsThatTheEmployeeCanHelpWith[j]) && !menu.itemTakenIntoAccount((MenuItem)itemsThatTheEmployeeCanHelpWith[j]))
                 {
                     bucle = false;
                     pedido = actual;
@@ -169,18 +125,18 @@ public class CocinaManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Metodo que devuelve un menu que haya terminado su parte en la cocina o null en caso de que no exista
+    /// Return the first order that is done with kitchen items or null if there are no orders like that
     /// </summary>
-    /// <returns>Menu que ha terminado o null</returns>
-    public GameObject pedidoTerminadoParteCocina()
+    /// <returns> Order done with the kitchen or null </returns>
+    public GameObject getOrderWithNoKitchenItemsLeftToComplete()
     {
         GameObject pedido = null;
 
         int i = 0;
         bool bucle = true;
-        while (i < pedidosHaciendose.Count && bucle)
+        while (i < ordersInProgress.Count && bucle)
         {
-            GameObject actual = pedidosHaciendose[i];
+            GameObject actual = ordersInProgress[i];
             Menu menu = actual.GetComponent<Menu>();
             if (menu.isTheKitchenDoneWithThisOrder())
             {

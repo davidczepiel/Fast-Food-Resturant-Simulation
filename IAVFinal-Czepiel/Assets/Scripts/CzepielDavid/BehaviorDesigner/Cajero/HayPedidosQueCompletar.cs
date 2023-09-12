@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite ser completado por un cajero")]
@@ -28,10 +21,10 @@ public class HayPedidoQueCompletar : Conditional
     public override TaskStatus OnUpdate()
     {
         //Si hay algún pedido que completar me lo quedo
-        if (caja.hayPedidosParaCompletar())
+        if (caja.areThereAnyOrdersToComplete())
         {
-            miPedido.Value = caja.damePedidoPorCompletar();
-            caja.añadirPedidoPorCompletar(miPedido.Value);
+            miPedido.Value = caja.getOrderToComplete();
+            caja.addOrderToTheToCompleteList(miPedido.Value);
             return TaskStatus.Success;
         }
         else

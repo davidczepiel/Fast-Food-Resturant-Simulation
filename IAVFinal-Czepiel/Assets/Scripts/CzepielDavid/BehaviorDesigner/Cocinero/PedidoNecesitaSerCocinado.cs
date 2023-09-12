@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
 [TaskDescription("Este condición tiene como objetivo preguntar si un pedido concreto necesita de items que se cocinen en la cocina \n" +
@@ -34,7 +28,7 @@ public class PedidoNecesitaSerCocinado : Conditional
         //Si el menu necesita de cosas de la cocina la informamos de que hay un nuevo elemento haciendose
         if (necesitaCocina())
         {
-            cocina.empezarPedido(pedido.Value);
+            cocina.markOrderAsInCompletion(pedido.Value);
             return TaskStatus.Success;
         }
         else

@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
 [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
@@ -24,15 +17,15 @@ public class SerAtendido : Action
 
     public override void OnStart()
     {
-        miNumeroCaja = cajaManager.Value.GetComponent<CajaManager>().dameCajaParaQueMeAtiendan();
+        miNumeroCaja = cajaManager.Value.GetComponent<CajaManager>().giveAvailableCashierToBeServed();
     }
 
     public override TaskStatus OnUpdate()
     {
         //Mientras no me atiendad, sigo esperando
-        if (cajaManager.Value.GetComponent<CajaManager>().meHanAtendido(miNumeroCaja))
+        if (cajaManager.Value.GetComponent<CajaManager>().haveIBeenAttended(miNumeroCaja))
         {
-            cajaManager.Value.GetComponent<CajaManager>().hacerPedido(miNumeroCaja, miPedido.Value);
+            cajaManager.Value.GetComponent<CajaManager>().placeOrder(miNumeroCaja, miPedido.Value);
             return TaskStatus.Success;
         }
         else

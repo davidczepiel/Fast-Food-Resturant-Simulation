@@ -1,19 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
 [TaskDescription("Este task tiene como objetivo cocinar un elemento determinado\n" +
     "Este task dispone de un temporizador que representa el tiempo que vamos a tardar en cocinar algo")]
 public class Comer : Action
 {
-    [Tooltip("Silla para sentarme")]
     public SharedGameObject miPedido;
 
     private Menu miMenu;

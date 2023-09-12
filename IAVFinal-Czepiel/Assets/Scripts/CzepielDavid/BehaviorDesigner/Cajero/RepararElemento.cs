@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Este task tiene como objetivo informar a un manager de lugares desgastables de que hemos reparado uno de sus lugares\n" +
@@ -32,7 +26,7 @@ public class RepararElemento : Action
     //EN caso de un abort arreglamos el lugar para que no se quede bloquedao y roto para siempre
     public override void OnConditionalAbort()
     {
-        manager.Value.GetComponent<LugaresDesgastablesManager>().repararLugar(target.Value);
+        manager.Value.GetComponent<LugaresDesgastablesManager>().repairPlace(target.Value);
     }
 
     public override TaskStatus OnUpdate()
@@ -41,7 +35,7 @@ public class RepararElemento : Action
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            manager.Value.GetComponent<LugaresDesgastablesManager>().repararLugar(target.Value);
+            manager.Value.GetComponent<LugaresDesgastablesManager>().repairPlace(target.Value);
             return TaskStatus.Success;
         }
         else

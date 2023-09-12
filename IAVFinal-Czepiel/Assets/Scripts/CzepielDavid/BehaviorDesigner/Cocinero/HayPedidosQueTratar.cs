@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
 [TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos en los que un cocinero pueda trabajar, tanto si hay pedidos por empezar " +
@@ -31,7 +24,7 @@ public class HayPedidoQueTratar : Conditional
 
     public override TaskStatus OnUpdate()
     {
-        if (caja.hayPedidosParaEmpezar() || cocina.hayPedidosHaciendose())
+        if (caja.areThereAnyOrdersToStart() || cocina.areThereAnyOrdersBeingDone())
             return TaskStatus.Success;
         else
             return TaskStatus.Failure;

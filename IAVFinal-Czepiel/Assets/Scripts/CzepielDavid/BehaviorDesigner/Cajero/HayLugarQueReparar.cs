@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Esta condición tiene como objetivo preguntar a un manager de lugares desgastables por si tiene\n" +
@@ -22,9 +15,9 @@ public class HayLugarQueReparar : Conditional
     public override TaskStatus OnUpdate()
     {
         //Pregunto por lugares que reparar, si los hay me quedo con uno de ellos para ir a repararlo
-        if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().hayLugarQueArreglar())
+        if (lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().isThereAnyPlaceToRepair())
         {
-            miTarget.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dameLugarQueArreglar();
+            miTarget.Value = lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().getPlaceToRepair();
             return TaskStatus.Success;
         }
         else

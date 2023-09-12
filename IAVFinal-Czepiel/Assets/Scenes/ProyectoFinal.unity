@@ -729,7 +729,7 @@ Transform:
   - {fileID: 900540141}
   - {fileID: 72842730}
   m_Father: {fileID: 676570136}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &94767189
 GameObject:
@@ -2260,7 +2260,7 @@ MonoBehaviour:
   usosHastaDesgaste: 4
   lugarEmpiezaCola: {fileID: 1961881894}
   desplazamiento: {x: -2.5, y: 0, z: 0}
-  textoUsosRestantes: {fileID: 1372151898869483313, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
+  textoUsosRestantes: {fileID: 2193895687867588387, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
     type: 3}
   desplazamientoTextoAereo: {x: 0, y: 2.5, z: 0}
 --- !u!1001 &326530344
@@ -3713,7 +3713,7 @@ MonoBehaviour:
   usosHastaDesgaste: 2
   lugarEmpiezaCola: {fileID: 1394027721}
   desplazamiento: {x: -2.5, y: 0, z: 0}
-  textoUsosRestantes: {fileID: 1372151898869483313, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
+  textoUsosRestantes: {fileID: 2193895687867588387, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
     type: 3}
   desplazamientoTextoAereo: {x: 0, y: 2.5, z: 0}
 --- !u!1001 &602049278
@@ -4504,12 +4504,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1904376770}
-  - {fileID: 1317324853}
-  - {fileID: 1514695322}
-  - {fileID: 1384711916}
-  - {fileID: 916050543}
   - {fileID: 94125116}
+  - {fileID: 1384711916}
+  - {fileID: 1317324853}
+  - {fileID: 1904376770}
+  - {fileID: 1514695322}
+  - {fileID: 916050543}
   - {fileID: 2071865259}
   - {fileID: 1212562311}
   - {fileID: 2015069110}
@@ -5091,15 +5091,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eb77652c6858d54b97e0ab6a702438c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  padreLugaresHacerHamburguesa: {fileID: 94125115}
-  lugaresHacerHamburguesas: []
-  padreLugaresHacerPatatas: {fileID: 1384711915}
-  lugaresHacerPatatas: []
-  padreLugaresHacerBebida: {fileID: 1317324852}
-  lugaresHacerBebidas: []
-  padreLugaresHacerHelado: {fileID: 1317324852}
-  lugaresHacerHelados: []
-  pedidosHaciendose: []
+  fatherOfPlacesToPrepareHamburguers: {fileID: 94125115}
+  fatherOfPlacesToPrepareFries: {fileID: 1384711915}
+  fatherOfPlacesToPrepareDrinks: {fileID: 1317324852}
+  fatherOfPlacesToPrepareIceCreams: {fileID: 1317324852}
 --- !u!114 &729050103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5119,7 +5114,7 @@ MonoBehaviour:
   usosHastaDesgaste: 100000
   lugarEmpiezaCola: {fileID: 927508311}
   desplazamiento: {x: 0, y: 0, z: -2.5}
-  textoUsosRestantes: {fileID: 1372151898869483313, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
+  textoUsosRestantes: {fileID: 2193895687867588387, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
     type: 3}
   desplazamientoTextoAereo: {x: 0, y: 100, z: 0}
 --- !u!1001 &729774258
@@ -7242,7 +7237,7 @@ Transform:
   - {fileID: 326530345}
   - {fileID: 1139998022}
   m_Father: {fileID: 676570136}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916547303
 GameObject:
@@ -10429,7 +10424,6 @@ MonoBehaviour:
     type: 3}
   cocineroPrefab: {fileID: 6042787518312104964, guid: 19b5dfce7391e5d43a32a2d475ec1138,
     type: 3}
-  elementosSiguientePedido: 
   posSpwanCliente: {x: 5.3, y: -4.3, z: -16}
   posSpwanCajero: {x: 0, y: -4.3, z: 44}
   posSpwanCocinero: {x: 17, y: -4.2, z: 44}
@@ -10488,7 +10482,7 @@ Transform:
   - {fileID: 1519708463}
   - {fileID: 653067837}
   m_Father: {fileID: 676570136}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324502425
 GameObject:
@@ -11004,7 +10998,7 @@ Transform:
   - {fileID: 1729796381}
   - {fileID: 953023176}
   m_Father: {fileID: 676570136}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1386945429
 PrefabInstance:
@@ -11539,7 +11533,7 @@ MonoBehaviour:
   usosHastaDesgaste: 1000
   lugarEmpiezaCola: {fileID: 1365472416}
   desplazamiento: {x: 2.5, y: 0, z: 0}
-  textoUsosRestantes: {fileID: 1372151898869483313, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
+  textoUsosRestantes: {fileID: 2193895687867588387, guid: 964d3bb6f926bd84c8ff14ae5f7e7549,
     type: 3}
   desplazamientoTextoAereo: {x: 0, y: 100, z: 0}
 --- !u!1001 &1409674351
@@ -12537,7 +12531,7 @@ Transform:
   - {fileID: 747483277}
   - {fileID: 1939651246}
   m_Father: {fileID: 676570136}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1519708462
 GameObject:
@@ -15088,7 +15082,7 @@ Transform:
   - {fileID: 1130761375}
   - {fileID: 691016411}
   m_Father: {fileID: 676570136}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1905445133
 PrefabInstance:

@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Este task tiene como objetivo indicar que una caja está siendo atendida, para que" +
@@ -39,7 +33,7 @@ public class AtenderCliente : Action
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            caja.atenderClienteEnCaja(numCaja.Value);
+            caja.takeCareOfCustomer(numCaja.Value);
             return TaskStatus.Success;
         }
         else

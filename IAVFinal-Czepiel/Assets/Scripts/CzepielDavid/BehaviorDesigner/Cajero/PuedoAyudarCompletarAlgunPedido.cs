@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using Bolt;
-using Ludiq;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Esta condición sirve para comprobar si hay algún pedido que necesite se esté haciendo y le quede algún item\n" +
@@ -32,9 +26,7 @@ public class PuedoAyudarCompletarAlgunPedido : Conditional
     public override TaskStatus OnUpdate()
     {
         if (pedidosParaAyudar())
-        {
             return TaskStatus.Success;
-        }
         else
             return TaskStatus.Failure;
     }
@@ -42,9 +34,9 @@ public class PuedoAyudarCompletarAlgunPedido : Conditional
     private bool pedidosParaAyudar()
     {
         //Si hay algo que se esté completando pregunto si puedo ayudar en algo
-        if (caja.hayPedidosParaCompletar())
+        if (caja.areThereAnyOrdersToComplete())
         {
-            pedido.Value = caja.damePedidoEnElQueAyudar(posibilidadesAyuda);
+            pedido.Value = caja.getOrderToCOmplete(posibilidadesAyuda);
             if (pedido.Value != null)
                 return true;
             else

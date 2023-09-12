@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cliente")]
 [TaskDescription("Este task tiene como objetivo liberar uno de los lugares que alguno de los clientes haya estado ocupando ")]
@@ -20,7 +13,7 @@ public class LiberarLugar : Action
 
     public override TaskStatus OnUpdate()
     {
-        lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().dejarLibreLugar(miTarget.Value);
+        lugaresManager.Value.GetComponent<LugaresDesgastablesManager>().leavePlace(miTarget.Value);
         return TaskStatus.Success;
     }
 }

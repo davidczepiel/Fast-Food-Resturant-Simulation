@@ -4,97 +4,65 @@ using UnityEngine;
 
 public class CajaManager : MonoBehaviour
 {
-    //Lista de pedidos que se pueden completar por los cajeros
+    private List<GameObject> pedidosParaEmpezar = new List<GameObject>();
     private List<GameObject> pedidosParaCompletar = new List<GameObject>();
-
-    //Lista de pedidos que pueden ser entregados
     private List<GameObject> pedidosParaRecoger = new List<GameObject>();
 
-    //Lista e pedidos que todavía no se han empezado
-    private List<GameObject> pedidosParaEmpezar = new List<GameObject>();
-
-    //Lista de bool que representa si una caja está atendidapor un agente
-    private List<bool> cajaAtendida = new List<bool>();
-
-    //Lista de bool que representa si una caja está ocupada por un cliente
-    private List<bool> clienteEnCaja = new List<bool>();
-
-    //Lista de bool que representa si una caja está controlada por un cajero
-    private List<bool> cajaControlada = new List<bool>();
+    private List<bool> clientWaitingInCashier = new List<bool>();
+    private List<bool> cashierInControl = new List<bool>();
+    private List<bool> cashierWithAnEmployee = new List<bool>();
 
     private void Start()
     {
         Transform[] allChildren = this.gameObject.GetComponentsInChildren<Transform>();
         foreach (Transform child in allChildren)
         {
-            cajaAtendida.Add(false);
-            clienteEnCaja.Add(false);
-            cajaControlada.Add(false);
+            cashierWithAnEmployee.Add(false);
+            clientWaitingInCashier.Add(false);
+            cashierInControl.Add(false);
         }
-        cajaAtendida.RemoveAt(0);
-        clienteEnCaja.RemoveAt(0);
-        cajaControlada.RemoveAt(0);
+        cashierWithAnEmployee.RemoveAt(0);
+        clientWaitingInCashier.RemoveAt(0);
+        cashierInControl.RemoveAt(0);
+    }
+
+
+    public bool areThereAnyOrdersToStart() { return pedidosParaEmpezar.Count > 0; }
+    public bool areThereAnyOrdersToComplete() { return pedidosParaCompletar.Count > 0; }
+    public bool areThereAnyOrdersToGiveToTheCustomer() { return pedidosParaRecoger.Count > 0; }
+
+    /// <summary>
+    /// Adds an order to the list of orders to complete
+    /// </summary>
+    public void addOrderToTheToCompleteList(GameObject order)
+    {
+        if (!pedidosParaCompletar.Contains(order))
+            pedidosParaCompletar.Add(order);
     }
 
     /// <summary>
-    /// Metodo que informa de si hay pedidos por empezar
+    /// Ads an order to the list of orders that can be given to the customer
     /// </summary>
-    /// <returns>bool que informa de lo solicitado</returns>
-    public bool hayPedidosParaEmpezar()
+    public void addOrderToTheToGiveToTheCustomerList(GameObject order)
     {
-        return pedidosParaEmpezar.Count > 0;
-    }
-
-    /// <summary>
-    /// Metodo que informa de si hay pedidos por completar
-    /// </summary>
-    /// <returns>bool que informa de lo solicitado</returns>
-    public bool hayPedidosParaCompletar()
-    {
-        return pedidosParaCompletar.Count > 0;
-    }
-
-    /// <summary>
-    /// Metodo que informa de si hay pedidos por recoger
-    /// </summary>
-    /// <returns>bool que informa de lo solicitado</returns>
-    public bool hayPedidosParaRecoger()
-    {
-        return pedidosParaRecoger.Count > 0;
-    }
-
-    /// <summary>
-    /// Metodo que añade un pedido a la lista de pedidos por completar
-    /// </summary>
-    public void añadirPedidoPorCompletar(GameObject pedido)
-    {
-        if (!pedidosParaCompletar.Contains(pedido))
-            pedidosParaCompletar.Add(pedido);
-    }
-
-    /// <summary>
-    /// Metodo que añade un pedido a la lista de pedidos por recoger
-    /// </summary>
-    public void añadirPedidoPorRegoger(GameObject pedido)
-    {
-        if (!pedidosParaRecoger.Contains(pedido))
-            pedidosParaRecoger.Add(pedido);
+        if (!pedidosParaRecoger.Contains(order))
+            pedidosParaRecoger.Add(order);
     }
 
     /// <summary>
     /// Metodo que elimina un pedido a la lista de pedidos por completar
     /// </summary>
-    public void eliminarPedidoPorCompletar(GameObject pedido)
+    public void removerOrderFromTheToCompleteList(GameObject order)
     {
-        if (pedidosParaCompletar.Contains(pedido))
-            pedidosParaCompletar.Remove(pedido);
+        if (pedidosParaCompletar.Contains(order))
+            pedidosParaCompletar.Remove(order);
     }
 
     /// <summary>
-    /// Metodo que devuelve uno de los pedidos por empezar
+    /// Returns an order that has not been started yet
     /// </summary>
-    /// <returns>pedido solicitado</returns>
-    public GameObject damePedidoPorEmpezar()
+    /// <returns> Order to start making </returns>
+    public GameObject getNewOrderToStart()
     {
         GameObject nuevo = pedidosParaEmpezar[0];
         pedidosParaEmpezar.RemoveAt(0);
@@ -102,10 +70,10 @@ public class CajaManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Metodo que devuelve uno de los pedidos por completar
+    /// Returns an order that has not been finished yet
     /// </summary>
-    /// <returns>pedido solicitado</returns>
-    public GameObject damePedidoPorCompletar()
+    /// <returns> Order to continue </returns>
+    public GameObject getOrderToComplete()
     {
         GameObject nuevo = pedidosParaCompletar[0];
         pedidosParaCompletar.RemoveAt(0);
@@ -113,10 +81,10 @@ public class CajaManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Metodo que devuelve uno de los pedidos por entregar
+    /// Returns the first order ready for the customer
     /// </summary>
-    /// <returns>pedido solicitado</returns>
-    public GameObject damePedidoPorEntregar()
+    /// <returns> Order ready </returns>
+    public GameObject getOrderToGiveToTheCustomer()
     {
         GameObject nuevo = pedidosParaRecoger[0];
         pedidosParaRecoger.RemoveAt(0);
@@ -124,81 +92,48 @@ public class CajaManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Metodo que informa de si hay algun cliente esperando en la caja y todavía no ha sido atendido
+    /// Returns whether there is a client waiting to be attended or not
     /// </summary>
-    /// <returns>bool que informa de lo solicitado</returns>
-    public bool hayClientesEnColaParaPedir()
+    /// <returns> True if a client is waiting to order , false otherwise </returns>
+    public bool isThereAnyClientWaitingToOrder()
     {
         int i = 0;
-        while (i < clienteEnCaja.Count && (!clienteEnCaja[i] || (clienteEnCaja[i] && cajaControlada[i])))
+        while (i < clientWaitingInCashier.Count && (!clientWaitingInCashier[i] || (clientWaitingInCashier[i] && cashierInControl[i])))
             i++;
-        return i < clienteEnCaja.Count;
+        return i < clientWaitingInCashier.Count;
     }
 
     /// <summary>
-    /// Metodo que devuelve el número de una caja en la que se encuentre un cliente que todavía no ha sido atendido
+    /// Returns the cashier number to attend the very next customer in the queue
     /// </summary>
-    /// <returns>numero de caja en cuestión</returns>
-    public int dameNumeroDeCajaQueAtender()
+    /// <returns> Number of the cashier where the client is waiting </returns>
+    public int getCashierNumberToAttendANewCustomer()
     {
+        //This lets an employee mark a cashier as "controlled" to let the rest of the employees know that although there is a customer waiting
+        //there is already an employee on its way to attend him
         int i = 0;
-        while (i < clienteEnCaja.Count && (!clienteEnCaja[i] || (clienteEnCaja[i] && cajaControlada[i])))
+        while (i < clientWaitingInCashier.Count && (!clientWaitingInCashier[i] || (clientWaitingInCashier[i] && cashierInControl[i])))
             i++;
-        cajaControlada[i] = true;
+        cashierInControl[i] = true;
         return i;
     }
 
     /// <summary>
-    /// Metodo que sirve para indicar que una caja en la que se encuentra un cliente está siendo atendida
+    /// Sets a specific cashier as attended
     /// </summary>
-    /// <param name="numCaja">numero de la caja que vamos a atender</param>
-    public void atenderClienteEnCaja(int numCaja)
+    /// <param name="numCaja"> number of the cashier that is being attended </param>
+    public void takeCareOfCustomer(int numCaja)
     {
-        cajaAtendida[numCaja] = true;
+        cashierWithAnEmployee[numCaja] = true;
     }
 
     /// <summary>
-    /// Este método sirve para que un cliente reciba una caja en la que pueda ser atendido
+    /// Returns the first order that hasnt been completed yet so that an employee can help on its completion given 
+    /// a list of order items that the employee can help with 
     /// </summary>
-    /// <returns>numero de caja que le toca al cliente</returns>
-    public int dameCajaParaQueMeAtiendan()
-    {
-        int i = 0;
-        while (clienteEnCaja[i]) i++;
-        clienteEnCaja[i] = true;
-        return i;
-    }
-
-    /// <summary>
-    /// Método que sirve para comprobar si una caja ha sido atendida o no
-    /// </summary>
-    /// <param name="numCaja">número de caja a comprobar</param>
-    /// <returns>bool que indica si ha sido atendida o no</returns>
-    public bool meHanAtendido(int numCaja)
-    {
-        return cajaAtendida[numCaja];
-    }
-
-    /// <summary>
-    /// Método que sirve para realizar un pedido y liberar la caja en la que un cliente ha sido atendido
-    /// </summary>
-    /// <param name="numCaja">numero de caja a liberar</param>
-    /// <param name="pedidoNuevo">pedido a hacer</param>
-    public void hacerPedido(int numCaja, GameObject pedidoNuevo)
-    {
-        pedidosParaEmpezar.Add(pedidoNuevo);
-        clienteEnCaja[numCaja] = false;
-        cajaAtendida[numCaja] = false;
-        cajaControlada[numCaja] = false;
-    }
-
-    /// <summary>
-    /// Este método sirve para que un cajero pueda pillar un pedido en el que pueda ayudar a completar alguno
-    /// de los elementos que requiera.En caso de que no exista tal pedido se devuelve null
-    /// </summary>
-    /// <param name="posiblesElementos">posibles items en los que se puedeayudar</param>
-    /// <returns>posible pedido en el que se puede ayudar</returns>
-    public GameObject damePedidoEnElQueAyudar(List<int> posiblesElementos)
+    /// <param name="posiblesElementos"> List of elements that the employee can help with </param>
+    /// <returns> Order gameobject that has not been completed yet or null if there are no orders to complete </returns>
+    public GameObject getOrderToCOmplete(List<int> posiblesElementos)
     {
         GameObject pedido = null;
         int i = 0;
@@ -220,5 +155,43 @@ public class CajaManager : MonoBehaviour
         }
 
         return pedido;
+    }
+
+
+    //////////////////////CUSTOMERS METHODS///////////////////////////
+
+    /// <summary>
+    /// Returns the first available cashier where a customer can get attended
+    /// </summary>
+    /// <returns> Number of the first available cashier </returns>
+    public int giveAvailableCashierToBeServed()
+    {
+        int i = 0;
+        while (clientWaitingInCashier[i]) i++;
+        clientWaitingInCashier[i] = true;
+        return i;
+    }
+
+    /// <summary>
+    /// Places an order leaves the cashier free for the next customer 
+    /// </summary>
+    /// <param name="numCaja"> Number of the cashier that is going to be freed </param>
+    /// <param name="pedidoNuevo"> Order placed </param>
+    public void placeOrder(int numCaja, GameObject pedidoNuevo)
+    {
+        pedidosParaEmpezar.Add(pedidoNuevo);
+        clientWaitingInCashier[numCaja] = false;
+        cashierWithAnEmployee[numCaja] = false;
+        cashierInControl[numCaja] = false;
+    }
+
+    /// <summary>
+    /// Returns whether a cashier has been attended or not 
+    /// </summary>
+    /// <param name="numCaja"> Number of the cashier </param>
+    /// <returns> True if the cashier has been attended by a cashier, false otherwise </returns>
+    public bool haveIBeenAttended(int numCaja)
+    {
+        return cashierWithAnEmployee[numCaja];
     }
 }

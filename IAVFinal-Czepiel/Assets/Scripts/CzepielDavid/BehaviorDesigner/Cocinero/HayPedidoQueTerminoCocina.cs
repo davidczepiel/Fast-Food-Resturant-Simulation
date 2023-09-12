@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
 [TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos en la cocina que ya no necesiten ningún elemento cocinable \n" +
@@ -29,10 +22,10 @@ public class HayPedidoQueTerminoCocina : Conditional
     public override TaskStatus OnUpdate()
     {
         //Le pido un pedido de estos, si me da algo me lo quedo y lo saco de la cocina
-        pedido.Value = cocina.pedidoTerminadoParteCocina();
+        pedido.Value = cocina.getOrderWithNoKitchenItemsLeftToComplete();
         if (pedido.Value != null)
         {
-            cocina.quitarPedido(pedido.Value);
+            cocina.removeOrderFromInCompletionList(pedido.Value);
             return TaskStatus.Success;
         }
         else

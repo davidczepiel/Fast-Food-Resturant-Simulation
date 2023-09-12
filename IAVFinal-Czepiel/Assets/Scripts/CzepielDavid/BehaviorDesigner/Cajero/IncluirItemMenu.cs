@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Este task tiene como objetivo incluir un elemento que esté cocinado en un menu que tengamos")]
@@ -34,8 +27,8 @@ public class IncluirItemMenu : Action
         miMenu.Value.GetComponent<Menu>().completeOrderItem((MenuItem)itemCocinando.Value);
         if (miMenu.Value.GetComponent<Menu>().isOrderFinished())
         {
-            caja.añadirPedidoPorRegoger(miMenu.Value);
-            caja.eliminarPedidoPorCompletar(miMenu.Value);
+            caja.addOrderToTheToGiveToTheCustomerList(miMenu.Value);
+            caja.removerOrderFromTheToCompleteList(miMenu.Value);
             miMenu.Value = null;
         }
         return TaskStatus.Success;

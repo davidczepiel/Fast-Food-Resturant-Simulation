@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal")]
 [TaskDescription("Este task tiene como objetivo que los agentes vayan a la mesa donde se encuentra el pedido" +
@@ -24,7 +17,7 @@ public class DejarItemBandeja : Action
 
     public override TaskStatus OnUpdate()
     {
-        miTarget.Value = mesasPedidos.Value.GetComponent<MesaColocarPedido>().dameMesaConEstePedido(miMenu.Value);
+        miTarget.Value = mesasPedidos.Value.GetComponent<MesaColocarPedido>().getTableThatContainsThisOrder(miMenu.Value);
         return TaskStatus.Success;
     }
 }

@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
 [TaskDescription("Este condición tiene como objetivo preguntar si hay pedidos en la cocina en lo que el cocinero pueda ayudar \n" +
@@ -42,9 +36,9 @@ public class PuedoAyudarCocinarAlgunPedido : Conditional
     private bool pedidosParaAyudar()
     {
         //Si hay pedidos haciendose le pregunto por alguno en el que pueda ayudar
-        if (cocina.hayPedidosHaciendose())
+        if (cocina.areThereAnyOrdersBeingDone())
         {
-            pedido.Value = cocina.damePedidoEnElQueAyudar(posibilidadesAyuda);
+            pedido.Value = cocina.getOrderToHelpWith(posibilidadesAyuda);
             if (pedido.Value != null)
                 return true;
             else

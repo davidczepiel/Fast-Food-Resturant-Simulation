@@ -1,12 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
-using BehaviorDesigner.Runtime;
+﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cocinero")]
 [TaskDescription("Este task tiene como objetivo quitar un menu de la cocina porque ya no tenga nada que hacer allí  \n" +
@@ -37,13 +30,13 @@ public class PedidoParteCocinaTerminado : Action
     public override TaskStatus OnUpdate()
     {
         //Se quita de la lista de cosas haciendose
-        cocina.quitarPedido(miMenu.Value);
+        cocina.removeOrderFromInCompletionList(miMenu.Value);
 
         //Se mete en una lista u otra
         if (menu.isOrderFinished())
-            caja.añadirPedidoPorRegoger(miMenu.Value);
+            caja.addOrderToTheToGiveToTheCustomerList(miMenu.Value);
         else
-            caja.añadirPedidoPorCompletar(miMenu.Value);
+            caja.addOrderToTheToCompleteList(miMenu.Value);
 
         miMenu.Value = null;
         return TaskStatus.Success;

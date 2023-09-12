@@ -1,12 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Bolt;
-using Ludiq;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using Tooltip = BehaviorDesigner.Runtime.Tasks.TooltipAttribute;
-using UnityEngine.AI;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
 [TaskDescription("Este task tiene como objetivo seleccionar un elemento en el que completar algo en el menu que he hemos tomado para ayudar")]
@@ -53,7 +47,7 @@ public class SeleccionarElementoCompletarMenu : Action
     public override TaskStatus OnUpdate()
     {
         //Le pido a la cocina un lugar en el que pueda cocinar el item que coy a cocinar
-        miTarget.Value = cocina.dameLugarHacerItem((MenuItem)itemCocinando.Value);
+        miTarget.Value = cocina.getPlaceToPrepareItem((MenuItem)itemCocinando.Value);
         miPensamiento.Value.GetComponent<AgentePiensa>().mostrarImagenMenuItem((MenuItem)itemCocinando.Value);
         return TaskStatus.Success;
     }
