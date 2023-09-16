@@ -1,4 +1,5 @@
-﻿using BehaviorDesigner.Runtime;
+﻿using UnityEngine;
+using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
 [TaskCategory("CzepielDavidProyectoFinal/Cajero")]
@@ -9,6 +10,7 @@ public class HayClientesCola : Conditional
     public SharedGameObject cajaManager;
     private CajaManager caja;
     public SharedInt numCaja;
+    public SharedGameObject atenderPedido;
 
     public override void OnStart()
     {
@@ -21,6 +23,7 @@ public class HayClientesCola : Conditional
         if (caja.isThereAnyClientWaitingToOrder())
         {
             numCaja.Value = caja.getCashierNumberToAttendANewCustomer();
+            atenderPedido.Value = GameObject.Find("LugarAtender"+(numCaja.Value+1));
             return TaskStatus.Success;
         }
         else

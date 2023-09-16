@@ -28,7 +28,7 @@ public class AgentesManager : MonoBehaviour
 
     private void Start()
     {
-        elementosSiguientePedido = new List<bool>() { false, false, false, false };
+        elementosSiguientePedido = new List<bool>() { true, true, true, true};
         uiManager.ShowMealItems(elementosSiguientePedido);
     }
 

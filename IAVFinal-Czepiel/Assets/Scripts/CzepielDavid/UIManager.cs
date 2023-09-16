@@ -7,7 +7,10 @@ public class UIManager : MonoBehaviour
     AgentesManager agentsManager;
 
     [SerializeField]
-    List<GameObject> currentMealItems;
+    List<CanvasGroup> currentMealItems;
+
+    [SerializeField]
+    float disabledItemAlpha = 0.5f;
 
     /// <summary>
     /// Updates the UI to display only the menu items that will be included in the next customer order
@@ -16,7 +19,7 @@ public class UIManager : MonoBehaviour
     public void ShowMealItems(List<bool> itemsIncludedInTheNextMeal)
     {
         for (int i = 0; i < itemsIncludedInTheNextMeal.Count; i++)
-            currentMealItems[i].SetActive(itemsIncludedInTheNextMeal[i]);
+            currentMealItems[i].alpha = itemsIncludedInTheNextMeal[i] ? 1.0f : disabledItemAlpha;
     }
 
     /// <summary>
@@ -25,7 +28,7 @@ public class UIManager : MonoBehaviour
     /// <param name="item"> Item that is going to be toggled </param>
     public void toggleMenuItem(int item)
     {
-        currentMealItems[item].SetActive(!currentMealItems[item].activeSelf);
+        currentMealItems[item].alpha = currentMealItems[item].alpha < 1.0f ? 1.0f : disabledItemAlpha;
         agentsManager.toggleMenuItem(item);
     }
 }
