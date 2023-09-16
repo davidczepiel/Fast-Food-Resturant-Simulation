@@ -28,7 +28,7 @@ In addition, the restaurant has litter bins where customers can deposit their tr
 The customer's behaviour is that of a person making an ordinary visit to a fast food restaurant:
 
 
-<img src="./Resources/Client.png" alt="side_sticker" height="200px" style="float: right; margin-right: 100px; margin-left: 50px;" />
+<img src="./Resources/Client.PNG" align= "right" alt="side_sticker" height="200px" style="float: right; margin-right: 100px; margin-left: 50px;" />
 
 1) Upon entering the restaurant, they queue until a cashier takes their order.
 2) Once they have placed their order, they wait by the counter until it is ready.
@@ -45,7 +45,7 @@ The customer's behaviour is that of a person making an ordinary visit to a fast 
 # Cashiers
 Cashiers are responsible for taking customers' orders, finishing orders with products that are easier to prepare (drinks/ice cream) and taking care of bins and toilets for customers to use.  These agents prioritise their tasks in the following order:
 
-<img src="./Resources/Cashier.png" alt="side_sticker" height="200px" style="float: right; margin-right: 100px; margin-left: 50px; margin-bottom: 15px;" />
+<img src="./Resources/Cashier.PNG" align= "right" alt="side_sticker" height="200px" style="float: right; margin-right: 100px; margin-left: 50px; margin-bottom: 15px;" />
 
 1) Deliver finished orders.
 2) Take orders from new customers at the counter.
@@ -63,7 +63,7 @@ If no tasks are available, cashiers will move to the kitchen room to rest.
 # Cooks
 Cooks are in charge of starting customer orders with products that take longer to prepare (burgers/fries). These agents prioritise the following tasks:
 
-<img src="./Resources/Cook.png" alt="side_sticker" height="150px" style="float: right; margin-right: 100px; margin-left: 50px; margin-bottom: 15px;" />
+<img src="./Resources/Cook.PNG" align= "right" alt="side_sticker" height="150px" style="margin-right: 100px; margin-left: 50px; margin-bottom: 15px;" />
 
 1) Start new orders by preparing burgers and fries if needed.
 2) Add these products to the trays that hold customer orders.
