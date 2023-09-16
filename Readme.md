@@ -9,7 +9,7 @@
 In this repository you can find the final project of the subject "Artificial Intelligence for videogames" of the Complutense University of Madrid. The aim of this project is to simulate a fast food restaurant in the Unity engine. In this restaurant there will coexist 3 types of agents: customers, cashiers and cooks, whose AI will be programmed using the behaviour trees provided by the "Behaviour Designer" extension.
 
 <div align="center" display="flex" > 
- <img align="center" width="75%"  src="./Resources/Interfaz.JPG" />
+ <img align="center"  src="./Resources/ProjectOverview.gif" />
  <br></br>
 </div>
 
@@ -43,13 +43,13 @@ The customer's behaviour is that of a person making an ordinary visit to a fast 
 </div>
 
 # Cashiers
-Cashiers are responsible for taking customers' orders, finishing orders with products that are easier to prepare (beverages/ice cream) and taking care of bins and toilets for customers to use.  These agents prioritise their tasks in the following order:
+Cashiers are responsible for taking customers' orders, finishing orders with products that are easier to prepare (drinks/ice cream) and taking care of bins and toilets for customers to use.  These agents prioritise their tasks in the following order:
 
 <img src="./Resources/Cashier.png" alt="side_sticker" height="200px" style="float: right; margin-right: 100px; margin-left: 50px; margin-bottom: 15px;" />
 
 1) Deliver finished orders.
 2) Take orders from new customers at the counter.
-3) Assist with orders requiring beverages/ice creams.
+3) Assist with orders requiring drink/ice creams.
 4) Empty bins that have been filled.
 5) Repair clogged toilets.
 
